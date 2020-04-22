@@ -1,0 +1,37 @@
+{
+  "deploy.reloaded": {
+      "packages": [
+          {
+              "name": "viaencuesta Webpage",
+              "description": "The wp folder",
+
+              "files": [
+                  "**/*.php",
+                  "**/*.css",
+                  "**/*.js",
+                  "**/*.log"
+              ],
+              "exclude": [
+                  // "**/!(wp-config).php",
+                  // "**/!(debug).log",
+              ],
+
+              "deployOnSave": [ "viaencuestaWebpage" ],
+              //"syncWhenOpen": "laaldeaWebpage",
+          }
+      ],
+
+      "targets": [
+          {
+              "type": "ftp",
+              "name": "viaencuestaWebpage",
+              "description": "public_html",
+              "host": "192.169.190.162", 
+              "port": 21,
+              "user": "uniandes@viaencuesta.com", 
+              "password": "a(G#AG%X?ST]",
+              "dir": "/public_html/"
+          }
+      ]
+  }
+}
