@@ -2,7 +2,7 @@
   "deploy.reloaded": {
       "packages": [
           {
-              "name": "viaencuesta Webpage",
+              "name": " Webpage",
               "description": "The wp folder",
 
               "files": [
@@ -16,20 +16,20 @@
                   // "**/!(debug).log",
               ],
 
-              "deployOnSave": [ "viaencuestaWebpage" ],
-              //"syncWhenOpen": "laaldeaWebpage",
+              "deployOnSave": [ "siscovidWebpage" ],
+              //"syncWhenOpen": "siscovidWebpage",
           }
       ],
 
       "targets": [
           {
               "type": "ftp",
-              "name": "viaencuestaWebpage",
+              "name": "siscovidWebpage",
               "description": "public_html",
               "host": "192.169.190.162", 
               "port": 21,
-              "user": "uniandes@viaencuesta.com", 
-              "password": "a(G#AG%X?ST]",
+              "user": "uniandes@siscovid.com", 
+              "password": "RFtTz@&9R1+F",
               "dir": "/public_html/"
           }
       ]

@@ -1,0 +1,158 @@
+/* Home */
+#project {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+}
+
+#project .description h2 {
+  margin-bottom: 3rem;
+}
+
+#project .description p {
+  line-height: 2em;
+  padding: 0 5em;
+}
+
+#project .links a {
+  display: block;
+  margin: 0.5em 0;
+  border: 1px var(--blue) solid;
+  padding: 1em 1em;
+  font-size: 1.6rem;
+  text-align: center;
+  background: lightgrey;
+}
+
+#team {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+}
+
+#team .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#team  .member-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 30%;
+  margin: 1em;
+}
+
+#team .member-container .picture {
+  padding: 0 1em;
+}
+
+#team .member-container img {
+  width: 80px;
+  height: 80px;
+}
+
+#team .info-container .name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#team .info-container .profile {
+  margin-top: 0.5em;
+  padding: 0 0.5em;
+}
+
+#team .info-container .email {
+  margin-top: 0.5em;
+}
+
+#allies {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+}
+
+#allies .allies-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+#allies .allies-container img {
+  max-height: 100px;
+  padding: 1em 1em;
+}
+
+
+/* Simulacion */
+
+#simulation .title-row {
+  margin-top: 4em;
+  text-align: center;
+}
+
+#simulation .filter-row {
+  margin-top: 2em;
+}
+
+#simulation .filter-row button {
+  margin: 0.5em 1em;
+  border: none;
+  padding: 0.5em 1.5em;
+  font-size: 2em;
+  text-transform: uppercase;
+  transition: background-color 1s, border 0.5s, color 0.5s;
+}
+
+#simulation .filter-row button:hover {
+  color: var(--blue);
+}
+
+#simulation .filter-row button:focus,
+#simulation .filter-row button:active {
+  outline: none;
+}
+
+#simulation .filter-row button.active {
+  background-color: darkgray;
+  color: var(--white);
+  pointer-events: none;
+}
+
+#simulation .model-row {
+  margin-top: 2em;
+}
+
+#simulation .model-container {
+  position: relative;
+  height: calc(45vw + 4.5em);
+}
+
+#simulation .model-row .temp-title {
+  color: rgba(211,211,211, 0.8);
+  margin: 1em 0;
+  border: 1px dashed currentColor;
+  border-left: none;
+  border-right: none;
+  padding: 0.5em 0;
+}
+
+#simulation .model-row iframe {
+  width: 100%;
+  height: 45vw;
+}
+
+#simulation .model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
