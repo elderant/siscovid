@@ -236,6 +236,10 @@ button:active {
 	list-style: disc;
 }
 
+.animate__animated {
+	opacity: 1 !important;
+}
+
 /******************** Shared ********************/
 /* shared : header*/
 header#masthead {
@@ -326,7 +330,26 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li > a {
 }
 
 /* shared : table */
+table tr.header:nth-child(1) {
+  background-color: var(--blue);
+  color: white;
+}
 
+table tr th{
+  padding: 1em 0;
+}
+
+table tr {
+  border-bottom: solid 1px var(--blue);
+}
+
+table tr td {
+  padding: 1em 0;
+}
+
+table tr:nth-child(odd) {
+  background-color: lightgray;
+}
 
 /* tools : slick slider */
 /* Slider */

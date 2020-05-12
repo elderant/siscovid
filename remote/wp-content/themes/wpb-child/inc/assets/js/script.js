@@ -54,48 +54,19 @@
       $goToTop.on('click', function(event) {
         $('html, body').animate({scrollTop:0}, '1000');
       });
-    }
-
-    if($('.page-simulacion').length > 0) {
-      $('.filter-container button').each(function() {
-        $(this).on('click', function(event) {
-          let city = $(this).attr('data-city');
-          let $modelContainer = $('.model-row .model.' + city);
-
-          if($modelContainer.length == 0) {return;}
-
-          // fill src if is not set
-          if(!$modelContainer.find('iframe').attr('src')) {
-            $modelContainer.find('iframe').attr('src', $modelContainer.find('iframe').attr('data-src'));
-          }
-
-          // Change button states
-          $('.filter-container button.active').removeClass('active');
-          $(this).addClass('active');
-
-          // Change model states
-          $('.model-row .model.active').fadeOut(500, function(){
-            $(this).removeClass('active');
-            $(this).addClass('hidden');
-          });
-          setTimeout(function(){
-            $modelContainer.fadeIn(500, function(){
-              $(this).addClass('active');
-              $(this).removeClass('hidden');
-            })
-          }, 250);
-        });
-      });
-    }
-    
+    }    
   });
 } (jQuery) );
 
-/* ------  SMOOTH SCROLL ----- */
+/* ------  SMOOTH SCROLL  ----- */
 ( function( $ ) {
 	$(document).ready(function () {
-		"use strict";
+    "use strict";
 		$('a[href*="http://siscovid.com/#"]').bind('click', function(event) {
+      let href = window.location.href;
+      if(href !== "http://siscovid.com/" && !href.startsWith("http://siscovid.com/#")){
+        return;
+      }
       event.preventDefault();
 		
       let target = $(this).attr("href"); //Get the target

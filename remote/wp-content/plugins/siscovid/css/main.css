@@ -1,11 +1,11 @@
 /* Home */
+/*****************************************************/
+/******************** Descripcion ********************/
+/*****************************************************/
 #project {
-  min-height: 75vh;
   display: flex;
   align-items: center;
   padding: 5rem 0;
-  border-top: 1px dashed lightgray;
-  /* background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%); */
 }
 
 #project .description h2 {
@@ -23,17 +23,17 @@
   font-size: 1.6rem;
 }
 
+/**********************************************/
+/******************** team ********************/
+/**********************************************/
 #team {
-  padding: 5rem 0;
-  /* min-height: 75vh; */
   display: flex;
   align-items: center;
-  border-top: 8px solid var(--blue-dark);
+  padding: 5rem 0;
   background: var(--blue);
   color: var(--white);
 }
 
-/* team */
 #team a {
   color: var(--white);
 }
@@ -123,12 +123,13 @@
   margin: 0.5rem 0;
 }
 
+/************************************************/
+/******************** Allies ********************/
+/************************************************/
 #allies {
-  min-height: 75vh;
   display: flex;
   align-items: center;
-  border-top: 1px dashed lightgray;
-  /* background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%); */
+  padding: 5rem 0;
 }
 
 #allies .allies-container {
@@ -145,7 +146,9 @@
 }
 
 
-/* Simulacion */
+/****************************************************/
+/******************** Simulacion ********************/
+/****************************************************/
 #simulation .title-row {
   margin-top: 4em;
   text-align: center;
@@ -195,7 +198,9 @@
   height: 100%;
 }
 
-/* Metodologia */
+/*****************************************************/
+/******************** Metodologia ********************/
+/*****************************************************/
 #methodology .title-row {
   margin-top: 4em;
   text-align: center;
@@ -224,46 +229,71 @@
 }
 
 #methodology .model h4,
-#methodology .model p {
+#methodology .model h5,
+#methodology .model h6,
+#methodology .model p,
+#methodology .model ol,
+#methodology .model ul {
   text-align: left;
 }
 
 #methodology .model h3 {
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 #methodology .model h4 {
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-#methodology .model p,
-#methodology .model img {
+  margin-top: 2.5rem;
   margin-bottom: 2rem;
 }
 
-#methodology #parameters tr.header:nth-child(1) {
-  background-color: var(--blue);
-  color: white;
+#methodology .model h5 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-#methodology #parameters tr th{
-  padding: 1em 0;
+#methodology .model h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-#methodology #parameters tr {
-  border-bottom: solid 1px var(--blue);
+#methodology .model img,
+#methodology .model table,
+#methodology .model .mjx-container,
+#methodology .model .padded-block,
+#methodology .model ol,
+#methodology .model ul {
+  opacity: 0;
 }
 
-#methodology #parameters tr td {
-  padding: 1em 0;
+#methodology .model p,
+#methodology .model img,
+#methodology .model table {
+  margin-bottom: 1rem;
 }
 
-#methodology #parameters tr:nth-child(odd) {
-  background-color: lightgray;
+#methodology .model ol,
+#methodology .model ul {
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
-#methodology #parameters tr:nth-child(even) {
+#methodology .model .padded-block {
+  padding-left: 1.75rem;
+}
 
+table#severity-table {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table#severity-table tr td {
+  padding: 0.5em 0;
+}
+
+table#parameters {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
