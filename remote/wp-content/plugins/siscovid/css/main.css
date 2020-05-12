@@ -3,7 +3,9 @@
   min-height: 75vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+  padding: 5rem 0;
+  border-top: 1px dashed lightgray;
+  /* background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%); */
 }
 
 #project .description h2 {
@@ -13,68 +15,120 @@
 #project .description p {
   line-height: 2em;
   padding: 0 5em;
+  /*font-size: 1.145em;*/
 }
 
 #project .links a {
-  display: block;
-  margin: 0.5em 0;
-  border: 1px var(--blue) solid;
-  padding: 1em 1em;
+  min-width: 15em;
   font-size: 1.6rem;
-  text-align: center;
-  background: lightgrey;
 }
 
 #team {
-  min-height: 75vh;
+  padding: 5rem 0;
+  /* min-height: 75vh; */
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+  border-top: 8px solid var(--blue-dark);
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* team */
+#team a {
+  color: var(--white);
+}
+
+#team a:hover {
+  color: var(--blue-dark);
 }
 
 #team .team-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#team  .member-container {
+#team .member-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 30%;
-  margin: 1em;
+  width: 15vw;
+  min-height: 334px;
+  margin: 0 1.2em;
 }
 
-#team .member-container .picture {
-  padding: 0 1em;
+/* team : carousel */
+#team .team-carousel, 
+#team .team-carousel .slick-list {
+  display: inline-block;
+  max-width: 1192px;
+  margin: 0;
+  text-align: center;
+}
+
+#team .team-carousel {
+  order: 2;
+}
+
+#team .carousel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carousel-row .arrow {
+  cursor: pointer;
+  color: var(--white);
+  transition: color 1s;
+}
+
+.carousel-row .arrow i {
+  font-size: 50px;
+}
+
+.carousel-row .slick-prev {
+  margin-right: 50px;
+  order: 1;
+}
+
+.carousel-row .slick-next {
+  margin-left: 50px;
+  order: 3;
+}
+
+/* team : member containers */
+#team .member-container .name {
+  font-family: metapromedium;
+  font-size: 1.4em;
+  margin: 0.75rem 0;
 }
 
 #team .member-container img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
 }
 
-#team .info-container .name {
-  font-size: 1.2em;
-  font-weight: bold;
+#team .member-container .organization {
+  margin: 0.5rem 0;
 }
 
-#team .info-container .profile {
-  margin-top: 0.5em;
-  padding: 0 0.5em;
+#team .member-container .profile {
+  margin: 0.5rem 0;
 }
 
-#team .info-container .email {
-  margin-top: 0.5em;
+#team .member-container .email {
+  margin: 0.5rem 0;
 }
 
 #allies {
   min-height: 75vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%);
+  border-top: 1px dashed lightgray;
+  /* background: linear-gradient(180deg, var(--blue) 10%, var(--white) 20%, var(--white) 80%, var(--green) 90%); */
 }
 
 #allies .allies-container {
@@ -92,7 +146,6 @@
 
 
 /* Simulacion */
-
 #simulation .title-row {
   margin-top: 4em;
   text-align: center;
@@ -102,28 +155,13 @@
   margin-top: 2em;
 }
 
-#simulation .filter-row button {
-  margin: 0.5em 1em;
-  border: none;
-  padding: 0.5em 1.5em;
-  font-size: 2em;
-  text-transform: uppercase;
-  transition: background-color 1s, border 0.5s, color 0.5s;
+#simulation .filter-container {
+  display: flex;
+  justify-content: space-around;
 }
 
-#simulation .filter-row button:hover {
-  color: var(--blue);
-}
-
-#simulation .filter-row button:focus,
-#simulation .filter-row button:active {
-  outline: none;
-}
-
-#simulation .filter-row button.active {
-  background-color: darkgray;
-  color: var(--white);
-  pointer-events: none;
+#simulation button {
+  border: 2px outset lightgray;
 }
 
 #simulation .model-row {
@@ -155,4 +193,77 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Metodologia */
+#methodology .title-row {
+  margin-top: 4em;
+  text-align: center;
+}
+
+#methodology .filter-row {
+  margin-top: 2em;
+}
+
+#methodology .filter-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#methodology button {
+  border: 2px outset lightgray;
+}
+
+#methodology .model-row {
+  margin-top: 2em;
+}
+
+#methodology .model {
+  padding: 4em 0;
+  text-align: center;
+}
+
+#methodology .model h4,
+#methodology .model p {
+  text-align: left;
+}
+
+#methodology .model h3 {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+#methodology .model h4 {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+#methodology .model p,
+#methodology .model img {
+  margin-bottom: 2rem;
+}
+
+#methodology #parameters tr.header:nth-child(1) {
+  background-color: var(--blue);
+  color: white;
+}
+
+#methodology #parameters tr th{
+  padding: 1em 0;
+}
+
+#methodology #parameters tr {
+  border-bottom: solid 1px var(--blue);
+}
+
+#methodology #parameters tr td {
+  padding: 1em 0;
+}
+
+#methodology #parameters tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+#methodology #parameters tr:nth-child(even) {
+
 }

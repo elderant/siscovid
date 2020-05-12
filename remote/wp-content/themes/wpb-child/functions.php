@@ -1,13 +1,19 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'wpb_child_enqueue_styles' );
+
 function wpb_child_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_script('wpb-child-main', get_stylesheet_directory_uri() . '/inc/assets/js/script.js', array(), '', true );
 
-	wp_enqueue_style('wpb-child-home-animate', get_stylesheet_directory_uri() . '/inc/assets/css/animate.css', array(), false );
-	// wp_enqueue_style('wpb-child-home-hover', get_stylesheet_directory_uri() . '/inc/assets/css/hover.css', array(), false );
-	// wp_enqueue_style('wpb-child-home-slick', get_stylesheet_directory_uri() . '/inc/assets/css/slick.css', array(), false );
+	wp_enqueue_style('wpb-child-animate', get_stylesheet_directory_uri() . '/inc/assets/css/animate.css', array(), false );
+	wp_enqueue_script('wpb-child-slick', get_stylesheet_directory_uri() . '/inc/assets/js/slick.min.js', array('jquery'), false, true );
+	// wp_enqueue_script('wpb-child-home-hovers', get_stylesheet_directory_uri() . '/inc/assets/js/home/hovers.js', array('jquery'), false, true );
+
+	if(is_page(54)) {
+		wp_enqueue_script('wpb-child-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=es6', array(), false, true );
+		wp_enqueue_script('wpb-child-mathjax', 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js', array(), false, true );
+	}
 } 
+add_action( 'wp_enqueue_scripts', 'wpb_child_enqueue_styles', 10 );
 
 add_action( 'wp_enqueue_scripts', 'wpb_child_enqueue_mobile_styles', 99 );
 function wpb_child_enqueue_mobile_styles() {
@@ -16,11 +22,17 @@ function wpb_child_enqueue_mobile_styles() {
 
 // include custom jQuery
 function wpb_child_include_custom_jquery() {
-	// wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', array(), null, true);
+	//wp_enqueue_script('jquery-2.2.4', 'https://code.jquery.com/jquery-2.2.4.min.js', array(), null, true);
 }
-add_action('wp_enqueue_scripts', 'wpb_child_include_custom_jquery');
+add_action('wp_enqueue_scripts', 'wpb_child_include_custom_jquery', 9);
 
 
+add_filter('script_loader_tag', 'wp_child_add_script_attributes', 10, 2);
+function wp_child_add_script_attributes($tag, $handle) {
+	if ( 'wpb-child-mathjax' !== $handle )
+		return $tag;
+	return str_replace( ' src', 'id="MathJax-script" async="async" src', $tag );
+}
 /******************** Shared ********************/
 //Page Slug Body Class
 function wpb_child_add_slug_body_class( $classes ) {

@@ -1,4 +1,45 @@
 ( function( $ ) {
+  var siscovid_initialize_team_carrousel = function() {
+    $('#team .team-carousel').slick({
+      infinite: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      prevArrow: '#team .slick-prev',
+      nextArrow: '#team .slick-next',
+      variableWidth: true,
+      // responsive: [
+      //   {
+      //     breakpoint: 1367,
+      //     settings: {
+      //       slidesToShow: 3,
+      //       slidesToScroll: 3,
+      //       infinite: false,
+      //       variableWidth: true,
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 730,
+      //     settings: {
+      //       slidesToShow: 2,
+      //       slidesToScroll: 2,
+      //       infinite: false,
+      //       variableWidth: true,
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 600,
+      //     settings: {
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //       infinite: false,
+      //       variableWidth: true,
+      //     }
+      //   },
+      // ],
+    });
+  }
+
   var siscovid_validate_promo_form_jquery = function() {
     let $form = $('.page-id-35 .covid-form-section .laaldea-form');
     let $inputs = $form.find('input:not([type="submit"]), select');
@@ -83,8 +124,8 @@
   }
 
   $(document).ready(function () {
-    // if($('.page-id-35').length > 0) {
-    //   siscovid_validate_promo_form_jquery();
-    // }
+    if($('.page-home').length > 0) {
+      siscovid_initialize_team_carrousel();
+    }
   });
 } (jQuery) );

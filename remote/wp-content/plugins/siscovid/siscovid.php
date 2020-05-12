@@ -95,3 +95,10 @@ function siscovid_build_simulacion_html ( $lang ) {
 
 add_shortcode( 'siscovid_simulacion', 'siscovid_build_simulacion_html' );
 
+function siscovid_build_metodologia_html ( $lang ) {
+	$template_url = siscovid_load_template('metodologia.php');
+	load_template($template_url, true);
+}
+
+add_shortcode( 'siscovid_metodologia', 'siscovid_build_metodologia_html' );
+

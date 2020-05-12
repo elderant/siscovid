@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-10 offset-1 allies-container">
-        <img src="/wp-content/uploads/uniandes.png" alt="Uniandes Logo">
+        <img src="/wp-content/uploads/uniandes.jpeg" alt="Uniandes Logo">
         <img src="/wp-content/uploads/socialHealth.jpeg" alt="Social & health complexity center Logo">
         <img src="/wp-content/uploads/epiandes.jpeg" alt="EpiAndes Logo">
         <img src="/wp-content/uploads/santafe.jpeg" alt="Fundación Santa Fe de Bogotá Logo">
