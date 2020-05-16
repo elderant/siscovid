@@ -8,14 +8,16 @@ Template:		 wp-bootstrap-starter
 Version:		 1.0.0
 Text Domain:	 wpb-child
 */
-
+ 
 :root {
 	--black: #000;
-	--blue: #21a6e9;
-	--blue-dark: #0F4B69;
+	/* --blue: #27aae1; */
+	--blue: #437eeb;
+	--blue-dark: #3F4F6B;
 	--green:#c2d11e;
 	--green-dark:	#4C520B;
 	--red: #e9221f;
+	--light: #f2f3fe;
 }
 
 /* font - Oswald */
@@ -128,6 +130,14 @@ h3, h4, h5, h6 {
 	font-family: metapromedium;
 }
 
+.h1, h1 {
+	font-size: 3rem;
+}
+
+.h2, h2 {
+	font-size: 2.5rem;
+}
+
 label {
 	font-size: 1.2em;
 }
@@ -146,18 +156,23 @@ a.secondary:hover {
 	color: var(--green);
 }
 
+p {
+	text-align: justify;
+}
+
 .button,
 button {
 	width: auto;
 	height: auto;
 	margin: 0px;
+	border: none;
 	border-radius: 100px;
 	padding: 15px 30px;
 	text-align: center;
 	line-height: 1.5em;
 	color: var(--white);
 	background-color: var(--blue);
-	transition: background-color 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 .button.active,
@@ -175,18 +190,66 @@ button:hover {
 .button.secondary,
 button.secondary {
 	color: var(--white);
-	background-color: var(--green);
+	background-color: var(--blue-dark);
 }
 
 .button.secondary:hover,
 button.secondary:hover {
 	color: var(--white);
-	background-color: var(--green-dark);
+	background-color: var(--blue);
 }
 
 button:focus,
 button:active {
   outline: none;
+}
+
+.tabs-container {
+	overflow: hidden;
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	align-items: stretch;
+	justify-content: space-between;
+	border-radius: 10px;
+	box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tabs-container .tab {
+	position: relative;
+	border-radius: 0;
+	background-color: var(--white);
+	color: var(--black);
+	font-size: 1.1em;
+}
+
+.tabs-container .tab:hover {
+	color: var(--blue);
+}
+
+.tabs-container.tabs-4 .tab {
+	width: 24.75%;
+}
+
+.tabs-container.tabs-5 .tab {
+	width: 19.75%;
+}
+
+.tabs-container .tab:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0%;
+	height: 4px;
+	border-radius: 10px;
+	background-color: var(--blue);
+	transition: width	0.5s ease-in-out;
+}
+
+.tabs-container .tab:hover:after,
+.tabs-container .tab.active:after {
+	width: 100%;
 }
 
 #wraper {
@@ -244,10 +307,17 @@ button:active {
 /* shared : header*/
 header#masthead {
 	background-color: var(--white);
+	padding: 0;
+	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+#masthead nav {
+	padding: 15px;
+	padding-right: 15px;
 }
 
 #masthead .topbar {
-	margin-bottom: 1em;
+	margin-bottom: 2rem;
 	font-size: 0.8575em;
 }
 
@@ -263,7 +333,8 @@ header#masthead {
 }
 
 #masthead .topbar .contact-info > span {
-	padding: 0 2rem;
+	padding-left: 2rem;
+	padding-right: 4rem;
 }
 
 #masthead .topbar .contact-info .contact-email {
@@ -276,6 +347,10 @@ header#masthead {
 
 #masthead .topbar .social-info .last-item {
 	padding-right: 0;
+}
+
+#masthead .topbar .social-info i {
+	font-size: 1.5em;
 }
 
 #masthead .navbar-brand img {
@@ -297,14 +372,83 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li > a {
 	color: var(--black);
 }
 
-#masthead #menu-main-menu > .menu-item {
-	padding: 0 1em;
-	min-width: 8rem;
+body:not(.theme-preset-active) #masthead #menu-main-menu.navbar-nav > li > a {
+	padding: 0 1rem;
+}
+
+body:not(.theme-preset-active) #masthead #menu-main-menu.navbar-nav > li:nth-last-child(1) > a {
+	padding-right: 0;
 }
 
 #masthead #menu-main-menu .menu-item-dropdown-13 {
 	min-width: 15rem;
 	transition: all 0.5s ease-in-out;
+}
+
+/* shared : footer */
+body:not(.theme-preset-active) footer#colophon.site-footer {
+	background-color: var(--blue-dark);
+	color: white;
+	font-size: 1rem;
+
+	box-shadow: 0px -10px 30px 0px rgba(0, 0, 0, 0.15);
+	margin-top: 2rem;
+}
+
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6 {
+	color: inherit;
+}
+
+.site-footer h3 {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 2rem;
+	font-weight: bold;
+	text-align: left;
+}
+
+.site-footer .footer-menu-container, 
+.site-footer .footer-info-container, 
+.site-footer .footer-social-container {
+	width: 40%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.site-footer .col-4 {
+	border-right: 1px solid var(--light);
+}
+
+.site-footer .col-4.last-item {
+	border-right: none;
+}
+
+.site-footer .footer-menu-container .footer-menu {
+	list-style: none;
+	padding: 0;
+}
+
+.site-footer .footer-menu a {
+	padding: 0.5rem;
+}
+
+footer#colophon.site-footer a:hover {
+	color: var(--black);
+}
+
+.site-footer .footer-social-container a {
+	display: block;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+.site-footer .footer-social-container a i {
+	padding-right: 1rem;
+	width: 2rem;
 }
 
 /* shared : page defaults */
@@ -335,8 +479,8 @@ table tr.header:nth-child(1) {
   color: white;
 }
 
-table tr th{
-  padding: 1em 0;
+table tr th {
+  padding: 1rem 0.25rem;
 }
 
 table tr {
@@ -344,11 +488,33 @@ table tr {
 }
 
 table tr td {
-  padding: 1em 0;
+  padding: 1rem 0;
 }
 
 table tr:nth-child(odd) {
   background-color: lightgray;
+}
+
+/* special elements */
+ul {
+	margin-bottom: 1.5rem;
+}
+
+.color-blue {
+	color: var(--blue);	
+}
+
+.background-light {
+	background-color: var(--light);
+}
+
+.subtitle {
+	margin: 0;
+	padding-bottom: 0 0 0.5em;
+	font-family: inherit;
+	font-size: 0.5em;
+	letter-spacing: 0.1rem;
+	line-height: 1em;
 }
 
 /* tools : slick slider */

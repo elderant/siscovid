@@ -8,6 +8,11 @@ function wpb_child_enqueue_styles() {
 	wp_enqueue_script('wpb-child-slick', get_stylesheet_directory_uri() . '/inc/assets/js/slick.min.js', array('jquery'), false, true );
 	// wp_enqueue_script('wpb-child-home-hovers', get_stylesheet_directory_uri() . '/inc/assets/js/home/hovers.js', array('jquery'), false, true );
 
+	if(is_page(2)) {
+		// wp_enqueue_script('wpb-child-vega-d3', 'https://cdn.jsdelivr.net/npm/d3@5', array(), false, true );
+		// wp_enqueue_script('wpb-child-vega-client', 'https://cdn.jsdelivr.net/npm/d3@5', array(), false, true );
+		// wp_enqueue_script('wpb-child-vega-core', 'https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js', array(), false, true );
+	}
 	if(is_page(54)) {
 		wp_enqueue_script('wpb-child-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=es6', array(), false, true );
 		wp_enqueue_script('wpb-child-mathjax', 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js', array(), false, true );
@@ -44,7 +49,7 @@ function wpb_child_add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'wpb_child_add_slug_body_class' );
 
-// function laaldea_register_secondary_menu() {
-//   register_nav_menu('secondary-menu', __( 'Secondary menu', 'laaldea' ));
-// }
-// add_action( 'init', 'laaldea_register_secondary_menu' );
+function wpb_child_register_footer_menu() {
+  register_nav_menu('footer-menu', __( 'Footer menu', 'wpbchild' ));
+}
+add_action( 'init', 'wpb_child_register_footer_menu' );

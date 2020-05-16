@@ -25,52 +25,55 @@
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
         <div class="container-fluid">
-            <div class="topbar col-10 offset-1 d-flex justify-content-between align-items-center">
-                <div class="contact-info">
-                    <span class="contact-email">
-                        <a href="mailto:anemail@adomain.com"><i class="fas fa-envelope"></i> anemail@adomain.com</a>
-                    </span>
-                    <span class="contact-phone">
-                        <a class="d-lg-none d-xl-inline-block" href="callto:+5711234567"><i class="fas fa-phone"></i> +5711234567</a>
-                        <a class="d-inline-block d-xl-none" href="tel:+5711234567"><i class="fas fa-phone"></i> +5711234567</a>
-                    </span>
-                </div>
-                <div class="social-info">
-                    <a class="first-item facebook" href="https://www.facebook.com/pg/siscovid/posts/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
-                    <a class="twitter" href="https://twitter.com/search?q=siscovid" target="_black"><i class="fab fa-twitter"></i></a>
-                    <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a>
-                </div>
+                <nav class="row navbar navbar-expand-xl">
+                    <div class="col-5 offset-1">
+                        <div class="navbar-brand">
+                            <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
+                                <a href="<?php echo esc_url( home_url( '/' )); ?>">
+                                    <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                                </a>
+                            <?php else : ?>
+                                <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-12 topbar d-flex justify-content-end align-items-center">
+                                <div class="contact-info">
+                                    <span class="contact-email">
+                                        <a href="mailto:siscovid@hotmail.com"><i class="fas fa-envelope"></i> siscovid@hotmail.com</a>
+                                    </span>
+                                </div>
+                                <div class="social-info">
+                                    <a class="first-item facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
+                                    <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i></a>
+                                    <a class="github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i></a>
+                                    <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <?php
+                                wp_nav_menu(array(
+                                'theme_location'    => 'primary',
+                                'container'       => 'div',
+                                'container_id'    => 'main-nav',
+                                'container_class' => 'collapse navbar-collapse justify-content-end',
+                                'menu_id'         => false,
+                                'menu_class'      => 'navbar-nav',
+                                'depth'           => 3,
+                                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                                'walker'          => new wp_bootstrap_navwalker()
+                                ));
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
-            <nav class="navbar navbar-expand-xl p-0 col-10 offset-1">
-                <div class="navbar-brand">
-                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-                        <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                            <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        </a>
-                    <?php else : ?>
-                        <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
-                    <?php endif; ?>
-
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <?php
-                wp_nav_menu(array(
-                'theme_location'    => 'primary',
-                'container'       => 'div',
-                'container_id'    => 'main-nav',
-                'container_class' => 'collapse navbar-collapse justify-content-end',
-                'menu_id'         => false,
-                'menu_class'      => 'navbar-nav',
-                'depth'           => 3,
-                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                'walker'          => new wp_bootstrap_navwalker()
-                ));
-                ?>
-
-            </nav>
         </div>
 	</header><!-- #masthead -->
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>

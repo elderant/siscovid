@@ -1,11 +1,12 @@
 ( function( $ ) {
   var siscovid_check_metodologia_objects = function($container) {
-    $container.find('img').each(checkOffset('animate__animated animate__fadeInDown'));
+    $container.find('img.animate').each(checkOffset('animate__animated animate__fadeInDown'));
     $container.find('mjx-container').each(checkOffset('animate__animated animate__pulse'));
     $container.find('table').each(checkOffset('animate__animated animate__fadeInLeft'));
     $container.find('ul').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
     $container.find('ol').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
     $container.find('.padded-block').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
+    $container.find('.model-image-container').each(checkOffset('show'));
   }
 
   var siscovid_handle_metodologia_fadeIn = function() {
@@ -33,6 +34,47 @@
             siscovid_check_metodologia_objects($(this));
           });
         }, 250);
+      });
+    });
+  }
+
+  var siscovid_handle_metodologia_agentes_fadeIn = function() {
+    $('.temp-interface-container button').each(function() {
+      $(this).on('click', function(event) {
+        let modelPart = $(this).attr('data-part');
+        let $modelContainer = $('.agents .model-part.' + modelPart);
+
+        if($modelContainer.length == 0) {return;}
+
+        // Change button states
+        $('.temp-interface-container button.active').removeClass('active');
+        $(this).addClass('active');
+
+        // Change model states
+        $('.agents .model-part.active').fadeOut(500, function(){
+          $(this).removeClass('active');
+          $(this).addClass('hidden');
+        });
+
+        // Change arrow states
+        let oldArrow = $('.display-interface-container .arrow-container.active');
+        let newArrow = $('.display-interface-container .arrow-container.' + modelPart);
+
+        oldArrow.removeClass('animate active');
+        newArrow.addClass('animate active');
+
+        setTimeout(function(){
+          $modelContainer.fadeIn(500, function(){
+            $(this).addClass('active');
+            $(this).removeClass('hidden');
+            
+            siscovid_check_metodologia_objects($(this));
+          });
+        }, 250);
+        setTimeout(function(){
+          oldArrow.removeClass('reverse');
+          newArrow.addClass('reverse');
+        }, 1000);
       });
     });
   }
@@ -72,12 +114,15 @@
   var siscovid_initialize_team_carrousel = function() {
     $('#team .team-carousel').slick({
       infinite: false,
-      speed: 300,
+      speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 2,
       prevArrow: '#team .slick-prev',
       nextArrow: '#team .slick-next',
       variableWidth: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      infinite: true,
       // responsive: [
       //   {
       //     breakpoint: 1367,
@@ -207,6 +252,8 @@
   $(document).ready(function () {
     if($('.page-home').length > 0) {
       siscovid_initialize_team_carrousel();
+      $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
+      $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
     }
 
     if($('.page-simulacion').length > 0) {
@@ -215,16 +262,23 @@
 
     if($('.page-metodologia').length > 0) {
       // element animation initization
+      siscovid_check_metodologia_objects($('#methodology .project-methodology-row'));
       siscovid_check_metodologia_objects($('#methodology .model.active'));
 
       siscovid_handle_metodologia_fadeIn();
+      siscovid_handle_metodologia_agentes_fadeIn();
     }
   });
 
   $(window).scroll(function () {
     "use strict";
     if($('.page-metodologia').length > 0) {
-      siscovid_check_metodologia_objects($('.page-metodologia'));
+      siscovid_check_metodologia_objects($('.page-metodologia #methodology'));
+    }
+
+    if($('.page-home').length > 0) {
+      $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
+      $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
     }
   });
 

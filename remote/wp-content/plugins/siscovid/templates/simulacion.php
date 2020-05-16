@@ -6,12 +6,14 @@
       </div>
     </div>
     <div class="row filter-row">
-      <div class="col-10 offset-1 filter-container">
-        <button class= "active" data-city="barranquilla">Barranquilla</button>
-        <button data-city="bogota">Bogotá</button>
-        <button data-city="cali">Cali</button>
-        <button data-city="cartagena">Cartagena</button>
-        <button data-city="medellin">Medellín</button>
+      <div class="col-6 offset-3 filter-container">
+        <div class="tabs-container tabs-5">
+          <button class= "tab active" data-city="barranquilla">Barranquilla</button>
+          <button class= "tab" data-city="bogota">Bogotá</button>
+          <button class= "tab" data-city="cali">Cali</button>
+          <button class= "tab" data-city="cartagena">Cartagena</button>
+          <button class= "tab" data-city="medellin">Medellín</button>
+        </div>
       </div>
     </div>
     <div class="row model-row">

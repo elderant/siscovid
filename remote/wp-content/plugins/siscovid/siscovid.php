@@ -102,3 +102,11 @@ function siscovid_build_metodologia_html ( $lang ) {
 
 add_shortcode( 'siscovid_metodologia', 'siscovid_build_metodologia_html' );
 
+
+function siscovid_build_encuestas_html ( $lang ) {
+	$template_url = siscovid_load_template('encuestas.php');
+	load_template($template_url, true);
+}
+
+add_shortcode( 'siscovid_encuestas', 'siscovid_build_encuestas_html' );
+

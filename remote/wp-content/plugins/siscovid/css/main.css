@@ -2,25 +2,110 @@
 /*****************************************************/
 /******************** Descripcion ********************/
 /*****************************************************/
+.page-id-2 #page {
+	z-index: 1;
+	position: relative;
+}
+
+.page-id-2 header#masthead {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.page-id-2.page-template-fullwidth #content.site-content {
+	padding: initial;
+}
+
+.page-id-2.page-template-fullwidth #content.site-content {
+  background: url(/wp-content/uploads/home-background.png);
+  background-repeat: no-repeat;
+  padding-top: 200px;
+}
+
 #project {
   display: flex;
   align-items: center;
-  padding: 5rem 0;
 }
 
-#project .description h2 {
+#project .row {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#project h2 {
+  text-align: left;
+}
+
+#project .h2 {
+  line-height: 0.5em;
+  margin-bottom: 2rem;
+}
+
+#project ul {
   margin-bottom: 3rem;
 }
 
-#project .description p {
-  line-height: 2em;
-  padding: 0 5em;
-  /*font-size: 1.145em;*/
+#project ul.marker-globe {
+  list-style: none;
 }
 
-#project .links a {
+#project ul.marker-globe li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+#project ul.marker-globe li::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f0ac';
+  font-weight: 900;
+  padding-right: 1.5rem;
+  font-size: 0.7em;
+}
+
+#project .banner-container {
+  text-align: center;
+}
+
+#project .text-container p,
+#project .text-container ul {
+  font-size: 1.2em;
+}
+
+#project iframe#map-iframe {
+  min-height: 400px;
+  min-width: 708px;
+}
+
+#project .banner-container a {
+  position: absolute;
+  transform: translate(-50%, -50%);
   min-width: 15em;
   font-size: 1.6rem;
+  opacity: 0;
+}
+
+#project .encuestas-row {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+#project .encuestas-row .text-container {
+  order: 2;
+  margin-left: 0;
+}
+
+#project .encuestas-row .banner-container {
+  order: 1;
+  margin-left: 8.333333%;
+}
+
+#project .button {
+  margin: 0 1rem;
 }
 
 /**********************************************/
@@ -31,15 +116,14 @@
   align-items: center;
   padding: 5rem 0;
   background: var(--blue);
-  color: var(--white);
+  color: var(--blue);
+  box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.2), 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
-#team a {
+#team h2 {
+  margin-bottom: 3rem;
+  text-align: center;
   color: var(--white);
-}
-
-#team a:hover {
-  color: var(--blue-dark);
 }
 
 #team .team-container {
@@ -54,9 +138,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 15vw;
-  min-height: 334px;
-  margin: 0 1.2em;
+  width: 200px;
+  /* min-height: 334px; */
+  margin: 0.5rem 3.25rem;
+  border-radius: 0px 0 20px 0px;
+  /* border: 1px black solid; */
+  background-color: var(--light);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
 
 /* team : carousel */
@@ -65,7 +153,6 @@
   display: inline-block;
   max-width: 1192px;
   margin: 0;
-  text-align: center;
 }
 
 #team .team-carousel {
@@ -73,9 +160,7 @@
 }
 
 #team .carousel-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  opacity: 0;
 }
 
 .carousel-row .arrow {
@@ -89,38 +174,36 @@
 }
 
 .carousel-row .slick-prev {
-  margin-right: 50px;
   order: 1;
 }
 
 .carousel-row .slick-next {
-  margin-left: 50px;
   order: 3;
 }
 
 /* team : member containers */
 #team .member-container .name {
-  font-family: metapromedium;
+  align-self: center;
+  margin: 0.75rem 0.5rem;
+  font-family: metaproblack;
   font-size: 1.4em;
-  margin: 0.75rem 0;
+  color: var(--black);
+  text-align: left;
 }
 
 #team .member-container img {
-  width: 150px;
+  width: 100%;
   height: auto;
-  margin: 0 auto;
 }
 
 #team .member-container .organization {
-  margin: 0.5rem 0;
+  margin: 0rem 0.5rem 0.1rem;
+  align-self: flex-start;
 }
 
 #team .member-container .profile {
-  margin: 0.5rem 0;
-}
-
-#team .member-container .email {
-  margin: 0.5rem 0;
+  margin: 0rem 0.5rem 0.5rem;
+  align-self: flex-start;
 }
 
 /************************************************/
@@ -132,6 +215,10 @@
   padding: 5rem 0;
 }
 
+#allies h2 {
+  text-align: center;
+}
+
 #allies .allies-container {
   display: flex;
   flex-wrap: wrap;
@@ -141,14 +228,23 @@
 }
 
 #allies .allies-container img {
-  max-height: 100px;
-  padding: 1em 1em;
+  max-height: 75px;
+  margin: 2rem 2rem;
+  transition: all 0.5s linear;
+}
+
+#allies .allies-container img:hover {
+  filter: grayscale(1);
 }
 
 
 /****************************************************/
 /******************** Simulacion ********************/
 /****************************************************/
+.page-simulacion header#masthead {
+  background-color: var(--light);
+}
+
 #simulation .title-row {
   margin-top: 4em;
   text-align: center;
@@ -158,13 +254,13 @@
   margin-top: 2em;
 }
 
+#simulation .filter-row button {
+  min-width: 8rem;
+}
+
 #simulation .filter-container {
   display: flex;
   justify-content: space-around;
-}
-
-#simulation button {
-  border: 2px outset lightgray;
 }
 
 #simulation .model-row {
@@ -201,6 +297,24 @@
 /*****************************************************/
 /******************** Metodologia ********************/
 /*****************************************************/
+.page-metodologia header#masthead {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.page-metodologia.page-template-fullwidth #content.site-content {
+	padding: initial;
+}
+
+.page-metodologia.page-template-fullwidth #content.site-content {
+  background: url(/wp-content/uploads/home-background.png);
+  background-repeat: no-repeat;
+  padding-top: 165px;
+}
+
 #methodology .title-row {
   margin-top: 4em;
   text-align: center;
@@ -210,21 +324,12 @@
   margin-top: 2em;
 }
 
-#methodology .filter-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-#methodology button {
-  border: 2px outset lightgray;
-}
-
 #methodology .model-row {
   margin-top: 2em;
 }
 
 #methodology .model {
-  padding: 4em 0;
+  padding: 1em 0;
   text-align: center;
 }
 
@@ -238,8 +343,8 @@
 }
 
 #methodology .model h3 {
-  margin-top: 4rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 #methodology .model h4 {
@@ -257,7 +362,11 @@
   margin-bottom: 1rem;
 }
 
-#methodology .model img,
+#methodology .project-methodology-row img.animate {
+  opacity: 0;
+}
+
+#methodology .model img.animate,
 #methodology .model table,
 #methodology .model .mjx-container,
 #methodology .model .padded-block,
@@ -282,18 +391,463 @@
   padding-left: 1.75rem;
 }
 
-table#severity-table {
+#methodology .model-part.general {
+  margin-bottom: 3rem;
+}
+
+#methodology .model-part.other {
+  margin-top: 3rem;
+  border-top: 3px dashed rgba(211,211,211, 0.8);
+}
+
+#methodology .model-interface {
+  position: relative;
+}
+
+#methodology .model-interface .model-image {
+  position: relative; 
+  z-index: 24;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+#methodology .model-interface .temp-interface-container,
+#methodology .model-interface .display-interface-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#methodology .model-interface .temp-interface-container {
+  z-index: 25;
+}
+
+#methodology .temp-interface-container .invisible-button {
+  background-color: transparent;
+}
+
+#methodology .temp-interface-container button {
+  position: absolute;
+  background-color: var(--blue);
+  color: var(--black);
+  border-radius: 0;
+  border: 1px dotted rgba(0,0,0,0.5);
+  transform: translate(-50%, -50%);
+}
+
+#methodology .temp-interface-container button.active {
+  pointer-events: none;
+  cursor: default;
+}
+
+#methodology .temp-interface-container .properties {
+  left: 27%;
+  top: 17%;
+  width: 8.5rem;
+  height: 6rem;
+}
+
+#methodology .temp-interface-container .actions {
+  left: 35%;
+  top: 56%;
+  width: 8.5rem;
+  height: 8rem;
+}
+
+#methodology .temp-interface-container .rules {
+  left: 50%;
+  top: 68%;
+  width: 7rem;
+  height: 8rem;
+}
+
+#methodology .temp-interface-container .time {
+  left: 65%;
+  top: 61%;
+  width: 8.5rem;
+  height: 8rem;
+}
+
+#methodology .temp-interface-container .environment {
+  left: 74%;
+  top: 19%;
+  width: 8.5rem;
+  height: 7rem;
+}
+
+#methodology .temp-interface-container .general {
+  left: 42%;
+  top: 17%;
+  width: 8rem;
+  height: 6rem;
+}
+
+#methodology .temp-interface-container .references {
+  left: 57%;
+  top: 17%;
+  width: 8rem;
+  height: 6rem;
+}
+
+#methodology .model-interface .display-interface-container {
+  z-index: 1;
+}
+
+#methodology .arrow-container {
+  position: absolute;
+  transition: height 0.5s ease-in-out;
+}
+
+#methodology .arrow-container.reverse {
+  transition: height 0.5s ease-in-out 0.3s;
+}
+
+#methodology .arrow-container .line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0px;
+  border: 0px dashed var(--blue);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: translate(-50%, 0);
+  transition: border-width 0.2s ease-in-out 0.1s;
+}
+
+#methodology .arrow-container.reverse .line {
+  transition: border-width 0.2s ease-in-out 0.7s;
+}
+
+#methodology .arrow-container .line.curve {
+  left: 0;
+  width: 100%;
+  transform: none;
+}
+
+#methodology .arrow-container .arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+#methodology .arrow-container .arrow::before,
+#methodology .arrow-container .arrow::after {
+  content:'';
+  position: absolute;
+  background-color: var(--blue);
+  opacity: 0;
+  width: 2px;
+  height: 15px;
+  transform-origin: bottom;
+  transition: transform 0.5s ease-in-out 0.4s, 
+            opacity 0.3s ease-in-out 0.3s;
+}
+
+#methodology .arrow-container.reverse .arrow::before,
+#methodology .arrow-container.reverse .arrow::after {
+  transition: transform 0.5s ease-in-out, 
+            opacity 0.3s ease-in-out;
+}
+
+#methodology .arrow-container.animate {
+  border-width: 2px;
+}
+
+#methodology .arrow-container.animate .arrow::before,
+#methodology .arrow-container.animate .arrow::after {
+  opacity: 1;
+}
+
+/* display interface : porperties button specific */
+#methodology .arrow-container.properties {
+  top: 7%;
+  left: 12%;
+  width: 180px;
+  height: 0px;
+}
+
+#methodology .arrow-container.properties .line {
+  border-radius: 300px 0 0 300px;
+  border-right-color: transparent;
+}
+
+#methodology .arrow-container.properties .arrow {
+  top: 77%;
+  left: 19%;
+}
+
+#methodology .arrow-container.properties .arrow::before,
+#methodology .arrow-container.properties .arrow::after {
+  bottom: 2%;
+  left: 59%;
+  transform: rotate(-45deg);
+}
+
+#methodology .arrow-container.properties.animate {
+  height: 340px;
+}
+
+#methodology .arrow-container.properties.animate .line {
+  border-width: 2px;
+}
+
+#methodology .arrow-container.properties.animate .arrow::before {
+  transform: rotate(-10deg);
+}
+
+#methodology .arrow-container.properties.animate .arrow::after {
+  transform: rotate(-80deg);
+}
+
+/* display interface : actions button specific */
+#methodology .arrow-container.actions {
+  top: 64%;
+  left: 25%;
+  width: 100px;
+  height: 0px;
+}
+
+#methodology .arrow-container.actions .line {
+  border-radius: 90px 0 0 90px;
+  border-right-color: transparent;
+}
+
+#methodology .arrow-container.actions .arrow {
+  top: 67%;
+  left: 7%;
+}
+
+#methodology .arrow-container.actions .arrow::before,
+#methodology .arrow-container.actions .arrow::after {
+  bottom: 2%;
+  left: 59%;
+  transform: rotate(-45deg);
+}
+
+#methodology .arrow-container.actions.animate {
+  height: 150px;
+}
+
+#methodology .arrow-container.actions.animate .line {
+  border-width: 2px;
+}
+
+#methodology .arrow-container.actions.animate .arrow::before {
+  transform: rotate(-10deg);
+}
+
+#methodology .arrow-container.actions.animate .arrow::after {
+  transform: rotate(-80deg);
+}
+
+/* display interface : rules button specific */
+#methodology .arrow-container.rules {
+  top: 94%;
+  left: 44%;
+  width: 100px;
+  height: 0px;
+}
+
+#methodology .arrow-container.rules .line {
+  border-radius: 90px 0 0 90px;
+  border-right-color: transparent;
+}
+
+#methodology .arrow-container.rules .arrow {
+  top: 63%;
+  left: 31%;
+}
+
+#methodology .arrow-container.rules .arrow::before,
+#methodology .arrow-container.rules .arrow::after {
+  bottom: 2%;
+  left: 59%;
+  transform: rotate(0deg);
+}
+
+#methodology .arrow-container.rules.animate {
+  height: 75px;
+}
+
+#methodology .arrow-container.rules.animate .line {
+  border-width: 2.5px;
+  border-right: transparent;
+}
+
+#methodology .arrow-container.rules.animate .arrow::before {
+  transform: rotate(35deg);
+}
+
+#methodology .arrow-container.rules.animate .arrow::after {
+  transform: rotate(-35deg);
+}
+
+/* display interface : time button specific */
+#methodology .arrow-container.time {
+  top: 64%;
+  left: 64%;
+  width: 100px;
+  height: 0px;
+}
+
+#methodology .arrow-container.time .line {
+  border-radius: 0 90px 90px 0;
+  border-left-color: transparent;
+}
+
+#methodology .arrow-container.time .arrow {
+  top: 67%;
+  left: 55%;
+}
+
+#methodology .arrow-container.time .arrow::before,
+#methodology .arrow-container.time .arrow::after {
+  bottom: 2%;
+  left: 59%;
+  transform: rotate(45deg);
+}
+
+#methodology .arrow-container.time.animate {
+  height: 150px;
+}
+
+#methodology .arrow-container.time.animate .line {
+  border-width: 2px;
+}
+
+#methodology .arrow-container.time.animate .arrow::before {
+  transform: rotate(10deg);
+}
+
+#methodology .arrow-container.time.animate .arrow::after {
+  transform: rotate(80deg);
+}
+
+/* display interface : environment button specific */
+#methodology .arrow-container.environment {
+  top: 7%;
+  left: 66%;
+  width: 180px;
+  height: 0px;
+}
+
+#methodology .arrow-container.environment .line {
+  border-radius: 0 300px 300px 0;
+  border-left-color: transparent;
+}
+
+#methodology .arrow-container.environment .arrow {
+  top: 77%;
+  left: 60%;
+}
+
+#methodology .arrow-container.environment .arrow::before,
+#methodology .arrow-container.environment .arrow::after {
+  bottom: 2%;
+  left: 59%;
+  transform: rotate(45deg);
+}
+
+#methodology .arrow-container.environment.animate {
+  height: 340px;
+}
+
+#methodology .arrow-container.environment.animate .line {
+  border-width: 2px;
+}
+
+#methodology .arrow-container.environment.animate .arrow::before {
+  transform: rotate(10deg);
+}
+
+#methodology .arrow-container.environment.animate .arrow::after {
+  transform: rotate(80deg);
+}
+
+/* display interface : END of specific button fixes */
+
+/* Metapoblaciona special animations */
+#methodology .model .model-image-container {
+  position: relative;
+}
+
+#methodology .model-image-container .animation-overlay {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px doted rgba(0,0,0,0.5);
+  background-color: var(--white);
+  transform: translate(0px, 0px);
+  transition: transform 2s ease-in-out;
+}
+
+#methodology .model .model-image-container.show .animation-overlay {
+  transform: translate(100%, 0);
+}
+
+#methodology table#severity-table {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
 
-table#severity-table tr td {
+#methodology table#severity-table tr td {
   padding: 0.5em 0;
 }
 
-table#parameters {
-  width: 50%;
+#methodology .parameter-table-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#methodology table#parameters {
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
+}
+
+#methodology table.parameters-table mjx-container {
+  margin: 0;
+}
+
+#methodology table .mjx-units {
+  font-size: 0.5em;
+  padding-left: 0.2rem;
+}
+
+#methodology table#parameters-2 {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#methodology table.parameters-table tr td:first-child {
+  width: 70px;
+}
+
+#methodology table.parameters-table tr td:nth-child(2) {
+  font-size: 0.8em;
+}
+
+/***************************************************/
+/******************** Encuestas ********************/
+/***************************************************/
+.page-reportes-encuestas header#masthead {
+  background-color: var(--light);
+}
+
+#survey .title-row {
+  margin-top: 4em;
+  text-align: center;
+}
+
+#survey .image-container {
+  text-align: center;
 }
