@@ -48,8 +48,8 @@
                                 <div class="social-info">
                                     <a class="first-item facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
                                     <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i></a>
-                                    <a class="github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i></a>
-                                    <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a>
+                                    <a class="last-item github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i></a>
+                                    <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a> -->
                                 </div>
                             </div>
                             <div class="col-12">

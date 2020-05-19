@@ -11,13 +11,26 @@ Text Domain:	 wpb-child
  
 :root {
 	--black: #000;
-	/* --blue: #27aae1; */
 	--blue: #437eeb;
-	--blue-dark: #3F4F6B;
-	--green:#c2d11e;
-	--green-dark:	#4C520B;
-	--red: #e9221f;
+	--blue-dark-shade: #3c71dc;
+
+	--blue-dark: #3f4f6b;
+
+	--yellow: #fff275;
+	--yellow-dark-shade: #E8DA69;
+
+	--green:#c5d124;
+	--green-dark-shade: #b4bd20;
+	--green-dark:	#297373;
+
+	--red: #ff1039;
+	--orange: #ff8c42;
+	--orange-dark-shade: #EC7E3B;
+
 	--light: #f2f3fe;
+	--light-dark-shade: #dadbe6;
+
+	--dark: #797a85;
 }
 
 /* font - Oswald */
@@ -387,7 +400,7 @@ body:not(.theme-preset-active) #masthead #menu-main-menu.navbar-nav > li:nth-las
 
 /* shared : footer */
 body:not(.theme-preset-active) footer#colophon.site-footer {
-	background-color: var(--blue-dark);
+	background-color: var(--dark);
 	color: white;
 	font-size: 1rem;
 
@@ -425,6 +438,15 @@ body:not(.theme-preset-active) footer#colophon.site-footer {
 
 .site-footer .col-4.last-item {
 	border-right: none;
+}
+
+.site-footer .footer-copy-container img {
+	margin-top: 2rem;
+}
+
+.site-footer .footer-copy-container .footer-info-container {
+	margin-top: 2rem;
+	text-align: center;
 }
 
 .site-footer .footer-menu-container .footer-menu {

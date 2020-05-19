@@ -39,16 +39,19 @@
   }
 
   var siscovid_handle_metodologia_agentes_fadeIn = function() {
-    $('.temp-interface-container button').each(function() {
+    $('.model-interface .tabs-container button').each(function() {
       $(this).on('click', function(event) {
         let modelPart = $(this).attr('data-part');
         let $modelContainer = $('.agents .model-part.' + modelPart);
-
         if($modelContainer.length == 0) {return;}
+        
+        // Change tab states
+        $('.tabs-container button.active').removeClass('active');
+        $(this).addClass('active');
 
         // Change button states
-        $('.temp-interface-container button.active').removeClass('active');
-        $(this).addClass('active');
+        // $('.temp-interface-container button.active').removeClass('active');
+        // $(this).addClass('active');
 
         // Change model states
         $('.agents .model-part.active').fadeOut(500, function(){
@@ -57,11 +60,11 @@
         });
 
         // Change arrow states
-        let oldArrow = $('.display-interface-container .arrow-container.active');
-        let newArrow = $('.display-interface-container .arrow-container.' + modelPart);
+        // let oldArrow = $('.display-interface-container .arrow-container.active');
+        // let newArrow = $('.display-interface-container .arrow-container.' + modelPart);
 
-        oldArrow.removeClass('animate active');
-        newArrow.addClass('animate active');
+        // oldArrow.removeClass('animate active');
+        // newArrow.addClass('animate active');
 
         setTimeout(function(){
           $modelContainer.fadeIn(500, function(){
@@ -70,11 +73,11 @@
             
             siscovid_check_metodologia_objects($(this));
           });
-        }, 250);
-        setTimeout(function(){
-          oldArrow.removeClass('reverse');
-          newArrow.addClass('reverse');
-        }, 1000);
+        }, 300);
+        // setTimeout(function(){
+        //   oldArrow.removeClass('reverse');
+        //   newArrow.addClass('reverse');
+        // }, 1000);
       });
     });
   }
@@ -254,6 +257,23 @@
       siscovid_initialize_team_carrousel();
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
+
+      // Home - models animaton
+      $('#project .images-container .agentes-container ').on('hover', function() {
+        $('.agentes-container').addClass('animate');
+        $('.poblacional-container').addClass('animate');
+
+        $('.agentes-container').removeClass('reverse');
+        $('.poblacional-container').removeClass('reverse');
+      });
+
+      $('#project .images-container .poblacional-container').on('hover', function() {
+        $('.agentes-container').addClass('reverse');
+        $('.poblacional-container').addClass('reverse');
+
+        $('.agentes-container').removeClass('animate');
+        $('.poblacional-container').removeClass('animate');
+      });
     }
 
     if($('.page-simulacion').length > 0) {

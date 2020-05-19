@@ -8,12 +8,13 @@
     <div class="row">
       <div class="col-10 offset-1 allies-container">
         <img src="/wp-content/uploads/uniandes.jpeg" alt="Uniandes Logo">
+        <img src="/wp-content/uploads/cnc.jpeg" alt="Centro nacional de consultoría Logo">
+        <img class="ginnova" src="/wp-content/uploads/ginnova.png" alt="Gestión e innovación empresarial Logo">
+        <img src="/wp-content/uploads/minciencias.png" alt="Minciencias Logo">
         <img src="/wp-content/uploads/socialHealth.jpeg" alt="Social & health complexity center Logo">
         <img src="/wp-content/uploads/epiandes.jpeg" alt="EpiAndes Logo">
         <img src="/wp-content/uploads/santafe.jpeg" alt="Fundación Santa Fe de Bogotá Logo">
-        <img src="/wp-content/uploads/ginnova.jpeg" alt="Gestión e innovación empresarial Logo">
-        <img src="/wp-content/uploads/cnc.jpeg" alt="Centro nacional de consultoría Logo">
-        <img src="/wp-content/uploads/lstm.jpeg" alt="Liverpool school of tropical medicine Logo">
+        <img src="/wp-content/uploads/liverpool.png" alt="University of Liverpool Logo">
         <img src="/wp-content/uploads/northwestern.jpeg" alt="Northwestern University Logo">
       </div>
     </div>

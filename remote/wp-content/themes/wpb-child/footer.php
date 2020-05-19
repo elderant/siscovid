@@ -18,8 +18,8 @@
 	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
 		<div class="container-fluid pt-3 pb-3 text-center">
       <div class="row">
-        <div class="col-4">
-          <h3><?php _e('Imagen?','wpbchild');?></h3>
+        <div class="col-4 footer-copy-container">
+          <img src="/wp-content/uploads/logo-footer.png" alt="<?php _e('SISCOVID logo','siscovid')?>">
           <div class="footer-info-container">
             &copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
             <!-- <span class="sep"> | </span> -->
@@ -49,8 +49,8 @@
           <div class="footer-social-container">
             <a class="first-item facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i> <?php _e('Facebook','wpbchild');?></a>
             <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i> <?php _e('Twitter','wpbchild');?></a>
-            <a class="github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i> <?php _e('Github','wpbchild');?></a>
-            <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i> <?php _e('Instagram','wpbchild');?></a>
+            <a class="last-item  github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i> <?php _e('Github','wpbchild');?></a>
+            <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i> <?php _e('Instagram','wpbchild');?></a> -->
           </div>
         </div>
       </div>
