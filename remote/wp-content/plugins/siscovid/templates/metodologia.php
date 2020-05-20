@@ -532,15 +532,15 @@
         </div>
 
         <div class="model intervenciones hidden">
-          <table id="intervenciones-table">
+          <table id="intervenciones-table" class="hidden">
             <tr>
               <th class="uppercase"><?php _e('Paquete de intervenciones','siscovid');?></th>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>1.</strong></span> Pares OD de riesgo.','siscovid');?></td>
+              <td><?php _e('<span><strong>1.</strong></span> Cierre de zonas de alta probabilidad de transmisión.','siscovid');?></td>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>2.</strong></span> Horarios escalonados por sectores.','siscovid');?></td>
+              <td><?php _e('<span><strong>2.</strong></span> Horarios escalonados por sectores económicos.','siscovid');?></td>
             </tr>
             <tr>
               <td><?php _e('<span><strong>3.</strong></span> Horarios escalonados por zonas.','siscovid');?></td>
@@ -549,21 +549,184 @@
               <td><?php _e('<span><strong>4.</strong></span> Transporte activo (% de aumento de los viajes).','siscovid');?></td>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>5.</strong></span> Apertura de jardines infantiles y primaria.','siscovid');?></td>
+              <td><?php _e('<span><strong>5.</strong></span> Apertura de jardines infantiles y guarderías (1-5)','siscovid');?></td>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>6.</strong></span> Apertura de Universidades y Bachillerato.','siscovid');?></td>
+              <td><?php _e('<span><strong>6.</strong></span> Apertura de primaria (5-13)','siscovid');?></td>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>7.</strong></span> Disminución de movilidad de transporte público 40%, 50%, 60%.','siscovid');?></td>
+              <td><?php _e('<span><strong>7.</strong></span> Apertura de Universidades y Bachillerato','siscovid');?></td>
             </tr>
             <tr>
               <td><?php _e('<span><strong>8.</strong></span> Continuar cuarentena de personas mayores de 60 años.','siscovid');?></td>
             </tr>
             <tr>
-              <td><?php _e('<span><strong>9.</strong></span> Cuarentenas por intervalos.','siscovid');?></td>
+              <td><?php _e('<span><strong>9.</strong></span> Seguimiento y aislamiento de contactos.','siscovid');?></td>
             </tr>
           </table>
+          <div class="title-container">
+            <h3><?php _e('Intervenciones','siscovid');?></h3>
+          </div>
+          <div class="intervencion-container intervencion-alta-probabilidad light-background">
+            <h4><?php _e('Cierre de zonas de alta probabilidad de transmisión','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-center align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Restricción de la movilidad en sectores detectados con alta probabilidad de transmisión','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('5% de movilidad por motivos de fuerza mayor','siscovid');?></li>
+                  <li><?php _e('10% de movilidad por motivos de fuerza mayor','siscovid');?></li>
+                  <li><?php _e('15% de movilidad por motivos de fuerza mayor','siscovid');?></li>
+                  <li><?php _e('Sin restricción en la movilidad','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-1.jpeg" alt="<?php _e('Foto temporal intervenciones 1','siscovid');?>">
+              </div>
+            </div>
+
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+            <h4><?php _e('Horarios escalonados <span class="uppercase">por sectores econónicos</span>','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Establecimiento de horarios de trabajo para los sectores productivos, de manera que el flujo de personas se distribuya en las franjas horarias.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('Todos los sectores productivos movilizándose en horarios habituales','siscovid');?></li>
+                  <li><?php _e('Sólo sectores esenciales','siscovid');?></li>
+                  <li><?php _e('Sectores esenciales + construcción y manufactura','siscovid');?></li>
+                  <li><?php _e('Sectores esenciales + construcción y manufactura + comercio','siscovid');?></li>
+                  <li><?php _e('Escenarios propuestos por tomadores de decisiones','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-2.jpeg" alt="<?php _e('Foto temporal intervenciones 2','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-background">
+            <h4><?php _e('Horarios escalonados <span class="uppercase">por zonas</span>','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Establecimiento de horarios de trabajo diferenciado por zonas de trabajo, de manera que el flujo de personas se distribuya en las franjas horarias.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('Todas las localidades/barrios movilizándose en horarios habituales','siscovid');?></li>
+                  <li><?php _e('Localidades/barrios a distintos horarios','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-3.jpeg" alt="<?php _e('Foto temporal intervenciones 3','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+            <h4><?php _e('Transporte activo (% de aumento de los viajes)','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('El aumento del uso de la bicicleta disminuye la probabilidad de infección en modos de transporte público. El aumento del transporte activo ha sido una alternativa en ciudades de América Latina.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('3% de aumento en transporte activo','siscovid');?></li>
+                  <li><?php _e('5% de aumento en transporte activo','siscovid');?></li>
+                  <li><?php _e('10% de aumento en transporte activo','siscovid');?></li>
+                  <li><?php _e('Porcentaje actual en transporte activo','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-4.jpeg" alt="<?php _e('Foto temporal intervenciones 4','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-background">
+            <h4><?php _e('Apertura de jardines infantiles y guarderías (1-5)','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('La población menor de 5 años retoma actividades. Tiene alto riesgo alimentario y de violencia intrafamiliar, así como poca socialización.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('50% de los niños salen de sus casas a las guarderías o preescolar','siscovid');?></li>
+                  <li><?php _e('70% de los niños salen de sus casas a las guarderías o preescolar','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-5.jpeg" alt="<?php _e('Foto temporal intervenciones 5','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+            <h4><?php _e('Apertura de primaria (5-13)','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Se movilizan los estudiantes del grupo etario de 5 a 13 años. Se usan los datos de uso de transporte público en las encuestas de movilidad.','siscovid');?></p>
+                <h5 class="hidden"><?php _e('Escenarios: ','siscovid');?></h5>
+                <p class="hidden"><?php _e('Movilización y contacto de este grupo etario, disminuyendo su probabilidad de transmisión a...','siscovid');?></p>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-6.jpeg" alt="<?php _e('Foto temporal intervenciones 6','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-background">
+            <h4><?php _e('Apertura de Universidades y Bachillerato','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Se movilizan los estudiantes de bachillerato y universidades. Se usan los datos de uso de transporte público en las encuestas de movilidad para estos grupos.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('100% de la población de bachillerato sale de su vivienda y 25% de la población universitaria','siscovid');?></li>
+                  <li><?php _e('100% de la población de bachillerato sale de su vivienda y 50% de la población universitaria','siscovid');?></li>
+                  <li><?php _e('100% de la población de bachillerato sale de su vivienda y 70% de la población universitaria','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-7.jpeg" alt="<?php _e('Foto temporal intervenciones 7','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+            <h4><?php _e('Continuar cuarentena de personas mayores de 60 años','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('Inmovilizar a la población mayor a 60 años, que son quienes presentan multicomorbilidades.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('Esta población se moviliza una vez al día al interior de su unidad espacial','siscovid');?></li>
+                  <li><?php _e('Esta población se moviliza de manera normal','siscovid');?></li>
+                  <li><?php _e('Movilización total de esta población','siscovid');?></li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-intervenciones-8.jpeg" alt="<?php _e('Foto temporal intervenciones 8','siscovid');?>">
+              </div>
+            </div>
+          </div>
+          <div class="intervencion-container intervencion-sectores-economicos light-background">
+            <h4><?php _e('Seguimiento y aislamiento de contactos','siscovid');?></h4>
+            <div class="content-container d-flex justify-content-between align-items-center">
+              <div class="text-container">
+                <h5><?php _e('¿En qué consiste?','siscovid');?></h5>
+                <p><?php _e('El adecuado seguimiento y aislamiento de contactos de personas positivas ha demostrado ser la estrategia más efectiva para mitigar y controlar la propagación de la enfermedad.','siscovid');?></p>
+                <h5><?php _e('Escenarios: ','siscovid');?></h5>
+                <ul>
+                  <li><?php _e('Se logra hacer seguimiento y aislamiento efectivo al 50% de los contactos de personas positivas','siscovid');?></li>
+                  <li><?php _e('Se logra hacer seguimiento y aislamiento efectivo al 30% de los contactos de personas positivas','siscovid');?></li>
+                  <li><?php _e('Se logra hacer seguimiento y aislamiento efectivo al 15% de los contactos de personas positivas','siscovid');?></li>
+                </ul>
+              </div>
+              <!-- <div class="image-container">
+              </div> -->
+            </div>
+          </div>
         </div>
         
       </div>
