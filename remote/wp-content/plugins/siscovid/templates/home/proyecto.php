@@ -12,7 +12,7 @@
         <p><?php _e('Determinar cómo podemos proteger a nuestra sociedad mientras mantenemos un equilibrio económico en las ciudades, sin enfrentar el dilema de salud o economía, sino entendiendo que ambas dimensiones van de la mano.', 'siscovid'); ?><p>
       </div>
       <div id="vega-map" class="col-5 banner-container">
-        <!-- <iframe id="map-iframe" src="/wp-content/plugins/siscovid/other/visualizacionvf.html" frameborder="0"></iframe> -->
+        <iframe id="map-iframe" src="https://fabiancpl.github.io/siscovid/colombia-map/index.html" frameborder="0"></iframe>
       </div>
       <!-- <script>
          vegaEmbed(

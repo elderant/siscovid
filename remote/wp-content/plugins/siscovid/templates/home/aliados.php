@@ -13,7 +13,7 @@
         <img src="/wp-content/uploads/minciencias.png" alt="Minciencias Logo">
         <img src="/wp-content/uploads/socialHealth.jpeg" alt="Social & health complexity center Logo">
         <img src="/wp-content/uploads/epiandes.jpeg" alt="EpiAndes Logo">
-        <img src="/wp-content/uploads/santafe.jpeg" alt="Fundación Santa Fe de Bogotá Logo">
+        <img src="/wp-content/uploads/santafe.png" alt="Fundación Santa Fe de Bogotá Logo">
         <img src="/wp-content/uploads/liverpool.png" alt="University of Liverpool Logo">
         <img src="/wp-content/uploads/northwestern.jpeg" alt="Northwestern University Logo">
       </div>

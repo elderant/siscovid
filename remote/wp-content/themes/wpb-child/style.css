@@ -225,7 +225,7 @@ button:active {
 	align-items: stretch;
 	justify-content: space-between;
 	border-radius: 10px;
-	box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .tabs-container .tab {
@@ -499,6 +499,11 @@ footer#colophon.site-footer a:hover {
 table tr.header:nth-child(1) {
   background-color: var(--blue);
   color: white;
+}
+
+table th {
+	background-color: var(--blue);
+	color: var(--white);
 }
 
 table tr th {

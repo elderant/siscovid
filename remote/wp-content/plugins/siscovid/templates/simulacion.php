@@ -6,10 +6,10 @@
       </div>
     </div>
     <div class="row filter-row">
-      <div class="col-6 offset-3 filter-container">
+      <div class="col-8 offset-2 filter-container">
         <div class="tabs-container tabs-5">
-          <button class= "tab active" data-city="barranquilla">Barranquilla</button>
-          <button class= "tab" data-city="bogota">Bogotá</button>
+          <button class= "tab" data-city="barranquilla">Barranquilla</button>
+          <button class= "tab active" data-city="bogota">Bogotá</button>
           <button class= "tab" data-city="cali">Cali</button>
           <button class= "tab" data-city="cartagena">Cartagena</button>
           <button class= "tab" data-city="medellin">Medellín</button>
@@ -18,15 +18,15 @@
     </div>
     <div class="row model-row">
       <div class="col-10 offset-1 model-container">
-        <div class="model barranquilla active">
-          <iframe 
-            src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
-            frameborder="0"></iframe>
-        </div>
-        <div class="model bogota hidden">
+        <div class="model barranquilla hidden">
           <iframe 
             data-src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
             src
+            frameborder="0"></iframe>
+        </div>
+        <div class="model bogota active">
+          <iframe 
+            src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             frameborder="0"></iframe>
         </div>
         <div class="model cali hidden">

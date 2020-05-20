@@ -23,7 +23,50 @@
     <div class="row model-row">
       <div class="col-6 offset-3 model-container">
         <div class="model datos hidden">
-          <p><?php _e('Consectetur adipiscing elit. Nullam luctus justo lorem, ac facilisis turpis consectetur id. Sed urna dui, sagittis vitae tempor ut, congue in justo. Praesent risus lectus, ultricies varius leo vel, dignissim aliquet felis. Quisque euismod neque nec felis iaculis, vel consequat magna elementum. Pellentesque ut purus pulvinar, auctor dui ac, vulputate nisi. Aliquam sem eros, pulvinar at aliquam mattis, dignissim eget nunc. Nulla vel consectetur est. Etiam sit amet commodo nulla. Curabitur fringilla lobortis massa, non tristique neque sagittis aliquam. Nam mollis tempor turpis quis congue. Vivamus diam nibh, vehicula nec eleifend non, scelerisque a purus. Vivamus aliquam commodo blandit. Curabitur non urna euismod, laoreet dolor quis, finibus mauris. Mauris eros odio, sollicitudin vel mattis in, vehicula at arcu.','siscovid')?></p>
+          <div class="title-container">
+            <h3><?php _e('Multiples fuentes de información','siscovid');?></h3>
+          </div>
+          <div class="d-flex flex-wrap justify-content-center align-items-center">  
+            <div class="datos-part primera">
+              <h4><?php _e('Primera','siscovid');?></h4>
+              <img class="animate-flip" src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Temporal datos image 1','siscovid')?>">
+            </div>
+            <div class="datos-part segunda">
+              <h4><?php _e('Segunda','siscovid');?></h4>
+              <div class="content-container">
+                <p><?php _e('Encuesta en cada ciudad:','siscovid');?></p>
+                <ul>
+                  <li><?php _e('Movilidad y contactos','siscovid');?></li>
+                  <li><?php _e('Adherencia','siscovid');?></li>
+                  <li><?php _e('Sintomas','siscovid');?></li>
+                  <li><?php _e('Enfermedades preexistentes','siscovid');?></li>
+                  <li><?php _e('Características sociodemográficas','siscovid');?></li>
+                </ul>
+              </div>
+            </div>
+            <div class="datos-part tercera">
+              <h4><?php _e('Tercera','siscovid');?></h4>
+              <div class="d-flex flex-wrap justify-content-around align-items-center">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-datos-2.jpg" alt="<?php _e('Temporal datos image 2','siscovid')?>">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-datos-3.jpg" alt="<?php _e('Temporal datos image 3','siscovid')?>">
+                <img class="animate-flip" src="/wp-content/uploads/methodology-datos-4.jpg" alt="<?php _e('Temporal datos image 4','siscovid')?>">
+              </div>
+            </div>
+            <div class="datos-part cuarta">
+              <h4><?php _e('Cuarta','siscovid');?></h4>
+              <img class="animate-flip" src="/wp-content/uploads/methodology-datos-5.jpg" alt="<?php _e('Temporal datos image 5','siscovid')?>">
+            </div>
+          </div>
+          <div class="sources-explanation light-background">
+            <div class="surveys">
+              <h4><?php _e('Lineamientos metodológicos para la selección de la muestra probabilística en las cinco ciudades','siscovid');?></h4>
+              <p><?php _e('<strong>Universo en estudio:</strong> Mujeres y hombres mayores de 18 años (adultos) habitantes de la zona urbana de Bogotá, Medellín, Cali, Cartagena y Barranquilla.','siscovid');?></p>
+              <p><?php _e('<strong>Marco de muestreo:</strong> directorio telefónico. La selección de los registros de teléfonos es aleatoria y funciona mediante un algoritmo de descarga de registros.','siscovid');?></p>
+              <p><?php _e('<strong>Diseño de muestreo:</strong> probabilístico. La unidad de observación son personas adultas de las cinco ciudades. Se realiza control de tamaños de muestra por sexo (mujer/hombre) y grupos de edad.','siscovid');?></p>
+              <p><?php _e('<strong>Márgenes de error de muestreo y nivel de confianza:</strong> se emplean expresiones matemáticas que permiten relacionar el tamaño de muestra con el error de muestreo esperado y el nivel del parámetro en investigación. En este caso el error de muestreo máximo es de 3.5% y el nivel de confiabilidad asumido por muestreo es de 95%.','siscovid');?></p>
+              <p><?php _e('<strong>Técnica de recolección:</strong> telefónica.','siscovid');?></p>
+            </div>
+          </div>
         </div>
 
         <div class="model agents active">
@@ -301,10 +344,10 @@
           <h4><?php _e('Modelo','siscovid');?></h4>
           <div class="model-image-container">
             <div class="animation-overlay"></div>
-            <img src="/wp-content/uploads/methodology-poblacional-1.jpeg" alt="<?php _e('Imagen modelo metapoblacional 1','siscovid')?>">
+            <img src="/wp-content/uploads/methodology-poblacional-1.jpg" alt="<?php _e('Imagen modelo metapoblacional 1','siscovid')?>">
           </div>
           <p><?php _e('Una de las hipotesis que tenemos es que modelar ciudades completas con el mismo modelo quizas no da suficiente información para tomar decisiones más específicas. Por eso estamos trabajando en realizar modelos más específicos por localidad ya que pensamos que cada localidad tiene sus propias dinámicas. En el caso de Bogotá es evidente que en el suroccidente de la ciudad en las localidades de Kennedy y Engativa el contagio es mucho mayor que en otras localidades. Sin embargo existe un flujo entre las localidades que los simulamos de la siguiente forma.','siscovid');?></p>
-          <img class="animate" src="/wp-content/uploads/methodology-poblacional-2.jpeg" alt="<?php _e('Imagen modelo metapoblacional 2','siscovid')?>">
+          <img class="animate" src="/wp-content/uploads/methodology-poblacional-2.jpg" alt="<?php _e('Imagen modelo metapoblacional 2','siscovid')?>">
           <p><?php _e('Como se puede ver en la figura, el flujo solo se da entre los susceptibles, los expuestos, los recuperados y los que no han sido diagnosticados. Las ecuacioines que describen los modelos son las siguientes.','siscovid')?><p>
           <p><?php _e('Para un nodo determinado i:','siscovid');?></p>
           <p>$$ {dS \over dt} =  -\beta*S + S_{in} - S_{out} $$</p>
@@ -489,7 +532,38 @@
         </div>
 
         <div class="model intervenciones hidden">
-          <p><?php _e('Facilisis turpis consectetur id. Sed urna dui, sagittis vitae tempor ut, congue in justo. Praesent risus lectus, ultricies varius leo vel, dignissim aliquet felis. Quisque euismod neque nec felis iaculis, vel consequat magna elementum. Pellentesque ut purus pulvinar, auctor dui ac, vulputate nisi. Aliquam sem eros, pulvinar at aliquam mattis, dignissim eget nunc. Nulla vel consectetur est. Etiam sit amet commodo nulla. Curabitur fringilla lobortis massa, non tristique neque sagittis aliquam. Nam mollis tempor turpis quis congue. Vivamus diam nibh, vehicula nec eleifend non, scelerisque a purus. Vivamus aliquam commodo blandit. Curabitur non urna euismod, laoreet dolor quis, finibus mauris. Mauris eros odio, sollicitudin vel mattis in, vehicula at arcu.','siscovid')?></p>
+          <table id="intervenciones-table">
+            <tr>
+              <th class="uppercase"><?php _e('Paquete de intervenciones','siscovid');?></th>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>1.</strong></span> Pares OD de riesgo.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>2.</strong></span> Horarios escalonados por sectores.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>3.</strong></span> Horarios escalonados por zonas.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>4.</strong></span> Transporte activo (% de aumento de los viajes).','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>5.</strong></span> Apertura de jardines infantiles y primaria.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>6.</strong></span> Apertura de Universidades y Bachillerato.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>7.</strong></span> Disminución de movilidad de transporte público 40%, 50%, 60%.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>8.</strong></span> Continuar cuarentena de personas mayores de 60 años.','siscovid');?></td>
+            </tr>
+            <tr>
+              <td><?php _e('<span><strong>9.</strong></span> Cuarentenas por intervalos.','siscovid');?></td>
+            </tr>
+          </table>
         </div>
         
       </div>

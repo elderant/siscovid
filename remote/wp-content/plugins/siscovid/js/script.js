@@ -1,6 +1,7 @@
 ( function( $ ) {
   var siscovid_check_metodologia_objects = function($container) {
     $container.find('img.animate').each(checkOffset('animate__animated animate__fadeInDown'));
+    $container.find('img.animate-flip').each(checkOffset('animate__animated animate__flipInY'));
     $container.find('mjx-container').each(checkOffset('animate__animated animate__pulse'));
     $container.find('table').each(checkOffset('animate__animated animate__fadeInLeft'));
     $container.find('ul').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
@@ -257,6 +258,7 @@
       siscovid_initialize_team_carrousel();
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
+      $('#allies .allies-container').each(checkOffset('animate__animated animate__fadeInDown'));
 
       // Home - models animaton
       $('#project .images-container .agentes-container ').on('hover', function() {
@@ -299,6 +301,7 @@
     if($('.page-home').length > 0) {
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
+      $('#allies .allies-container').each(checkOffset('animate__animated animate__fadeInDown'));
     }
   });
 
