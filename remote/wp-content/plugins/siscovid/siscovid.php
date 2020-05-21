@@ -13,6 +13,7 @@ add_action( 'wp_enqueue_scripts', 'siscovid_scripts' );
 function siscovid_scripts () {
 	wp_enqueue_script ( 'siscovid-js', plugins_url('/js/script.js', __FILE__), array('jquery'),  rand(111,9999), 'all' );
 	wp_enqueue_style ( 'siscovid',  plugins_url('/css/main.css', __FILE__), array(),  rand(111,9999), 'all' );
+	wp_enqueue_style ( 'siscovid-mobile',  plugins_url('/css/mobile.css', __FILE__), array(),  rand(111,9999), 'all' );
 
 	wp_localize_script( 'siscovid-js', 'ajax_params', array('ajax_url' => admin_url( 'admin-ajax.php' )));
 

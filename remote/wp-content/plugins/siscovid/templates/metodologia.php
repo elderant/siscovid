@@ -6,12 +6,12 @@
       </div>
     </div>
     <div class="row project-methodology-row">
-      <div class="col-6 offset-3 offset-1">
+      <div class="col-xl-6 col-xl1-8 col-lg-8 col-10 offset-xl-3 offset-xl1-2 offset-lg-2">
         <img class="animate" src="/wp-content/uploads/methodology-project.png" alt="<?php _e('Metodología del projecto', 'siscovid')?>">
       </div>
     </div>
     <div class="row filter-row">
-      <div class="col-6 offset-3 filter-container">
+      <div class="col-xl-6 col-xl1-8 col-10 offset-xl-3 offset-xl1-2 offset-1 filter-container">
         <div class="tabs-container tabs-4">
           <button class="tab" data-model="datos"><?php _e('Datos','siscovid');?></button>
           <button class="tab active" data-model="agents"><?php _e('Modelo basado en agentes','siscovid');?></button>
@@ -21,12 +21,12 @@
       </div>
     </div>
     <div class="row model-row">
-      <div class="col-6 offset-3 model-container">
+      <div class="col-xl-6 col-xl1-8 col-10 offset-xl-3 offset-xl1-2 offset-1 model-container">
         <div class="model datos hidden">
           <div class="title-container">
             <h3><?php _e('Multiples fuentes de información','siscovid');?></h3>
           </div>
-          <div class="d-flex flex-wrap justify-content-center align-items-center">  
+          <div class="d-flex flex-wrap justify-content-center align-items-start">  
             <div class="datos-part primera">
               <h4><?php _e('Primera','siscovid');?></h4>
               <img class="animate-flip" src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Temporal datos image 1','siscovid')?>">
@@ -81,7 +81,7 @@
             <h4 class="uppercase hidden"><?php _e('Descripción del modelo conceptual','siscovid');?></h4>
             <div class="light-background">
               <h4><?php _e('Parte I. Propósito del modelo','siscovid');?></h4>
-              <p><?php _e('El modelo basado en agentes (MBA) propuesto tiene como objetivo simular y evaluar el efecto de diferentes escenarios con el propósito de apoyar la toma de decisiones conjuntas que permitan mitigar los efectos del COVID-19 de tal manera que no se sobrepasen las capacidades de los sistemas de salud en una ciudad. Particularmente, la evaluación de escenarios se ha realizado para Bogotá, Cali, Medellin, Cartagena y Barranquilla.', 'siscovid');?></p>
+              <p><?php _e('El modelo basado en agentes (MBA) propuesto tiene como objetivo simular y evaluar el efecto de diferentes escenarios con el propósito de apoyar la toma de decisiones conjuntas que permitan mitigar los efectos del <span class="color-green">COVID-19</span> de tal manera que no se sobrepasen las capacidades de los sistemas de salud en una ciudad. Particularmente, la evaluación de escenarios se ha realizado para Bogotá, Cali, Medellin, Cartagena y Barranquilla.', 'siscovid');?></p>
               <p><?php _e('El desempeño global del sistema vendrá determinado en términos del número de infectados, hospitalizados, y usuarios que requieren alguna unidad de cuidados intensivos (UCI). También se analiza la tasa de ataque, que corresponde a la gráfica acumulada de infectados. Estas variables se pueden analizar por grupos de edad y para diferentes localidades o comunas en cada ciudad. La elección de los parámetros se ha hecho a partir de la revisión de la literatura y de diferentes fuentes de información a nivel nacional como el Instituto Nacional de Salud Pública.', 'siscovid');?></p>
             </div>
             <div class="light-shade-background">
@@ -95,7 +95,7 @@
                 <li><?php _e('Vuelven a su residencia.', 'siscovid');?></li>
               </ol>
               <p><?php _e('Para efectos del modelo solo se están considerando los viajes por trabajo. Los viajes de trabajo se pueden realizar a través de transporte público colectivo o transporte privado (vehículo particular).', 'siscovid');?></p>
-              <p><?php _e('Los agentes se infectan mediante un modelo SIR por contacto con otros agentes. Se utilizan parámetros de la literatura publicada sobre COVID19(3–5). Para nuestros análisis asumimos el período de incubación, período latente, periodo infeccioso y coeficiente de infección del trabajo adelantado por Ferguson, et al (3).', 'siscovid');?></p>
+              <p><?php _e('Los agentes se infectan mediante un modelo SIR por contacto con otros agentes. Se utilizan parámetros de la literatura publicada sobre <span class="color-green">COVID19</span> (3–5). Para nuestros análisis asumimos el período de incubación, período latente, periodo infeccioso y coeficiente de infección del trabajo adelantado por Ferguson, et al (3).', 'siscovid');?></p>
               <p><?php _e('Los agentes susceptibles, al tener contacto con un agente infectado, pueden infectarse con cuatro diferentes niveles de severidad (4):', 'siscovid');?></p>
               <ul class="bullet-list">
                 <li><?php _e('Leves Asintomáticos: son 50% menos contagiosos que los demás niveles de severidad y continúan con su rutina de movilidad.', 'siscovid');?></li>
@@ -168,10 +168,10 @@
             <div class="model-part actions hidden">
               <h5><?php _e('Acciones','siscovid');?></h5>
               <p><?php _e('Hay diferentes acciones que pueden realizar los agentes:', 'siscovid');?></p>
-              <p><?php _e('<strong>Infectar:</strong> En cada etapa un agente puede infectar algunos agentes susceptibles que se encuentran en su misma locación (celda) con una probabilidad fija (Imperial College COVID-19 Response Team, 2020). Un agente puede infectar a otros agentes solo si está infectado y si han pasado 5 días desde que fue infectado.', 'siscovid');?></p>
-              <p><?php _e('Un agente infectado puede infectar otros agentes con una tasa de contagio del 9,8% (Imperial College COVID-19 Response Team, 2020) si presenta síntomas, o del 4,9% de tasa de contagio si el agente no presenta síntomas.', 'siscovid');?></p>
-              <p><?php _e('<strong>Presenta síntomas:</strong> Los agentes contagiados tienen una probabilidad de no presentar síntomas del 80% (Imperial College COVID-19 Response Team, 2020). ', 'siscovid');?></p>
-              <p><?php _e('<strong>Estado del paciente:</strong> A los agentes contagiados que ya superaron el período de incubación de 5 días, dependiendo de su rango de edad, tienen una probabilidad de pasar del estado leve al estado grave (requiere hospitalización) o estado crítico (requiere UCI) (Imperial College COVID-19 Response Team, 2020). En la tabla 1 se puede observar las diferentes probabilidades para que un agente pase de un estado infectado a un estado infectado crítico o grave.', 'siscovid');?></p>
+              <p><?php _e('<strong>Infectar:</strong> En cada etapa un agente puede infectar algunos agentes susceptibles que se encuentran en su misma locación (celda) con una probabilidad fija (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020). Un agente puede infectar a otros agentes solo si está infectado y si han pasado 5 días desde que fue infectado.', 'siscovid');?></p>
+              <p><?php _e('Un agente infectado puede infectar otros agentes con una tasa de contagio del 9,8% (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020) si presenta síntomas, o del 4,9% de tasa de contagio si el agente no presenta síntomas.', 'siscovid');?></p>
+              <p><?php _e('<strong>Presenta síntomas:</strong> Los agentes contagiados tienen una probabilidad de no presentar síntomas del 80% (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020). ', 'siscovid');?></p>
+              <p><?php _e('<strong>Estado del paciente:</strong> A los agentes contagiados que ya superaron el período de incubación de 5 días, dependiendo de su rango de edad, tienen una probabilidad de pasar del estado leve al estado grave (requiere hospitalización) o estado crítico (requiere UCI) (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020). En la tabla 1 se puede observar las diferentes probabilidades para que un agente pase de un estado infectado a un estado infectado crítico o grave.', 'siscovid');?></p>
               
               <!-- page 3 -->
               <p><?php _e('Tabla 1: Casos severos estimados por grupos de edad. ', 'siscovid');?></p>
@@ -237,15 +237,15 @@
                   <td><?php _e('9.3%','siscovid');?></td>
                 </tr>
               </table>
-              <p class="citation"><?php _e('Source: (Imperial College COVID-19 Response Team, 2020). ', 'siscovid');?></p>
+              <p class="citation"><?php _e('Source: (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020). ', 'siscovid');?></p>
               <p><?php _e('<strong>Recuperarse:</strong> Los agentes infectados después de un tiempo de recuperación cambian de estado a recuperados. Este tiempo de recuperación depende del estado de infección del agente. Si su estado es infectado (asintomático) su tiempo de recuperación será de 2 semanas. Si el agente requiere hospitalización o cuidados intensivos su tiempo de recuperación se distribuirá de manera uniforme entre 3 a 6 semanas (Joint Mission, 2020).', 'siscovid');?></p>
-              <p><?php _e('<strong>Morir:</strong> Los agentes cuyo estado sea grave o crítico dependiendo su grupo de edad tienen una probabilidad de morir (Tabla 1) (Imperial College COVID-19 Response Team, 2020).', 'siscovid');?></p>
+              <p><?php _e('<strong>Morir:</strong> Los agentes cuyo estado sea grave o crítico dependiendo su grupo de edad tienen una probabilidad de morir (Tabla 1) (Imperial College <span class="color-green">COVID-19</span> Response Team, 2020).', 'siscovid');?></p>
             </div>
   
             <div class="model-part rules hidden">
               <h5><?php _e('Reglas','siscovid');?></h5>
               <p><?php _e('Todos los agentes susceptibles (1), infectados (2) y recuperados (5) se mueven desde su localidad de origen a su localidad de destino. Dependiendo de las dinámicas de movilidad en la población de la zona de cada agente, este tendrá asignada una probabilidad de quedarse o salir de su zona. La ubicación de destino y el modo de transporte se asignan a cada agente de acuerdo con la matriz Origen-Destino de cada ciudad.', 'siscovid');?></p>
-              <p><?php _e('Los agentes se mueven cuatri veces en cada paso:', 'siscovid');?></p>
+              <p><?php _e('Los agentes se mueven cuatro veces en cada paso:', 'siscovid');?></p>
               <ol class="numbered-list">
                 <li><?php _e('Viaje alrededor de su hogar.', 'siscovid');?></li>
                 <li><?php _e('Viaje de origen a destino.', 'siscovid');?></li>
@@ -331,9 +331,9 @@
             <ol class="numbered-list">
               <li class="citation"><?php _e('Departamento Administrativo Nacional de Estadística - DANE. Proyecciones de población [Internet]. Población y Demografía. 2020 [cited 2020 Mar 24]. Available from: https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion', 'siscovid');?></li>
               <li class="citation"><?php _e('Secretaría Distrital de Movilidad. Prudencia Bogotá - Sistema Integrado de Información sobre Movilidad Urbana [Internet]. Encuesta de movilidad 2019. 2019 [cited 2020 Mar 24]. Available from: https://www.simur.gov.co/portal-simur/datos-del-sector/encuestas-de-movilidad/', 'siscovid');?></li>
-              <li class="citation"><?php _e('Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, Baguelin M, et al. Impact of non-pharmaceutical interventions (NPIs) to reduce COVID-19 mortality and healthcare demand [Internet]. 2020 [cited 2020 Mar 24]. Available from: https://doi.org/10.25561/77482', 'siscovid');?></li>
-              <li class="citation"><?php _e('Verity R, Okell LC, Dorigatti I, Winskill P, Whittaker C, Imai N, et al. Estimates of the severity of COVID-19 disease. medRxiv. 2020;2020.03.09.20033357.', 'siscovid');?></li>
-              <li class="citation"><?php _e('World Health Organization (WHO). Report of the WHO-China Joint Mission on Coronavirus Disease 2019 ( COVID-19 ) [Internet]. Vol. 2019, Report of the WHO-China Joint Mission. 2020. Available from: https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf&ved=2ahUKEwiFr5KrppToAhWFdn0KHbRWABIQFjAAegQIBxAC&usg=AOvVaw1gO_RTfaIWQuEkjdvq_O7i', 'siscovid');?></li>
+              <li class="citation"><?php _e('Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, Baguelin M, et al. Impact of non-pharmaceutical interventions (NPIs) to reduce <span class="color-green">COVID-19</span> mortality and healthcare demand [Internet]. 2020 [cited 2020 Mar 24]. Available from: https://doi.org/10.25561/77482', 'siscovid');?></li>
+              <li class="citation"><?php _e('Verity R, Okell LC, Dorigatti I, Winskill P, Whittaker C, Imai N, et al. Estimates of the severity of <span class="color-green">COVID-19</span> disease. medRxiv. 2020;2020.03.09.20033357.', 'siscovid');?></li>
+              <li class="citation"><?php _e('World Health Organization (WHO). Report of the WHO-China Joint Mission on Coronavirus Disease 2019 ( <span class="color-green">COVID-19</span> ) [Internet]. Vol. 2019, Report of the WHO-China Joint Mission. 2020. Available from: https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf&ved=2ahUKEwiFr5KrppToAhWFdn0KHbRWABIQFjAAegQIBxAC&usg=AOvVaw1gO_RTfaIWQuEkjdvq_O7i', 'siscovid');?></li>
             </ol>
           </div>
         </div>

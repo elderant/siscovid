@@ -219,7 +219,7 @@
       </div>
     </div>
     <div class="row carousel-row">
-      <div class="col-10 offset-1 team-container">
+      <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-md-5 team-container">
         <div class="slick-prev arrow">
           <i class="fas fa-angle-double-left"></i>
         </div>
@@ -238,7 +238,6 @@
                             '<div class="profile">' . $member['profile'] . '</div>' .
                           '</div>' . 
                         '</div>';
-              error_log(print_r($html,1));
               echo $html;
             }
           ?>

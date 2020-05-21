@@ -1,12 +1,12 @@
 <div id="survey">
   <div class="container-fluid">
     <div class="row title-row">
-      <div class="col-6 offset-3">
+      <div class="col-10 offset-1">
         <h2 class="capitalize"><?php _e('Reporte Encuestas','siscovid')?></h2>
       </div>
     </div>
     <div class="row content-row">
-      <div class="col-10 offset-1">
+      <div class="col-xl-10 col-12 offset-xl-1 p-xl-0 p-lg-5">
         <div class="reporte first">
           <iframe 
             src="https://app.powerbi.com/view?r=eyJrIjoiODc1MzY5NjMtZDgxNC00ZTRkLTk5YTAtMTk0NTM3NTAxNDA5IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"

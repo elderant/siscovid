@@ -110,7 +110,7 @@ body {
 	color: var(--black);
 	position: relative;
 	font-family: oswald, 'Helvetica', sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	/* letter-spacing: 0.05em; */
 	border: 0 none;
@@ -185,7 +185,7 @@ button {
 	border-radius: 100px;
 	padding: 15px 30px;
 	text-align: center;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	color: var(--white);
 	background-color: var(--blue);
 	transition: all 0.5s ease-in-out;
@@ -233,6 +233,7 @@ button:active {
 
 .tabs-container .tab {
 	position: relative;
+	padding: 15px 15px;
 	border-radius: 0;
 	background-color: var(--white);
 	color: var(--black);
@@ -369,8 +370,13 @@ header#masthead {
 	font-size: 1.5em;
 }
 
+#masthead .navbar-container {
+	text-align: right;
+}
+
 #masthead .navbar-brand img {
 	height: 125px;
+	width: auto;
 }
 
 #masthead #menu-main-menu > li > a {
@@ -387,6 +393,12 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
 body:not(.theme-preset-active) #masthead .navbar-nav > li > a {
 	color: var(--black);
 }
+
+body:not(.theme-preset-active) #masthead .navbar-nav > li.current-menu-item > a {
+	color: var(--blue);
+	pointer-events: none;
+}
+
 
 body:not(.theme-preset-active) #masthead #menu-main-menu.navbar-nav > li > a {
 	padding: 0 1rem;
@@ -408,7 +420,6 @@ body:not(.theme-preset-active) footer#colophon.site-footer {
 	font-size: 1rem;
 
 	box-shadow: 0px -10px 30px 0px rgba(0, 0, 0, 0.15);
-	margin-top: 2rem;
 }
 
 .site-footer h3,
@@ -534,13 +545,16 @@ ul {
 	color: var(--blue);	
 }
 
+.color-green {
+	color: var(--green);	
+}
+
 .background-light {
 	background-color: var(--light);
 }
 
 .subtitle {
-	margin: 0;
-	padding-bottom: 0 0 0.5em;
+	margin-bottom: 3rem;
 	font-family: inherit;
 	font-size: 0.5em;
 	letter-spacing: 0.1rem;

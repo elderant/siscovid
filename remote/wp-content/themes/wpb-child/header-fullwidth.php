@@ -26,7 +26,7 @@
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
         <div class="container-fluid">
                 <nav class="row navbar navbar-expand-xl">
-                    <div class="col-5 offset-1">
+                    <div class="col-lg-5 col-6 offset-lg-1">
                         <div class="navbar-brand">
                             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                                 <a href="<?php echo esc_url( home_url( '/' )); ?>">
@@ -37,7 +37,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-lg-5 col-6 offset-lg-1 menu-column">
                         <div class="row">
                             <div class="col-12 topbar d-flex justify-content-end align-items-center">
                                 <div class="contact-info">
@@ -52,9 +52,9 @@
                                     <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a> -->
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
+                            <div class="col-12 navbar-container">
+                                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-custom-toggler-icon"></span>
                                 </button>
                                 <?php
                                 wp_nav_menu(array(

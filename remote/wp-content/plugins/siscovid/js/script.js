@@ -47,7 +47,7 @@
         if($modelContainer.length == 0) {return;}
         
         // Change tab states
-        $('.tabs-container button.active').removeClass('active');
+        $('.model-interface .tabs-container button.active').removeClass('active');
         $(this).addClass('active');
 
         // Change button states
@@ -127,35 +127,22 @@
       autoplay: true,
       autoplaySpeed: 2000,
       infinite: true,
-      // responsive: [
-      //   {
-      //     breakpoint: 1367,
-      //     settings: {
-      //       slidesToShow: 3,
-      //       slidesToScroll: 3,
-      //       infinite: false,
-      //       variableWidth: true,
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 730,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //       infinite: false,
-      //       variableWidth: true,
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 600,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1,
-      //       infinite: false,
-      //       variableWidth: true,
-      //     }
-      //   },
-      // ],
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+          }
+        },
+      ],
     });
   }
 
