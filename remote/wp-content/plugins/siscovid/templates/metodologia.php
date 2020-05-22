@@ -1,17 +1,17 @@
 <div id="methodology">
   <div class="container-fluid">
     <div class="row title-row">
-      <div class="col-10 offset-1">
+      <div class="col-12 col-sm-10 offset-sm-1">
         <h2><?php _e('Metodologia del proyecto','siscovid')?></h2>
       </div>
     </div>
     <div class="row project-methodology-row">
-      <div class="col-xl-6 col-xl1-8 col-lg-8 col-10 offset-xl-3 offset-xl1-2 offset-lg-2">
+      <div class="col-12 col-xl-6 col-xl1-8 col-lg-8 col-sm-10 offset-xl-3 offset-xl1-2 offset-lg-2 offset-sm-1">
         <img class="animate" src="/wp-content/uploads/methodology-project.png" alt="<?php _e('Metodología del projecto', 'siscovid')?>">
       </div>
     </div>
     <div class="row filter-row">
-      <div class="col-xl-6 col-xl1-8 col-10 offset-xl-3 offset-xl1-2 offset-1 filter-container">
+      <div class="col-xl-6 col-xl1-8 col-md-10 col-12 offset-xl-3 offset-xl1-2 offset-md-1 filter-container">
         <div class="tabs-container tabs-4">
           <button class="tab" data-model="datos"><?php _e('Datos','siscovid');?></button>
           <button class="tab active" data-model="agents"><?php _e('Modelo basado en agentes','siscovid');?></button>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="row model-row">
-      <div class="col-xl-6 col-xl1-8 col-10 offset-xl-3 offset-xl1-2 offset-1 model-container">
+      <div class="col-12 col-xl-6 col-xl1-8 col-sm-10 offset-xl-3 offset-xl1-2 offset-sm-1 model-container">
         <div class="model datos hidden">
           <div class="title-container">
             <h3><?php _e('Multiples fuentes de información','siscovid');?></h3>
@@ -607,7 +607,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-background">
+          <div class="intervencion-container intervencion-zonas light-background">
             <h4><?php _e('Horarios escalonados <span class="uppercase">por zonas</span>','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -624,7 +624,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+          <div class="intervencion-container intervencion-transporte light-shade-background">
             <h4><?php _e('Transporte activo (% de aumento de los viajes)','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -643,7 +643,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-background">
+          <div class="intervencion-container intervencion-jardines light-background">
             <h4><?php _e('Apertura de jardines infantiles y guarderías (1-5)','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -660,7 +660,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+          <div class="intervencion-container intervencion-primaria light-shade-background">
             <h4><?php _e('Apertura de primaria (5-13)','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -674,7 +674,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-background">
+          <div class="intervencion-container intervencion-universidad light-background">
             <h4><?php _e('Apertura de Universidades y Bachillerato','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -692,7 +692,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-shade-background">
+          <div class="intervencion-container intervencion-continuar light-shade-background">
             <h4><?php _e('Continuar cuarentena de personas mayores de 60 años','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">
@@ -710,7 +710,7 @@
               </div>
             </div>
           </div>
-          <div class="intervencion-container intervencion-sectores-economicos light-background">
+          <div class="intervencion-container intervencion-seguimiento light-background">
             <h4><?php _e('Seguimiento y aislamiento de contactos','siscovid');?></h4>
             <div class="content-container d-flex justify-content-between align-items-center">
               <div class="text-container">

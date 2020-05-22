@@ -101,8 +101,9 @@ Text Domain:	 wpb-child
 	font-style: italic;
 }
 
-html{
+html {
 	height: 100%;
+	font-size: 16px;
 	overflow-x: hidden;
 }
 
@@ -430,12 +431,12 @@ body:not(.theme-preset-active) footer#colophon.site-footer {
 }
 
 .site-footer h3 {
-	width: 40%;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 2rem;
 	font-weight: bold;
-	text-align: left;
+	text-align: center;
 }
 
 .site-footer .footer-menu-container, 

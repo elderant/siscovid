@@ -26,7 +26,7 @@
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
         <div class="container-fluid">
                 <nav class="row navbar navbar-expand-xl">
-                    <div class="col-lg-5 col-6 offset-lg-1">
+                    <div class="col-lg-5 col-sm-6 col-8 offset-lg-1">
                         <div class="navbar-brand">
                             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                                 <a href="<?php echo esc_url( home_url( '/' )); ?>">
@@ -37,9 +37,9 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-6 offset-lg-1 menu-column">
+                    <div class="col-lg-5 col-sm-6 col-4 offset-lg-1 menu-column">
                         <div class="row">
-                            <div class="col-12 topbar d-flex justify-content-end align-items-center">
+                            <div class="col-12 topbar d-flex justify-content-end align-items-end .align-items-sm-center flex-sm-row flex-column">
                                 <div class="contact-info">
                                     <span class="contact-email">
                                         <a href="mailto:siscovid@hotmail.com"><i class="fas fa-envelope"></i> siscovid@hotmail.com</a>

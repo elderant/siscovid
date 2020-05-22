@@ -120,7 +120,7 @@
       infinite: false,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 2,
+      slidesToScroll: 1,
       prevArrow: '#team .slick-prev',
       nextArrow: '#team .slick-next',
       variableWidth: true,
@@ -140,6 +140,20 @@
           settings: {
             slidesToShow: 3,
             slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 434,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
           }
         },
       ],
@@ -236,7 +250,12 @@
       var $this = $(this),
         imagePos = $this.offset().top;
 
-      $this.toggleClass(className, (imagePos < topOfWindow + 900));
+      if($(window).width() > 768) {
+        $this.toggleClass(className, (imagePos < topOfWindow + 900));
+      }
+      else {
+        $this.toggleClass(className, (imagePos < topOfWindow + 1250));
+      }
     };
   }
 
@@ -245,7 +264,7 @@
       siscovid_initialize_team_carrousel();
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
-      $('#allies .allies-container').each(checkOffset('animate__animated animate__fadeInDown'));
+      $('#allies .allies').each(checkOffset('animate__animated animate__fadeInDown'));
 
       // Home - models animaton
       $('#project .images-container .agentes-container ').on('hover', function() {
@@ -288,7 +307,7 @@
     if($('.page-home').length > 0) {
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
-      $('#allies .allies-container').each(checkOffset('animate__animated animate__fadeInDown'));
+      $('#allies .allies').each(checkOffset('animate__animated animate__fadeInDown'));
     }
   });
 

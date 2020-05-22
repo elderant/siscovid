@@ -57,27 +57,3 @@
     }    
   });
 } (jQuery) );
-
-/* ------  SMOOTH SCROLL  ----- */
-( function( $ ) {
-	$(document).ready(function () {
-    "use strict";
-		$('a[href*="http://siscovid.com/#"]').bind('click', function(event) {
-      let href = window.location.href;
-      if(href !== "http://siscovid.com/" && !href.startsWith("http://siscovid.com/#")){
-        return;
-      }
-      event.preventDefault();
-		
-      let target = $(this).attr("href"); //Get the target
-      let id = target.substring(20);
-          
-      // perform animated scrolling by getting top-position of target-element and set it as scroll target
-      $('html, body').stop().animate({ scrollTop: $(id).offset().top}, 1500, function() {
-        location.hash = id;  //attach the hash (#jumptarget) to the pageurl
-      });
-          
-      return false;
-		});
-	});
-} (jQuery) );
