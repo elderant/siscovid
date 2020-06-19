@@ -4,10 +4,13 @@
     $container.find('img.animate-flip').each(checkOffset('animate__animated animate__flipInY'));
     $container.find('mjx-container').each(checkOffset('animate__animated animate__pulse'));
     $container.find('table').each(checkOffset('animate__animated animate__fadeInLeft'));
-    $container.find('ul').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
-    $container.find('ol').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
+    $container.find('ul.animate').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
+    $container.find('ul.animate-flip').each(checkOffset('animate__animated animate__flipInY'));
+    $container.find('ol.animate').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
     $container.find('.padded-block').each(checkOffset('animate__animated animate__lightSpeedInLeft'));
     $container.find('.model-image-container').each(checkOffset('show'));
+    $container.find('.text-container.animate-bounce-left').each(checkOffset('animate__animated animate__bounceInLeft'));
+    $container.find('.text-container.animate-bounce-right').each(checkOffset('animate__animated animate__bounceInRight'));
   }
 
   var siscovid_handle_metodologia_fadeIn = function() {
@@ -120,7 +123,7 @@
       infinite: false,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 4,
       prevArrow: '#team .slick-prev',
       nextArrow: '#team .slick-next',
       variableWidth: true,

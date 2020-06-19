@@ -20,30 +20,30 @@
       <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-lg-5 model-container">
         <div class="model barranquilla hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection"
             src
             frameborder="0"></iframe>
         </div>
         <div class="model bogota active">
           <iframe 
-            src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
+            src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection23b1c72172eb8a048d31"
             frameborder="0"></iframe>
         </div>
         <div class="model cali hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection65264f65514030cc48e0" 
             src
             frameborder="0"></iframe>
         </div>
         <div class="model cartagena hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSectionea2653228035ea5c955a" 
             src
             frameborder="0"></iframe>
         </div>
         <div class="model medellin hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiNTRlNTAyOGEtODQ4ZS00MTgxLWEwMjUtNWU4ODM0YTY4MjY2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSectionbd834c60d0902baec757" 
             src
             frameborder="0"></iframe>
         </div>

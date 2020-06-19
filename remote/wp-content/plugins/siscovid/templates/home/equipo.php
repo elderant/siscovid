@@ -208,6 +208,14 @@
       'org'         => __('Centro Nacional de Consultoría','siscovid'),
       'profile'     => __('Miembro del equipo de comunicaciones','siscovid'),
     ),
+    'diego-martinez' => array(
+      'class'       => 'diego-martinez',
+      'src'         => '/wp-content/uploads/diegoMartinez.jpeg',
+      'src-label'   => __('Foto de Diego Martinez','siscovid'),
+      'name'        => __('Diego Andrés Martínez Mejía', 'siscovid'),
+      'org'         => __('Universidad de los Andes','siscovid'),
+      'profile'     => __('Miembro del equipo de modelación','siscovid'),
+    ),
   );
 ?>
 

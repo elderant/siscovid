@@ -14,12 +14,6 @@
       <div id="vega-map" class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-xl-1 pt-sm-4 offset-sm-1 banner-container">
         <iframe id="map-iframe" src="https://fabiancpl.github.io/siscovid/colombia-map/index.html" frameborder="0"></iframe>
       </div>
-      <!-- <script>
-         vegaEmbed(
-           '#vega-map',
-           'https://vega.github.io/vega/examples/bar-chart.vg.json'
-         );
-      </script> -->
     </div>
     <div class="row d-flex align-items-center encuestas-row background-light">
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-xl-1 p-md-5 text-container">
@@ -32,7 +26,7 @@
           <li><?php _e('3 momentos diferentes.', 'siscovid'); ?></li>
           <li><?php _e('Total 12.600 Encuestas.', 'siscovid'); ?></li>
         </ul>
-        <a class="button" href="/reporte"><? _e('Encuestas','siscovid');?></a>
+        <a class="button" href="/reporte"><? _e('Reporte de encuestas','siscovid');?></a>
       </div>
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-xl-1 pt-sm-4 banner-container">
         <img src="/wp-content/uploads/home-encuestas-image.png" alt="<?php _e('Imagen para las encuestas', 'siscovid')?>">
