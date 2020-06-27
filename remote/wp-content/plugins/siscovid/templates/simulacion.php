@@ -2,10 +2,25 @@
   <div class="container-fluid">
     <div class="row title-row">
       <div class="col-12 col-sm-10 offset-sm-1">
-        <h2><?php _e('Simulación de nuestros modelos','siscovid')?></h2>
+        <h2><?php _e('Evaluación escenarios','siscovid')?></h2>
       </div>
     </div>
-    <div class="row filter-row">
+    <div class="row page-intro">
+      <div class="col-12 col-sm-10 offset-sm-1 col-xl-4 offset-xl-4 col-xl1-6 offset-xl1-3 p-xl-3 p-3 p-lg-5 p-xl-0 text-container">
+        <p><?php _e('La siguiente herramienta permite evaluar diferentes escenarios de intervención para el control y mitigación del <span class="color-green">COVID-19</span> por ciudad, localidades y grupos de edad.','siscovid')?></p>
+      </div>
+    </div>
+    <div class="row model-row vertical">
+      <div class="col-12 col-xl-10 offset-xl-1 col-xl1-12 offset-xl1-0 p-0 model-container">
+        <iframe src="https://fabiancpl.github.io/siscovid/agents-viz/" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="row page-outro">
+      <div class="col-12 col-sm-10 offset-sm-1 col-xl-4 offset-xl-4 p-xl-3 col-xl1-6 offset-xl1-3 p-3 p-lg-5 p-xl-0 text-container">
+        <p><?php _e('El modelo implementado tiene como propósito evaluar  escenarios a partir de la dinámica de contagio y no busca pronosticar resultados específicos de la pandemia del <span class="color-green">COVID-19</span>.','siscovid')?></p>
+      </div>
+    </div>
+    <div class="row filter-row hidden">
       <div class="col-12 col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 filter-container">
         <div class="tabs-container tabs-5">
           <button class= "tab" data-city="barranquilla">Barranquilla</button>
@@ -16,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="row model-row">
+    <div class="row model-row hidden">
       <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-lg-5 model-container">
         <div class="model barranquilla hidden">
           <iframe 

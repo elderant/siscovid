@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row title-row">
       <div class="col-12 col-sm-10 offset-sm-1">
-        <h2><?php _e('Metodologia del proyecto','siscovid')?></h2>
+        <h2><?php _e('Información detallada','siscovid')?></h2>
       </div>
     </div>
     <div class="row project-methodology-row">

@@ -86,7 +86,40 @@
     });
   }
 
+  /* Not used to Delete */
   var siscovid_handle_simulacion_fadeIn = function() {
+    $('.filter-container button').each(function() {
+      $(this).on('click', function(event) {
+        let city = $(this).attr('data-city');
+        let $modelContainer = $('.model-row .model.' + city);
+
+        if($modelContainer.length == 0) {return;}
+
+        // fill src if is not set
+        if(!$modelContainer.find('iframe').attr('src')) {
+          $modelContainer.find('iframe').attr('src', $modelContainer.find('iframe').attr('data-src'));
+        }
+
+        // Change button states
+        $('.filter-container button.active').removeClass('active');
+        $(this).addClass('active');
+
+        // Change model states
+        $('.model-row .model.active').fadeOut(500, function(){
+          $(this).removeClass('active');
+          $(this).addClass('hidden');
+        });
+        setTimeout(function(){
+          $modelContainer.fadeIn(500, function(){
+            $(this).addClass('active');
+            $(this).removeClass('hidden');
+          })
+        }, 250);
+      });
+    });
+  }
+
+  var siscovid_handle_home_models_fadeIn = function() {
     $('.filter-container button').each(function() {
       $(this).on('click', function(event) {
         let city = $(this).attr('data-city');
@@ -265,6 +298,8 @@
   $(document).ready(function () {
     if($('.page-home').length > 0) {
       siscovid_initialize_team_carrousel();
+      siscovid_handle_home_models_fadeIn()
+
       $('#project a').each(checkOffset('animate__animated animate__fadeIn'));
       $('#team .carousel-row').each(checkOffset('animate__animated animate__fadeInDown'));
       $('#allies .allies').each(checkOffset('animate__animated animate__fadeInDown'));
@@ -287,11 +322,11 @@
       });
     }
 
-    if($('.page-simulacion').length > 0) {
-      siscovid_handle_simulacion_fadeIn();
+    if($('.page-evaluacion-escenarios').length > 0) {
+      //siscovid_handle_simulacion_fadeIn();
     }
 
-    if($('.page-metodologia').length > 0) {
+    if($('.page-informacion-detallada').length > 0) {
       // element animation initization
       siscovid_check_metodologia_objects($('#methodology .project-methodology-row'));
       siscovid_check_metodologia_objects($('#methodology .model.active'));
@@ -303,8 +338,8 @@
 
   $(window).scroll(function () {
     "use strict";
-    if($('.page-metodologia').length > 0) {
-      siscovid_check_metodologia_objects($('.page-metodologia #methodology'));
+    if($('.page-informacion-detallada').length > 0) {
+      siscovid_check_metodologia_objects($('.page-informacion-detallada #methodology'));
     }
 
     if($('.page-home').length > 0) {

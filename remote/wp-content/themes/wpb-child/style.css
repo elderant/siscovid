@@ -330,8 +330,8 @@ header#masthead {
 }
 
 #masthead nav {
-	padding: 15px;
-	padding-right: 15px;
+	/* padding: 15px;
+	padding-right: 15px; */
 }
 
 #masthead .topbar {
@@ -481,6 +481,13 @@ footer#colophon.site-footer a:hover {
 	display: block;
 	padding: 0.5rem;
 	text-align: left;
+}
+
+.site-footer .footer-social-container a {
+	overflow: hidden;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow-wrap: normal;
 }
 
 .site-footer .footer-social-container a i {

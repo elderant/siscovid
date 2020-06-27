@@ -15,6 +15,7 @@
         <img src="/wp-content/uploads/santafe.png" alt="Fundación Santa Fe de Bogotá Logo">
         <img src="/wp-content/uploads/liverpool.png" alt="University of Liverpool Logo">
         <img src="/wp-content/uploads/northwestern.jpeg" alt="Northwestern University Logo">
+        <img src="/wp-content/uploads/movistar.png" alt="Movistar Logo">
       </div>
     </div>
     <div class="row">

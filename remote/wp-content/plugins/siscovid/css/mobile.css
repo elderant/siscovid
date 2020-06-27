@@ -49,6 +49,33 @@
 		background: none;
 	}
 
+	#project .title-row h2 {
+		font-size: 1.75rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 1.2rem;
+	}
+
+	#project .title-row .description-column {
+		border-left: none;
+	}
+
+	#project .title-row .description-column h3 {
+		border-top: solid 1px var(--blue);
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 575px;
+	}
+
+	#project .model-row iframe {
+		max-width: none;
+		padding: 1.5rem 0;
+		width: 925px;
+	}
+
 	#project #vega-map {
 		padding-left: 0rem;
 	}
@@ -58,19 +85,19 @@
 	}
 
 	#project iframe#map-iframe {
-		min-height: 650px;
+		min-height: 500px;
     min-width: 100%;
 	}
 
 	#project .encuestas-row .text-container {
 		order: 1;
 		padding-top: 2rem;
-		margin-left: 8.333333%;
+		/* margin-left: 8.333333%; */
 	}
 
 	#project .encuestas-row .banner-container {
 		order: 2;
-		margin-left: 8.333333%;		
+		/* margin-left: 8.333333%;		 */
 	}
 
 	#project .resultados-row .model img {
@@ -117,8 +144,12 @@
 
 	#simulation .model-row iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5rem 0;
 		width: 925px;
+	}
+
+	#simulation .model-row.vertical iframe {
+		height: 8600px;
 	}
 
 	#methodology .datos .overview .datos-part {
@@ -165,7 +196,7 @@
 
 	#survey .reporte iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
 	}
@@ -175,6 +206,33 @@
 @media screen and (min-width: 401px) and (max-width: 575px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
+	}
+
+	#project .title-row h2 {
+		font-size: 1.75rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 1.2rem;
+	}
+
+	#project .title-row .description-column {
+		border-left: none;
+	}
+
+	#project .title-row .description-column h3 {
+		border-top: solid 1px var(--blue);
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 575px;
+	}
+
+	#project .model-row iframe {
+		max-width: none;
+		padding: 1.5rem 0;
+		width: 925px;
 	}
 
 	#project #vega-map {
@@ -251,6 +309,10 @@
 		width: 925px;
 	}
 
+	#simulation .model-row.vertical iframe {
+		height: 8450px;
+	}
+
 	#methodology .datos .overview .datos-part {
 		width: 45%;
 		min-height: 280px;
@@ -295,7 +357,7 @@
 
 	#survey .reporte iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
 	}
@@ -307,6 +369,25 @@
 		background: none;
 	}
 
+	#project .title-row h2 {
+		font-size: 1.4rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 0.9rem;
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 575px;
+	}
+
+	#project .model-row iframe {
+		max-width: none;
+		padding: 1.5rem 0;
+		width: 925px;
+	}
+
 	#project #vega-map {
 		padding-left: 0rem;
 	}
@@ -316,7 +397,7 @@
 	}
 
 	#project iframe#map-iframe {
-		min-height: 550px;
+		min-height: 500px;
 		max-width: 100%;
 		width: auto;
 		margin: 0 auto;
@@ -377,8 +458,12 @@
 
 	#simulation .model-row iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5rem 0;
 		width: 925px;
+	}
+
+	#simulation .model-row.vertical iframe {
+		height: 3900px;
 	}
 
 	#methodology .datos .overview .datos-part {
@@ -421,7 +506,7 @@
 
 	#survey .reporte iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
 	}
@@ -431,6 +516,25 @@
 @media screen and (min-width: 650px) and (max-width: 767px) {	
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
+	}
+
+	#project .title-row h2 {
+		font-size: 1.4rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 0.9rem;
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 575px;
+	}
+
+	#project .model-row iframe {
+		max-width: none;
+		padding: 1.5rem 0;
+		width: 925px;
 	}
 
 	#project #vega-map {
@@ -503,8 +607,12 @@
 
 	#simulation .model-row iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5rem 0;
 		width: 925px;
+	}
+
+	#simulation .model-row.vertical iframe {
+		height: 3900px;
 	}
 
 	#methodology .datos .overview .datos-part {
@@ -514,7 +622,7 @@
 
 	#survey .reporte iframe {
 		max-width: none;
-		padding: 1.5rem;
+		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
 	}
@@ -527,6 +635,23 @@
 		background: none;
 	}
 
+	#project .title-row h2 {
+		font-size: 1.5rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 1rem;
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 64vw;
+	}
+
+	#project .model-row iframe {
+		padding: 3rem;
+	}
+
 	#project #vega-map {
 		padding-left: 0rem;
 	}
@@ -536,7 +661,7 @@
 	}
 
 	#project iframe#map-iframe {
-			min-height: 383px;
+			min-height: 500px;
 			min-width: 383px;
 	}
 
@@ -596,6 +721,23 @@
 @media screen and (min-width: 992px) and (max-width: 1199px) {	
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
+	}
+
+	#project .title-row h2 {
+		font-size: 1.5rem;
+	}
+
+	#project .title-row h3 {
+		font-size: 1rem;
+	}
+
+	#project .model-container,
+	#project .model-row iframe {
+    height: 64vw;
+	}
+
+	#project .model-row iframe {
+		padding: 3rem;
 	}
 
 	#project #vega-map {

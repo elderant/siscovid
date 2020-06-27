@@ -25,7 +25,7 @@
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
         <div class="container-fluid">
-                <nav class="row navbar navbar-expand-xl">
+                <nav class="row navbar navbar-expand-xl justify-content-start">
                     <div class="col-lg-5 col-sm-6 col-8 offset-lg-1">
                         <div class="navbar-brand">
                             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
@@ -37,16 +37,17 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-sm-6 col-4 offset-lg-1 menu-column">
+                    <div class="col-lg-5 col-sm-6 col-4 pr-lg-0 menu-column">
                         <div class="row">
                             <div class="col-12 topbar d-flex justify-content-end align-items-end .align-items-sm-center flex-sm-row flex-column">
                                 <div class="contact-info">
-                                    <span class="contact-email">
+                                    <!-- <span class="contact-email">
                                         <a href="mailto:siscovid@hotmail.com"><i class="fas fa-envelope"></i> siscovid@hotmail.com</a>
-                                    </span>
+                                    </span> -->
                                 </div>
                                 <div class="social-info">
-                                    <a class="first-item facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
+                                    <a class="first-item mail" href="mailto:siscovid@uniandes.edu.co"><i class="fas fa-envelope"></i></a>
+                                    <a class="facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
                                     <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i></a>
                                     <a class="last-item github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i></a>
                                     <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a> -->
