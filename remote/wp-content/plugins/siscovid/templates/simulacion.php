@@ -20,7 +20,8 @@
         <p><?php _e('El modelo implementado tiene como propósito evaluar  escenarios a partir de la dinámica de contagio y no busca pronosticar resultados específicos de la pandemia del <span class="color-green">COVID-19</span>.','siscovid')?></p>
       </div>
     </div>
-    <div class="row filter-row hidden">
+
+    <!-- <div class="row filter-row">
       <div class="col-12 col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 filter-container">
         <div class="tabs-container tabs-5">
           <button class= "tab" data-city="barranquilla">Barranquilla</button>
@@ -31,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="row model-row hidden">
+    <div class="row model-row">
       <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-lg-5 model-container">
         <div class="model barranquilla hidden">
           <iframe 
@@ -63,6 +64,7 @@
             frameborder="0"></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </div>

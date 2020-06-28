@@ -152,6 +152,26 @@
 		height: 8600px;
 	}
 
+	#methodology .arrows-container .arrow.datos-modelos {
+		bottom: 30vw;
+		left: 8vw;
+		width: 20vw;
+		transform: rotate(-55deg);
+	}
+	
+	#methodology .arrows-container .arrow.modelos-intervenciones {
+		bottom: 30vw;
+		right: 8vw;
+    width: 20vw;
+		transform: rotate(55deg);
+	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		bottom: 24px;
+		right: 29vw;
+    width: 38vw;
+	}
+
 	#methodology .datos .overview .datos-part {
 		width: 43%;
 		min-height: 230px;
@@ -313,6 +333,25 @@
 		height: 8450px;
 	}
 
+	#methodology .arrows-container .arrow.datos-modelos {
+		bottom: 25vw;
+		left: 8vw;
+		width: 22vw;
+		transform: rotate(-55deg);
+	}
+	
+	#methodology .arrows-container .arrow.modelos-intervenciones {
+		bottom: 25vw;
+		right: 8vw;
+    width: 22vw;
+		transform: rotate(55deg);
+	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 26.5vw;
+    width: 44vw;
+	}
+
 	#methodology .datos .overview .datos-part {
 		width: 45%;
 		min-height: 280px;
@@ -465,6 +504,11 @@
 	#simulation .model-row.vertical iframe {
 		height: 3900px;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 26.5vw;
+    width: 44vw;
+	}
 
 	#methodology .datos .overview .datos-part {
 		width: 45%;
@@ -614,6 +658,11 @@
 	#simulation .model-row.vertical iframe {
 		height: 3900px;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 26.5vw;
+    width: 44vw;
+	}
 
 	#methodology .datos .overview .datos-part {
 		width: 45%;
@@ -710,6 +759,11 @@
 		width: 45%;
 		min-height: 385px;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 22.5vw;
+    width: 37vw;
+	}
 
 	#survey .reporte iframe {
     height: 55vw;
@@ -784,6 +838,11 @@
 	#simulation .model-row iframe {
 		padding: 3rem;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 22.5vw;
+    width: 37vw;
+	}
 
 	#methodology .datos .overview .datos-part {
 		min-height: 466px;
@@ -822,6 +881,12 @@
 	#allies .allies img {
 		max-height: 60px;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 17.5vw;
+		width: 30vw;
+	}
+
 
 	#methodology .datos .overview .datos-part {
 		min-height: 440px;
@@ -856,6 +921,11 @@
 	#allies .allies img {
 		max-height: 60px;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 17.5vw;
+		width: 30vw;
+	}
 
 	#methodology .datos .overview .datos-part {
 		min-height: 466px;
@@ -886,6 +956,11 @@
 		width: 200px;
     margin: 0.5rem 1.5rem;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 17.5vw;
+		width: 30vw;
+	}
 
 	#methodology .datos .overview .datos-part {
 		min-height: 500px;
@@ -908,6 +983,12 @@
 		width: 225px;
 		margin: 0.5rem 2rem;
 	}
+	
+	#methodology .arrows-container .arrow.intervenciones-datos {
+		right: 17.5vw;
+		width: 30vw;
+	}
+
 }
 
 

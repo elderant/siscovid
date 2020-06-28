@@ -1,6 +1,6 @@
 <div id="project">
   <div class="container-fluid">
-    <div class="row title-row d-flex align-items-center" style="display: none !important">
+    <div class="row title-row d-flex align-items-center">
       <div class="col-lg-4 col-sm-5 col-12 offset-lg-1 px-lg-5 name-column">
         <h2><?php _e('Sistema de Inteligencia Epidemiológica del <span class="color-green">COVID-19</span>','siscovid')?></h2>
       </div>
@@ -13,7 +13,7 @@
         </h3>
       </div>
     </div>
-    <div class="row filter-row hidden">
+    <div class="row filter-row">
       <div class="col-12 col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 filter-container">
         <div class="tabs-container tabs-5">
           <button class= "tab" data-city="barranquilla">Barranquilla</button>
@@ -24,54 +24,50 @@
         </div>
       </div>
     </div>
-    <div class="row model-row hidden">
+    <div class="row model-row">
       <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-lg-5 model-container">
         <div class="model barranquilla hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection"
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiZWM0MjkyYzItM2QzYS00Zjk3LWIwMzQtMmRkOGE2MTAzOTNhIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
             src
             frameborder="0"></iframe>
         </div>
         <div class="model bogota active">
           <iframe 
-            src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection23b1c72172eb8a048d31"
+            src="https://app.powerbi.com/view?r=eyJrIjoiYTQzMzE4ODUtZjlhMy00YWRmLWJhZjEtZjkxOTcyY2RjNTU3IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
             frameborder="0"></iframe>
         </div>
         <div class="model cali hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSection65264f65514030cc48e0" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiZThjNjY4YTUtZjJjOS00YWVkLWFiNTEtOTI1MTNmMDk1NWM2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
             frameborder="0"></iframe>
         </div>
         <div class="model cartagena hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSectionea2653228035ea5c955a" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiNzdkYmM0ZWUtY2Q1NS00M2ViLWEzYTAtZDVlNThjNjFiYTFiIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
             frameborder="0"></iframe>
         </div>
         <div class="model medellin hidden">
           <iframe 
-            data-src="https://app.powerbi.com/view?r=eyJrIjoiMWNmMTYzYTMtZWY4Yi00MDdkLWFiMzctMGY5ZWQ5MzJmYmIwIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9&pageName=ReportSectionbd834c60d0902baec757" 
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiNWUwZTY4NGUtMjNhMC00Mzg4LTg0MzUtODcwN2QxYTMzYjAxIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
             frameborder="0"></iframe>
         </div>
       </div>
     </div>
-    <div class="row d-flex align-items-center impacto-row">
+    <!-- <div class="row d-flex align-items-center impacto-row">
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-xl-1 offset-md-0 offset-sm-1 p-md-5 text-container">
-        <!-- <div class="row title-row">
-          <div class="col-10 offset-1"> -->
-            <h2><?php _e('Sistema de Inteligencia Epidemiológica del <span class="color-green">COVID-19</span>','siscovid')?></h2>
-            <h4 class="color-blue h2"><span class="subtitle"><?php _e('Impacto del proyecto', 'siscovid'); ?></span></h4>
-          <!-- </div>
-        </div> -->
+        <h2><?php _e('Sistema de Inteligencia Epidemiológica del <span class="color-green">COVID-19</span>','siscovid')?></h2>
+        <h4 class="color-blue h2"><span class="subtitle"><?php _e('Impacto del proyecto', 'siscovid'); ?></span></h4>
         <p><?php _e('Brindar una herramienta a los tomadores de decisiones con información actualizada recolectada durante la epidemia que permita evaluar escenarios que nos ayuden a tomar decisiones inteligentes sobre el aislamiento y la distancia social.', 'siscovid'); ?></p>
         <p><?php _e('Determinar cómo podemos proteger a nuestra sociedad mientras mantenemos un equilibrio económico en las ciudades, sin enfrentar el dilema de salud o economía, sino entendiendo que ambas dimensiones van de la mano.', 'siscovid'); ?><p>
       </div>
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-md-0 offset-sm-1 pt-sm-4 banner-container" id="vega-map" >
         <iframe id="map-iframe" src="https://fabiancpl.github.io/siscovid/colombia-map/index.html" frameborder="0"></iframe>
       </div>
-    </div>
+    </div> -->
     <div class="row d-flex align-items-center encuestas-row background-light">
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 p-md-5 text-container">
         <h2><?php _e('Encuesta Telefónica', 'siscovid'); ?></span></h2>

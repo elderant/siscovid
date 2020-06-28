@@ -71,6 +71,10 @@
   justify-content: space-around;
 }
 
+#project .filter-container .tabs-container {
+  background-color: white;
+}
+
 #project .filter-row {
   margin-bottom: 3rem;
 }
@@ -581,6 +585,114 @@
 
 #methodology .project-methodology-row img.animate {
   opacity: 0;
+}
+
+#methodology .filter-row .tabs-container {
+  z-index: 1;
+  display: block;
+  position: relative;
+  min-height: 258px;
+  border-radius: unset;
+  overflow: visible;
+  box-shadow: none;
+}
+
+#methodology .filter-row .tab-container {
+  position: absolute;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background-color: white;
+}
+
+#methodology .tab-container.datos {
+  width: 24%;
+  bottom: 0.5vw;
+  left: 0;
+}
+
+#methodology .tab-container.modelos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 48%;
+  top: 0.5vw;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#methodology .tab-container.intervenciones {
+  width: 24%;
+  right: 0;
+  bottom: 0.5vw;
+}
+
+#methodology .filter-row .tab-container .tab {
+  width: 100%;
+  border-radius: 10px 10px 5px 5px;
+}
+
+#methodology .filter-row .tab-container.modelos .title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+#methodology .filter-row .tab-container.modelos .tab {
+  width: 50%;
+}
+
+#methodology .filter-row .arrows-container {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#methodology .arrows-container .arrow {
+  position: absolute;
+  height: 4px;
+  border-radius: 2px 0 0 2px;
+  background-color: black;
+}
+
+#methodology .arrows-container .arrow.datos-modelos {
+  bottom: 122px;
+  left: 6vw;
+  width: 136px;
+  transform: rotate(-45deg);
+}
+
+#methodology .arrows-container .arrow.modelos-intervenciones {
+  bottom: 127px;
+  right: 6vw;
+  width: 136px;
+  transform: rotate(45deg);
+}
+
+#methodology .arrows-container .arrow.intervenciones-datos {
+  bottom: 32px;
+  right: 13.5vw;
+  width: 22.5vw;
+  transform: rotate(180deg);
+}
+
+#methodology .arrows-container .arrow:after {
+  content: '';
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-width: 12px;
+  border-left-color: black;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-style: solid;
+  transform: translate(0, -50%);
 }
 
 #methodology .model {

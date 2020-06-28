@@ -5,18 +5,32 @@
         <h2><?php _e('Información detallada','siscovid')?></h2>
       </div>
     </div>
-    <div class="row project-methodology-row">
+    <!-- <div class="row project-methodology-row">
       <div class="col-12 col-xl-6 col-xl1-8 col-lg-8 col-sm-10 offset-xl-3 offset-xl1-2 offset-lg-2 offset-sm-1">
         <img class="animate" src="/wp-content/uploads/methodology-project.png" alt="<?php _e('Metodología del projecto', 'siscovid')?>">
       </div>
-    </div>
+    </div> -->
     <div class="row filter-row">
       <div class="col-xl-6 col-xl1-8 col-md-10 col-12 offset-xl-3 offset-xl1-2 offset-md-1 filter-container">
         <div class="tabs-container tabs-4">
-          <button class="tab active" data-model="datos"><?php _e('Datos','siscovid');?></button>
-          <button class="tab" data-model="agents"><?php _e('Modelo basado en agentes','siscovid');?></button>
-          <button class="tab" data-model="metapoblacional"><?php _e('Modelo Metapoblacional','siscovid');?></button>
-          <button class="tab" data-model="intervenciones"><?php _e('Intervenciones','siscovid');?></button>
+          <div class="tab-container datos">
+            <button class="tab active" data-model="datos"><?php _e('Datos','siscovid');?></button>
+          </div>
+          <div class="tab-container modelos">
+            <div class="title">
+              <?php _e('Modelos','siscovid');?>
+            </div>
+            <button class="tab" data-model="agents"><?php _e('Modelo basado en agentes','siscovid');?></button>
+            <button class="tab" data-model="metapoblacional"><?php _e('Modelo Metapoblacional','siscovid');?></button>
+          </div>
+          <div class="tab-container intervenciones">
+            <button class="tab" data-model="intervenciones"><?php _e('Intervenciones','siscovid');?></button>
+          </div>
+        </div>
+        <div class="arrows-container">
+          <div class="arrow datos-modelos"></div>
+          <div class="arrow modelos-intervenciones"></div>
+          <div class="arrow intervenciones-datos"></div>
         </div>
       </div>
     </div>
