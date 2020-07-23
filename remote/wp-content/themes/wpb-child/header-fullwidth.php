@@ -49,7 +49,7 @@
                                     <a class="first-item mail" href="mailto:siscovid@uniandes.edu.co"><i class="fas fa-envelope"></i></a>
                                     <a class="facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i></i></a>
                                     <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i></a>
-                                    <a class="last-item github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i></a>
+                                    <a class="last-item github" href="https://github.com/orgs/SISCOVID" target="_black"><i class="fab fa-github"></i></a>
                                     <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i></a> -->
                                 </div>
                             </div>

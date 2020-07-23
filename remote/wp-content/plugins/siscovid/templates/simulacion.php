@@ -10,9 +10,34 @@
         <p><?php _e('La siguiente herramienta permite evaluar diferentes escenarios de intervención para el control y mitigación del <span class="color-green">COVID-19</span> por ciudad, localidades y grupos de edad.','siscovid')?></p>
       </div>
     </div>
+    <div class="row filter-row">
+      <div class="col-12 col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 filter-container">
+        <div class="tabs-container tabs-3">
+          <button class= "tab" data-city="barranquilla">Barranquilla</button>
+          <button class= "tab active" data-city="bogota">Bogotá</button>
+          <button class= "tab" data-city="cartagena">Cartagena</button>
+        </div>
+      </div>
+    </div>
     <div class="row model-row vertical">
-      <div class="col-12 col-xl-10 offset-xl-1 col-xl1-12 offset-xl1-0 p-0 model-container">
-        <iframe src="https://fabiancpl.github.io/siscovid/agents-viz/" frameborder="0"></iframe>
+      <div class="col-12 col-xl-10 offset-xl-1 p-0 model-container">
+        <div class="model barranquilla hidden">
+          <iframe 
+            data-src="https://fabiancpl.github.io/siscovid/agents-viz/index.html?city=barranquilla"
+            src
+            frameborder="0"></iframe>
+        </div>
+        <div class="model bogota active">
+          <iframe 
+            src="https://fabiancpl.github.io/siscovid/agents-viz/index.html?city=bogota"
+            frameborder="0"></iframe>
+        </div>
+        <div class="model cartagena hidden">
+          <iframe 
+            data-src="https://fabiancpl.github.io/siscovid/agents-viz/index.html?city=cartagena" 
+            src
+            frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="row page-outro">

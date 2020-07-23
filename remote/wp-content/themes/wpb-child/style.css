@@ -31,6 +31,14 @@ Text Domain:	 wpb-child
 	--light-dark-shade: #dadbe6;
 
 	--dark: #797a85;
+	
+	/* static sections animations*/
+	--data-top: 0;
+	--data-height: 300;
+	--data-start-offset:0;
+	--data-end-offset:0;
+	--data-transition-offset: 0;
+	--data-self-height: 0;
 }
 
 /* font - Oswald */
@@ -243,6 +251,14 @@ button:active {
 
 .tabs-container .tab:hover {
 	color: var(--blue);
+}
+
+.tabs-container.tabs-2 .tab {
+	width: 49.75%;
+}
+
+.tabs-container.tabs-3 .tab {
+	width: 33%;
 }
 
 .tabs-container.tabs-4 .tab {

@@ -22,7 +22,7 @@
 .page-id-2.page-template-fullwidth #content.site-content {
   background: url(/wp-content/uploads/home-background.png);
   background-repeat: no-repeat;
-  padding-top: calc(165px + 3rem);
+  padding-top: calc(165px + 5rem);
   background-position-x: -300px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 #project .row {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   /* padding-top: 2rem; */
   /* padding-bottom: 2rem; */
 }
@@ -66,6 +66,17 @@
   border-left: solid 1px var(--blue);
 }
 
+#project .page-intro h2,
+#project .page-intro h4,
+#project .page-intro span {
+  text-align: center;
+}
+
+#project .page-intro h4.h2 {
+  margin-bottom: 0;
+  line-height: 0.2em;
+}
+
 #project .filter-container {
   display: flex;
   justify-content: space-around;
@@ -79,9 +90,13 @@
   margin-bottom: 3rem;
 }
 
+#project .row.model-row{
+  margin-bottom: 0;
+}
+
 #project .model-container {
   position: relative;
-  height: 49.5vw;
+  height: fit-content;
 }
 
 #project .model-row .temp-title {
@@ -95,17 +110,32 @@
 
 #project .model-row iframe {
   width: 100%;
-  height: 48vw;
+  height: 48.5vw;
+  box-shadow: none;
+}
+
+#project .model-row .model.no-complement iframe {
+  margin-bottom: 3rem;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+#project .model-row iframe.github-complement {
+  width: 100%;
+  height: 26vw;
+  margin-bottom: 3rem;
+  padding: 0;
+  padding-top: 3rem;
+  background: white;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 #project .model-row .model {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  overflow-x: scroll;
+  height: fit-content;
+  overflow-x: auto;
 }
 
 #project ul.marker-globe {
@@ -484,6 +514,11 @@
   justify-content: space-around;
 }
 
+#simulation .page-intro p,
+#simulation .page-outro p {
+  text-align: center;
+}
+
 #simulation .model-row {
   margin-top: 3rem;
 }
@@ -518,19 +553,29 @@
 }
 
 #simulation .model-row.vertical iframe {
-  height: 3700px;
+  height: 2200px;
   max-width: 100vw;
   padding: 0;
   overflow-y: auto;
 }
 
+#simulation .model-row.vertical .model.barranquilla iframe {
+  height: 2400px;
+}
+#simulation .model-row.vertical .model.bogota iframe {
+  height: 3500px;
+}
+#simulation .model-row.vertical .model.cartagena iframe {
+  height: 2200px;
+}
+
 #simulation .model {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
 
 /*****************************************************/
@@ -1283,6 +1328,11 @@
   margin-bottom: 2rem;
 }
 
+#methodology .datos .overview .datos-part.facebook img {
+  max-width: 60%;
+  padding: .5rem .25rem;
+}
+
 #methodology .datos .overview .datos-part.transporte img {
   padding: 0.5rem 0.25rem;
   max-width: 33%;
@@ -1312,6 +1362,11 @@
   font-size: 1.2em;
 }
 
+#methodology .datos .source-explanation.facebook img {
+  max-width: 60%;
+  padding: .5rem .25rem;
+}
+
 #methodology .datos .source-explanation h4 {
   text-align: center;
 }
@@ -1320,7 +1375,6 @@
   padding: 1rem;
   border: 2px dashed var(--dark);
 }
-
 
 #methodology .datos .source-explanation.transporte img {
   max-width: 33%;
@@ -1420,4 +1474,503 @@
 
 #survey .download-button-row {
   margin-bottom: 2rem;
+}
+
+/***************************************************/
+/******************** Politicas ********************/
+/***************************************************/
+.page-politicas header#masthead {
+  background-color: var(--light);
+}
+
+#policy .title-row {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#policy .title {
+  margin-bottom: 1em;
+  color: var(--blue);
+  text-align: center;
+}
+
+#policy .image-description {
+  width: 100%;
+  margin-top: 0.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--blue);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+#policy .cities-text h3 {
+  line-height: 45px;
+}
+#policy .title .icon {
+  padding-right: 1rem;
+}
+
+#policy .light-background {
+  background-color: var(--light);
+  box-shadow: 7px 7px 20px 0 rgba(0,0,0,0.1);
+}
+
+#policy .light-shade-background {
+  background-color: var(--light-dark-shade);
+  box-shadow: 7px 7px 20px 0 rgba(0,0,0,0.1);
+}
+
+#policy .cities-text h4 {
+  margin-bottom: 1rem;
+}
+
+#policy .cities-text ul {
+  padding: 1rem 1rem 1rem 40px;
+}
+
+/* START first static element */ 
+#policy .static-row.introduction {
+  position: relative;
+  height: calc(6900px + 50vh);
+  overflow: hidden;
+}
+
+#policy .static-row .static-container {
+  position: relative;
+  width: 100%;
+}
+
+#policy .static-element {
+  visibility: hidden;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+#policy .static-subelement {
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: center;
+}
+
+#policy .static-element.in {
+  visibility: visible;
+  position: fixed;
+  opacity: 1;
+}
+
+#policy .static-element.entering {
+  visibility: visible;
+  position: fixed;
+}
+
+#policy .static-subelement.in {
+  visibility: visible;
+  opacity: 1;
+}
+
+#policy .static-subelement.entering {
+  visibility: visible;
+}
+
+#policy .static-element.entering.out,
+#policy .static-element.in.out,
+#policy .static-subelement.out {
+  visibility: hidden;
+  position: static;
+}
+
+#policy .static-element.first-element {
+  visibility: visible;
+  position: absolute;
+  top: 50vh;
+  opacity: 1;
+}
+
+#policy .static-element.in.first-element {
+  position: fixed;
+  top: 50%;
+}
+
+#policy .static-element.out.last-element {
+  visibility: visible;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  transform: translate(-50%, 0%);
+  margin-bottom: calc(1em + 24px + 4rem);
+}
+
+#policy .static-element.fade-in.entering,
+#policy .static-subelement.fade-in.entering {
+  opacity: min(1, calc((var(--data-top) - var(--data-start-offset)) / var(--data-height)));
+}
+#policy .static-element.fade-out.exiting,
+#policy .static-subelement.fade-out.exiting {
+  opacity: max(0, calc((var(--data-end-offset) + var(--data-height) - var(--data-top)) / var(--data-height)));
+}
+
+#policy .static-element.zoom-in.entering {
+  transform: translate(-50%, -50%) scale( min(1, calc((var(--data-top) - var(--data-start-offset)) / var(--data-height))));
+}
+
+#policy .static-subelement.zoom-in.entering {
+  transform: scale( min(1, calc((var(--data-top) - var(--data-start-offset)) / var(--data-height))));
+}
+
+#policy .static-subelement.zoom-out-in.entering {
+  transform: scale( max(1, calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height)) * 5 + 1)));
+}
+
+
+#policy .static-element.slide-out-up.exiting,
+#policy .static-subelement.slide-out-up.exiting {
+  transform: translate(-50%, min(100%,calc(((var(--data-end-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*150% - 200%)));
+}
+
+#policy .static-subelement.slide-left-out.exiting {
+  transform: translateX(max(-100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*-100%)));
+}
+
+#policy .static-subelement.slide-right-in.entering {
+  transform: translateX(max(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*100%)));
+}
+
+#policy .static-subelement.slide-left-in.entering {
+  transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
+}
+
+/* specific */
+#policy .introduction-image .first-image {z-index: 1;}
+#policy .introduction-image .second-image {z-index: 2;}
+#policy .introduction-image .third-image {z-index: 3;}
+
+#policy .introduction-image .static-subelement.first-image.transition {
+  transform: translateX(min(23vw, calc(((var(--data-top) - var(--data-transition-offset)) / var(--data-height))*23vw)) );
+}
+
+#policy .introduction-image .static-subelement.third-image.transition {
+  transform: translateX(max(-23vw, calc(((var(--data-top) - var(--data-transition-offset)) / var(--data-height))*-23vw)) );
+}
+
+#policy .map-section {
+  text-align: center;
+}
+
+#policy .map-section iframe {
+  width: 600px;
+  height: 578px;
+}
+
+#policy .factors-text .factors-container {
+  justify-content: space-evenly;
+}
+
+#policy .factors-text .factor-container {
+  width: 40%;
+} 
+
+#policy .factors-text .factor-container h4 {
+  font-weight: bold;
+}
+
+#policy .interventions-text .graph {
+  position: absolute;
+  top: calc(45px + 28px + 72px + 16px);
+  width: 100%;
+  min-height: 460px;
+  text-align: center;
+}
+
+#policy .interventions-text .graph .first-text {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+#policy .interventions-text .graph .second-text {
+  margin-top: 0.5rem;
+}
+/* End first static element */ 
+
+#policy .table-row {
+  text-align: center;
+}
+
+#policy .row.epidemic-intelligence-text-row {
+  margin-top: 2rem;
+}
+
+#policy ol.lettered-list {
+  list-style: none;
+  counter-reset: number-counter;
+}
+
+#policy ol.style-color-blue li {
+  counter-increment: number-counter;
+}
+
+#policy ol.style-color-blue li::before {
+  content: counter(number-counter) ". ";
+  color: var(--blue);
+}
+
+/* Start second static element */
+#policy .effectiveness-image-row .title {
+  margin-bottom: 1rem;
+}
+
+#policy .effectiveness-image-row .h2 {
+  margin-bottom: 0.5rem
+}
+
+#policy .static-row.effectiveness-image-row {
+  position: relative;
+  height: calc(6000px + 50vh);
+  overflow: hidden;
+}
+
+#policy .effectiveness-image-row .image-div {
+  text-align: center;
+}
+
+#policy .effectiveness-image-row .image-div > img.image {
+  max-height: 550px;
+}
+
+/* Tasa containers definition */
+#policy .effectiveness-image-container .tasa-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+}
+
+#policy .effectiveness-image-container .tasa-container.left {
+  transform: translateX(-100%);
+}
+
+
+/* Tasa value */
+#policy .effectiveness-image-container .tasa-container .value {
+  position: absolute;
+  color: white;
+}
+
+#policy .effectiveness-image-container .tasa-container.left .value {
+  left: auto;
+  right: 0;
+  transform: translateX(50%);
+}
+
+#policy .effectiveness-image-container .tasa-container.right .value {
+  right: auto;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+/* Tasa text container */
+#policy .effectiveness-image-container .tasa-container .text {
+  display: flex;
+  align-items: center;
+  text-align: left;
+} 
+
+/* Tasa Text items */
+#policy .effectiveness-image-container .tasa-container .text p {
+  margin: 0;
+  text-align: left;
+}
+
+#policy .effectiveness-image-container .tasa-container.left .text .icon {
+  align-self: flex-end;
+}
+
+#policy .effectiveness-image-container .tasa-container.left .text .icon {
+  max-height: 45px;
+  padding-left: 0.5rem;
+}
+
+#policy .effectiveness-image-container .tasa-container.right .text .icon {
+  max-height: 45px;
+  padding-right: 0.5rem;
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow {
+  position: relative;
+  width: 7vw;
+  height: 2px;
+  background-color: var(--black);
+  margin: 0 1rem;
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow.down {
+  transform: rotateZ(90deg);
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow.right {
+  /* right: -56%; */
+  margin: 0 1rem 0 0.5rem;
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow.left {
+  /* right: 103%; */
+  margin: 0 0.5rem 0 1rem;
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 0;
+  border: solid var(--black);
+  border-width: 6px;
+  padding: 0px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: translate(-100%, -50%);
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow.right::after {
+  left: 0;
+  border-left-color: transparent;
+  transform: translate(-100%, -50%);
+}
+
+#policy .effectiveness-image-container .tasa-container .arrow.left::after {
+  right: 0;
+  border-right-color: transparent;
+  transform: translate(100%,-50%);
+}
+
+/* Specific */
+#policy .effectiveness-image-container .tasa-container.tasa-2-6 {top: 14vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-2-6 .text {max-width: 300px;}
+#policy .effectiveness-image-container .tasa-container.tasa-2-6 .text p {
+  padding: 0.5rem;
+  background-color: var(--orange);
+  color: white;
+}
+
+#policy .effectiveness-image-container .tasa-container.tasa-2-5 {top: 19vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-2-5 .text {max-width: 375px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-disminucion {top: 26vh;}
+#policy .effectiveness-image-container .tasa-disminucion .arrow.down.right {
+  width: 3vw;
+  margin-right: 0;
+  margin-left: auto;
+  background-color: var(--white);
+  transform: translateX(50%) rotateZ(-90deg);
+}
+#policy .effectiveness-image-container .tasa-disminucion .arrow.down.right::after {border-right-color: var(--white);}
+
+#policy .effectiveness-image-container .tasa-container.tasa-disminucion .text {max-width: 148px;color: var(--blue);}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-8 {top: 35vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-8 .text {max-width: 325px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-7 {top: 39vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-7 .text {max-width: 375px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-6 {top: 43vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-6 .text {max-width: 325px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-medidas {top: 52vh;left: 48%;}
+#policy .effectiveness-image-container .tasa-container.tasa-medidas .text {max-width: 178px;color: var(--blue);}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-4 {top: 58vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-4 .text {max-width: 375px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-2 {top: 64vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-2 .text {max-width: 325px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-1 {top: 68vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-1 .text {max-width: 375px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-1-0 {top: 72vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-1-0 .text {max-width: 370px;}
+
+#policy .effectiveness-image-container .tasa-container.tasa-0-9 {top: 76vh;}
+#policy .effectiveness-image-container .tasa-container.tasa-0-9 .text {max-width: 500px;}
+/* End Second static element */
+
+/* Tipos de intervenciones main content */
+
+#policy .interventions-types-section {
+  position: relative;
+}
+
+#policy .interventions-index {
+  position: absolute;
+  top: 4.5%;
+  left: 7%;
+}
+
+#policy .interventions-index.fixed {
+  position: fixed;
+  top: 50%;
+  left: 27%;
+  transform: translate(-50%,-50%);
+}
+
+#policy .interventions-index.fixed.exit {
+  position: absolute;
+  top: unset;
+  bottom: 0%;
+}
+
+#policy .interventions-inf-personal-image .first-text {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+#policy .interventions-inf-personal-image .second-text {
+  margin-top: 0.5rem;
+}
+
+#policy .interventions-inf-community {
+  margin-top: 2rem;
+}
+
+#policy .interventons-pharmacological-image {
+  text-align: center;
+}
+
+#policy .implemented-row {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#policy .implemented-row iframe {
+  width: 1025px;
+  height: 450px;
+} 
+
+#policy .social-distancing-intro,
+#policy .community-intro-row {
+  margin-top: 3rem;
+}
+
+#policy .social-distancing-image p {
+  padding: 0 1rem;
+  line-height: 2;
+}
+
+#policy .community-maxims {
+  margin-top: 3rem;
+}
+
+#policy .community-maxims .maxim {
+  height: 500px;
+}
+
+#policy .community-maxims .maxim-image {
+  height: 500px;
 }

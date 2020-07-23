@@ -49,7 +49,7 @@
           <div class="footer-social-container">
             <a class="first-item facebook" href="https://www.facebook.com/siscovidcol/" target="_black"><i class="fab fa-facebook-f"></i> <?php _e('Facebook','wpbchild');?></a>
             <a class="twitter" href="https://twitter.com/siscovid" target="_black"><i class="fab fa-twitter"></i> <?php _e('Twitter','wpbchild');?></a>
-            <a class="github" href="https://github.com/Proyecto-COVID-19" target="_black"><i class="fab fa-github"></i> <?php _e('Github','wpbchild');?></a>
+            <a class="github" href="https://github.com/orgs/SISCOVID" target="_black"><i class="fab fa-github"></i> <?php _e('Github','wpbchild');?></a>
             <a class="last-item mail" href="mailto:siscovid@uniandes.edu.co"><i class="fas fa-envelope"></i><?php _e('siscovid@uniandes.edu.co','wpbchild')?></a>
             <!-- <a class="last-item instagram" href="https://www.instagram.com/siscovid/" target="_black"><i class="fab fa-instagram"></i> <?php _e('Instagram','wpbchild');?></a> -->
           </div>

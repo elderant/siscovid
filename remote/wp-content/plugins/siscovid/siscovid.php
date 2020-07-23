@@ -111,3 +111,11 @@ function siscovid_build_encuestas_html ( $lang ) {
 
 add_shortcode( 'siscovid_encuestas', 'siscovid_build_encuestas_html' );
 
+
+
+function siscovid_build_politicas_html ( $lang ) {
+	$template_url = siscovid_load_template('politicas.php');
+	load_template($template_url, true);
+}
+add_shortcode( 'siscovid_politicas', 'siscovid_build_politicas_html' );
+

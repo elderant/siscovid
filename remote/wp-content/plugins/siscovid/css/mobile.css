@@ -65,15 +65,27 @@
 		border-top: solid 1px var(--blue);
 	}
 
-	#project .model-container,
-	#project .model-row iframe {
-    height: 575px;
+	#project .model-row .model {
+		max-width: none;
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 1.5rem;
 	}
 
 	#project .model-row iframe {
-		max-width: none;
-		padding: 1.5rem 0;
-		width: 925px;
+		height: 62vw;
+		padding: 0 1.5rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 150vw;
+		padding: 3rem 0rem 0;
 	}
 
 	#project #vega-map {
@@ -148,8 +160,14 @@
 		width: 925px;
 	}
 
-	#simulation .model-row.vertical iframe {
-		height: 8600px;
+	#simulation .model-row.vertical .model.barranquilla iframe {
+		height: 4920px;
+	}
+	#simulation .model-row.vertical .model.bogota iframe {
+		height: 8300px;
+	}
+	#simulation .model-row.vertical .model.cartagena iframe {
+		height: 4500px;
 	}
 
 	#methodology .arrows-container .arrow.datos-modelos {
@@ -175,6 +193,11 @@
 	#methodology .datos .overview .datos-part {
 		width: 43%;
 		min-height: 230px;
+	}
+
+	#methodology .datos .overview .datos-part.facebook img {
+		max-width: 80%;
+		padding: .5rem .25rem;
 	}
 
 	#methodology .datos .source-explanation .image-container {
@@ -244,15 +267,27 @@
 		border-top: solid 1px var(--blue);
 	}
 
-	#project .model-container,
-	#project .model-row iframe {
-    height: 575px;
+	#project .model-row .model {
+		max-width: none;
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 1.5rem;
 	}
 
 	#project .model-row iframe {
-		max-width: none;
-		padding: 1.5rem 0;
-		width: 925px;
+		height: 59vw;
+		padding: 0 1.5rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 120vw;
+		padding: 3rem 0rem 0;
 	}
 
 	#project #vega-map {
@@ -329,8 +364,14 @@
 		width: 925px;
 	}
 
-	#simulation .model-row.vertical iframe {
-		height: 8450px;
+	#simulation .model-row.vertical .model.barranquilla iframe {
+		height: 4920px;
+	}
+	#simulation .model-row.vertical .model.bogota iframe {
+		height: 8300px;
+	}
+	#simulation .model-row.vertical .model.cartagena iframe {
+		height: 4500px;
 	}
 
 	#methodology .arrows-container .arrow.datos-modelos {
@@ -403,7 +444,7 @@
 }
 
 /*-- 3. STYLES FOR MOBILE DEVICES - media screen min width: 576px / max width: 649px --*/
-@media screen and (min-width: 576px) and (max-width: 649px) {	
+@media screen and (min-width: 576px) and (max-width: 649px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
 	}
@@ -416,15 +457,27 @@
 		font-size: 0.9rem;
 	}
 
-	#project .model-container,
-	#project .model-row iframe {
-    height: 575px;
+	#project .model-row .model {
+		max-width: none;
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 6rem;
 	}
 
 	#project .model-row iframe {
-		max-width: none;
-		padding: 1.5rem 0;
-		width: 925px;
+		height: 49vw;
+		padding: 0 6rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 82vw;
+		padding: 3rem 0 0;
 	}
 
 	#project #vega-map {
@@ -501,8 +554,14 @@
 		width: 925px;
 	}
 
-	#simulation .model-row.vertical iframe {
-		height: 3900px;
+	#simulation .model-row.vertical .model.barranquilla iframe {
+		height: 2500px;
+	}
+	#simulation .model-row.vertical .model.bogota iframe {
+		height: 3800px;
+	}
+	#simulation .model-row.vertical .model.cartagena iframe {
+		height: 2300px;
 	}
 	
 	#methodology .arrows-container .arrow.intervenciones-datos {
@@ -570,15 +629,34 @@
 		font-size: 0.9rem;
 	}
 
-	#project .model-container,
 	#project .model-row iframe {
-    height: 575px;
+    max-width: none;
+	}
+
+	#project .model-row .model {
+		padding: 0 6rem;
+	}
+
+	#project .model-row .model {
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 6rem;
 	}
 
 	#project .model-row iframe {
-		max-width: none;
-		padding: 1.5rem 0;
-		width: 925px;
+		height: 47vw;
+		padding: 0 6rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 75vw;
+		padding: 3rem 0 0;
 	}
 
 	#project #vega-map {
@@ -655,8 +733,14 @@
 		width: 925px;
 	}
 
-	#simulation .model-row.vertical iframe {
-		height: 3900px;
+	#simulation .model-row.vertical .model.barranquilla iframe {
+		height: 2500px;
+	}
+	#simulation .model-row.vertical .model.bogota iframe {
+		height: 3800px;
+	}
+	#simulation .model-row.vertical .model.cartagena iframe {
+		height: 2300px;
 	}
 	
 	#methodology .arrows-container .arrow.intervenciones-datos {
@@ -692,21 +776,30 @@
 		font-size: 1rem;
 	}
 
-	#project .model-container,
-	#project .model-row iframe {
-    height: 64vw;
-	}
-
-	#project .model-row iframe {
-		padding: 3rem;
-	}
-
 	#project #vega-map {
 		padding-left: 0rem;
 	}
 
-	#project #vega-map iframe {
-			height: 29rem;
+	#project .model-row .model {
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 6rem;
+	}
+
+	#project .model-row iframe {
+		height: 50.5vw;
+		padding: 0 6rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 62vw;
+		padding: 3rem 0 0;
 	}
 
 	#project iframe#map-iframe {
@@ -755,6 +848,16 @@
 		padding: 3rem;
 	}
 
+	#simulation .model-row.vertical .model.barranquilla iframe {
+		height: 2450px;
+	}
+	#simulation .model-row.vertical .model.bogota iframe {
+		height: 3600px;
+	}
+	#simulation .model-row.vertical .model.cartagena iframe {
+		height: 2200px;
+	}
+
 	#methodology .datos .overview .datos-part {
 		width: 45%;
 		min-height: 385px;
@@ -785,13 +888,26 @@
 		font-size: 1rem;
 	}
 
-	#project .model-container,
-	#project .model-row iframe {
-    height: 64vw;
+	#project .model-row .model {
+		padding: 0;
+	} 
+
+	#project .model-row .model.no-complement {
+		padding: 0 6rem;
 	}
 
 	#project .model-row iframe {
-		padding: 3rem;
+		height: 50.5vw;
+		padding: 0 6rem;
+	}
+
+	#project .model-row .model.no-complement iframe {
+		padding: 0;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 47vw;
+		padding: 3rem 6rem 0;
 	}
 
 	#project #vega-map {
@@ -864,13 +980,17 @@
 		padding-left: 3rem;
 	}
 
+	#project .model-row iframe.github-complement {
+		height: 39vw;
+	}
+
 	#project .resultados-row .model img {
 		max-height: 200px;
 	}
 
 	#team .team-carousel, 
 	#team .team-carousel .slick-list {
-		max-width: 821px;
+		max-width: 873px;
 	}
 
 	#team .member {
@@ -902,6 +1022,14 @@
 
 	#project #vega-map {
 		padding-left: 7rem;
+	}
+
+	#project .model-row iframe {
+    height: 49.5vw;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 37vw;
 	}
 
 	#project .resultados-row .model img {
@@ -943,6 +1071,10 @@
 		padding-left: 8rem;
 	}
 
+	#project .model-row iframe.github-complement {
+		height: 35vw;
+	}
+
 	#project .resultados-row .model img {
 		max-height: 200px;
 	}
@@ -974,6 +1106,10 @@
 		background-position-x: -490px;
 	}
 
+	#project .model-row iframe.github-complement {
+		height: 31vw;
+	}
+
 	#team .team-carousel, 
 	#team .team-carousel .slick-list {
 		max-width: 1098px;
@@ -996,6 +1132,10 @@
 @media screen and (min-width: 1680px) and (max-width: 1919px) {	
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -440px;
+	}
+
+	#project .model-row iframe.github-complement {
+		height: 29vw;
 	}
 
 	#methodology .datos .overview .datos-part {

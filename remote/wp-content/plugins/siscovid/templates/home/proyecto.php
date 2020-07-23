@@ -7,10 +7,15 @@
       <div class="col-lg-6 col-sm-7 col-12 pr-lg-0 description-column">
         <h3 class="pt-4 pt-sm-0">
           <strong>
-            <?php _e('<span class="color-blue">SIS</span><span class="color-green">COVID</span> <span class="color-blue">busca proveer una herramienta a los tomadores de decisión con información actualizada que permita evaluar escenarios de mitigación y control de la epidemia del</span> <span class="color-blue">COVID-19.</span>')?>
-          </strong><br/>
-          <?php _e('Esta web es una herramienta para los tomadores de decisión que provee información actualizada con el fin de contribuir a evaluar escenarios de mitigación y control de la epidemia del <span class="color-green">COVID-19</span>.')?>
+            <?php _e('<span class="color-blue">A través de esta web, SIS<span class="color-green">COVID</span> busca proveer una herramienta a los tomadores de decisión con información actualizada que permita evaluar escenarios de mitigación y control de la epidemia del COVID-19.</span>','siscovid')?>
+          </strong>
         </h3>
+      </div>
+    </div>
+    <div class="row page-intro">
+      <div class="col-12 col-sm-10 offset-sm-1 col-xl-8 offset-xl-2 col-xl1-8 offset-xl1-2 px-xl-3 px-3 px-lg-5 p-xl-0 text-container">
+        <h2><?php _e('Reporte actual de casos','siscovid')?></h2>
+        <h4 class="color-blue h2"><span class="subtitle"><?php _e('Consulte en este tablero interactivo el reporte actualizado de casos por ciudad','siscovid')?></h4>
       </div>
     </div>
     <div class="row filter-row">
@@ -25,31 +30,45 @@
       </div>
     </div>
     <div class="row model-row">
-      <div class="col-12 col-xl-10 offset-xl-1 p-xl-0 p-lg-5 model-container">
-        <div class="model barranquilla hidden">
+      <div class="col-12 col-xl-10 offset-xl-1 p-0 model-container">
+        <div class="model barranquilla no-complement hidden">
           <iframe 
             data-src="https://app.powerbi.com/view?r=eyJrIjoiZWM0MjkyYzItM2QzYS00Zjk3LWIwMzQtMmRkOGE2MTAzOTNhIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
             src
             frameborder="0"></iframe>
+            <!-- <iframe 
+            class="github-complement"
+            data-src="https://fabiancpl.github.io/siscovid/meta-viz/index.html?city=barranquilla"
+            src
+            frameborder="0"></iframe> -->
         </div>
-        <div class="model bogota active">
+        <div class="model bogota no-complement active">
           <iframe 
             src="https://app.powerbi.com/view?r=eyJrIjoiYTQzMzE4ODUtZjlhMy00YWRmLWJhZjEtZjkxOTcyY2RjNTU3IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9"
             frameborder="0"></iframe>
+            <!-- <iframe 
+            class="github-complement"
+            src="https://fabiancpl.github.io/siscovid/meta-viz/index.html?city=bogota"
+            frameborder="0"></iframe> -->
         </div>
-        <div class="model cali hidden">
+        <div class="model cali no-complement hidden">
           <iframe 
             data-src="https://app.powerbi.com/view?r=eyJrIjoiZThjNjY4YTUtZjJjOS00YWVkLWFiNTEtOTI1MTNmMDk1NWM2IiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
             frameborder="0"></iframe>
+            <!-- <iframe 
+            class="github-complement"
+            data-src="https://fabiancpl.github.io/siscovid/meta-viz/index.html?city=cali"
+            src
+            frameborder="0"></iframe> -->
         </div>
-        <div class="model cartagena hidden">
+        <div class="model cartagena no-complement hidden">
           <iframe 
             data-src="https://app.powerbi.com/view?r=eyJrIjoiNzdkYmM0ZWUtY2Q1NS00M2ViLWEzYTAtZDVlNThjNjFiYTFiIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
             frameborder="0"></iframe>
         </div>
-        <div class="model medellin hidden">
+        <div class="model medellin no-complement hidden">
           <iframe 
             data-src="https://app.powerbi.com/view?r=eyJrIjoiNWUwZTY4NGUtMjNhMC00Mzg4LTg0MzUtODcwN2QxYTMzYjAxIiwidCI6IjRjY2VlNTI2LTljZDktNGQxNC1iY2E2LWFiNzlkNzBhZjlmOSIsImMiOjR9" 
             src
@@ -79,7 +98,7 @@
           <li><?php _e('3 momentos diferentes.', 'siscovid'); ?></li>
           <li><?php _e('Total 12.600 Encuestas.', 'siscovid'); ?></li>
         </ul>
-        <a class="button" href="/reporte"><? _e('Reporte de encuestas','siscovid');?></a>
+        <a class="button" href="/reportes-encuestas"><? _e('Reporte encuestas','siscovid');?></a>
       </div>
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-xl-1 pt-sm-4 banner-container">
         <img src="/wp-content/uploads/home-encuestas-image.png" alt="<?php _e('Imagen para las encuestas', 'siscovid')?>">
@@ -97,8 +116,8 @@
           <li><?php _e('El número de hospitalizados en UCI.', 'siscovid'); ?></li>
           <li><?php _e('El número de muertes.', 'siscovid'); ?></li>
         </ul>
-        <a class="button methodology" href="/metodologia"><?php _e('Metodología','siscovid');?></a>
-        <a class="button results" href="/simulacion"><?php _e('Resultados','siscovid');?></a>
+        <a class="button methodology" href="/informacion-detallada"><?php _e('Información detallada','siscovid');?></a>
+        <a class="button results" href="/evaluacion-escenarios"><?php _e('Evaluación escenarios','siscovid');?></a>
       </div>
       <div class="col-xl-5 col-lg-6 col-md-6 col-sm-10 col-12 offset-md-0 offset-sm-1 pt-sm-4 banner-container">
         <div class="images-container">

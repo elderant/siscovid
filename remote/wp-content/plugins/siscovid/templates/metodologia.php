@@ -44,7 +44,10 @@
             <div class="col-12 d-flex flex-wrap justify-content-center align-items-start">  
               <div class="datos-part facebook">
                 <h4><?php _e('Primera','siscovid');?></h4>
-                <img class="animate-flip" src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Temporal datos image 1','siscovid')?>">
+                <div class="d-flex flex-wrap justify-content-around align-items-center">
+                  <img class="animate-flip" src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Imagen Facebook-geo','siscovid')?>">
+                  <img class="animate-flip" src="/wp-content/uploads/methodology-datos-luca.jpg" alt="<?php _e('Imagen Luca','siscovid')?>">
+                </div>
               </div>
               <div class="datos-part encuestas">
                 <h4><?php _e('Segunda','siscovid');?></h4>
@@ -93,8 +96,9 @@
                   <p><?php _e('A estos datos se le agrega el mallado geográfico usado por GeoInsights al nivel de localidad (o comuna), produciendo así matrices origen-destino entre localidades (comunas) que sirven como entrada para los dos modelos.','siscovid');?></p>
                 </div>
                 <div class="col-12 col-sm-4 order-1 order-sm-2 image-container">
-                  <div class="datos-part facebook">
-                    <img src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Temporal datos image 1','siscovid')?>">
+                  <div class="datos-part facebook d-flex flex-wrap justify-content-around align-items-center">
+                    <img src="/wp-content/uploads/methodology-datos-1.jpg" alt="<?php _e('Imagen Facebook-geo','siscovid')?>">
+                    <img class="animate-flip" src="/wp-content/uploads/methodology-datos-luca.jpg" alt="<?php _e('Imagen Luca','siscovid')?>">
                   </div>
                 </div>
               </div>

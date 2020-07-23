@@ -216,6 +216,30 @@
       'org'         => __('Universidad de los Andes','siscovid'),
       'profile'     => __('Miembro del equipo de modelación','siscovid'),
     ),
+    'carlos-cuervo' => array(
+      'class'       => 'carlos-cuervo',
+      'src'         => '/wp-content/uploads/carlosCuervo.jpeg',
+      'src-label'   => __('Foto de Carlos Cuervo','siscovid'),
+      'name'        => __('Carlos Cuervo', 'siscovid'),
+      'org'         => __('Movistar','siscovid'),
+      'profile'     => __('Miembro del equipo de datos','siscovid'),
+    ),
+    'marby-duarte' => array(
+      'class'       => 'marby-duarte',
+      'src'         => '/wp-content/uploads/marbyDuarte.jpeg',
+      'src-label'   => __('Foto de Marby Duarte','siscovid'),
+      'name'        => __('Marby Duarte', 'siscovid'),
+      'org'         => __('Movistar','siscovid'),
+      'profile'     => __('Miembro del equipo de comunicaciones','siscovid'),
+    ),
+    'esperanza-buitrago' => array(
+      'class'       => 'esperanza-buitrago',
+      'src'         => '/wp-content/uploads/esperanzaBuitrago.jpeg',
+      'src-label'   => __('Foto de Esperanza Buitrago','siscovid'),
+      'name'        => __('Esperanza Buitrago', 'siscovid'),
+      'org'         => __('Centro Nacional de Consultoría','siscovid'),
+      'profile'     => __('Miembro del equipo de modelamiento','siscovid'),
+    ),
   );
 ?>
 
