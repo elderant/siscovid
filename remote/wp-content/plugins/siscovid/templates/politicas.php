@@ -6,40 +6,63 @@
       </div>
     </div> 
     <div class="row static-row introduction">
-      <div class="introduction-text col-8 fade-in fade-out static-element first-element">
+      <div class="introduction-text col-8 fade-in fade-out slide-out-up static-element first-element">
         <h3 class="title"><?php _e('Introducción','siscovid')?></h3>
         <p><?php _e('La pandemia de <span class="color-green">COVID-19</span> no tiene precedentes en los últimos tiempos en términos de su propagación mundial, la morbilidad, mortalidad y la carga de enfermedad resultantes. Los países han adoptado diversas medidas de prevención y control para frenar la transmisión y así reducir la mortalidad asociada. Conforme avanza la pandemia los países y sus ciudades se enfrentan a los diferentes escenarios de transmisión bajo los cuales algunos intensifican las medidas al tiempo que otros las relajan.','siscovid')?></p>
-      </div>
-      <div class="introduction-image col-8 d-flex justify-content-between align-items-center flex-wrap fade-out slide-out-up static-element">
-        <img class="static-subelement fade-in zoom-in first-image" src="/wp-content/uploads/politicas-introduccion-1.png" alt="<?php _e('introduction image', 'siscovid')?>">
-        <img class="static-subelement fade-in zoom-in second-image" src="/wp-content/uploads/politicas-introduccion-2.png" alt="<?php _e('introduction image', 'siscovid')?>">
-        <img class="static-subelement fade-in zoom-in third-image" src="/wp-content/uploads/politicas-introduccion-3.png" alt="<?php _e('introduction image', 'siscovid')?>">
-        <p class="image-description static-subelement fade-in"><?php _e('Escenarios de transmisión','siscovid')?></p>
+        <div class="static-subelement introduction-image image-container fade-out d-flex justify-content-around flex-wrap">
+          <img class="static-subelement fade-in zoom-in first-image" src="/wp-content/uploads/politicas-introduccion-1.png" alt="<?php _e('introduction image', 'siscovid')?>">
+          <img class="static-subelement fade-in zoom-in second-image" src="/wp-content/uploads/politicas-introduccion-2.png" alt="<?php _e('introduction image', 'siscovid')?>">
+          <img class="static-subelement fade-in zoom-in third-image" src="/wp-content/uploads/politicas-introduccion-3.png" alt="<?php _e('introduction image', 'siscovid')?>">
+          <p class="image-description static-subelement fade-in"><?php _e('Escenarios de transmisión','siscovid')?></p>
+        </div>
       </div>
       <div class="cities-text col-8 fade-in fade-out static-element">
-        <h3 class="title"><img class="icon" src="/wp-content/uploads/politicas-ciudades-icon.png" alt="Cities icon"><?php _e('Ciudades','siscovid')?></h3>
-        <h4 class="color-blue h2"><span class="subtitle"><?php _e('Contextos urbanos', 'siscovid'); ?></span></h4>
-        <p class="static-subelement fade-in cities-p"><?php _e('Barranquilla, Bogotá, Cali, Cartagena y Medellín, así como las grandes ciudades en el mundo tienen más riesgo de propagación por sus densidades poblacionales, mayor conectividad y mayor actividad económica. Adicionalmente, el contexto colombiano presenta un reto adicional por los altos niveles de inequidad social, en los que poblaciones vulnerables habitan en hacinamiento, carecen de necesidades básicas y viven en asentamientos informales que a su vez suelen estar desempleados o dependen de economías informales.','siscovid')?></p>
-        <ul class="static-subelement fade-in background-light cities-ul">
-          <li><?php _e('<strong>Mapa con ciudades:</strong> Cali, Medellín, Bogotá, Barranquilla, Cartagena.','siscovid')?></li>
-          <li><?php _e('<strong>Generalidades de cada una:</strong> población, estructura de edad, capacidad hospitalaria, sectores, comorbilidades, movilidad, contexto.','siscovid')?></li>
-          <li><?php _e('<strong class="color-green">COVID:</strong> datos epidemiológicos (curvas ciudades).','siscovid')?></li>
-        </ul>
-      </div>
-      <div class="map-section col-8 fade-out static-element">
-        <iframe class="static-subelement zoom-out-in fade-in map" id="map-iframe" src="https://fabiancpl.github.io/siscovid/colombia-map/index.html" frameborder="0"></iframe>
+        <div class="row">
+          <div class="col-12">
+            <h3 class="title"><img class="icon" src="/wp-content/uploads/politicas-ciudades-icon.png" alt="Cities icon"><?php _e('Ciudades','siscovid')?></h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 d-flex justify-content-center flex-column">
+            <h4 class="color-blue h2"><span class="subtitle"><?php _e('Contextos urbanos', 'siscovid'); ?></span></h4>
+            <p class="static-subelement fade-in cities-p"><?php _e('Barranquilla, Bogotá, Cali, Cartagena y Medellín, así como las grandes ciudades en el mundo tienen más riesgo de propagación por sus densidades poblacionales, mayor conectividad y mayor actividad económica. Adicionalmente, el contexto colombiano presenta un reto adicional por los altos niveles de inequidad social, en los que poblaciones vulnerables habitan en hacinamiento, carecen de necesidades básicas y viven en asentamientos informales que a su vez suelen estar desempleados o dependen de economías informales.','siscovid')?></p>
+            <ul class="static-subelement fade-in background-light cities-ul hidden">
+              <li><?php _e('<strong>Mapa con ciudades:</strong> Cali, Medellín, Bogotá, Barranquilla, Cartagena.','siscovid')?></li>
+              <li><?php _e('<strong>Generalidades de cada una:</strong> población, estructura de edad, capacidad hospitalaria, sectores, comorbilidades, movilidad, contexto.','siscovid')?></li>
+              <li><?php _e('<strong class="color-green">COVID:</strong> datos epidemiológicos (curvas ciudades).','siscovid')?></li>
+            </ul>
+          </div>
+          <div class="col-6 map-column">
+            <iframe class="static-subelement zoom-out-in fade-in map" id="map-iframe" src="https://fabiancpl.github.io/siscovid/colombia-map/index.html" frameborder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div class="factors-text col-8 fade-in fade-out static-element">
-        <h3 class="title"><img class="icon" src="/wp-content/uploads/politicas-factors-icon.png" alt="Factors icon"><?php _e('¿Qué situaciones ocurren en las ciudades que facilitan la transmisión del SARS-COV2?','siscovid')?></h3>
-        
-        <div class="factors-container d-flex align-items-center">
-          <div class="factor-container">
-            <h4><?php _e('Hipercontacto:', 'siscovid'); ?></h4>
-            <p><?php _e('Número elevado de contactos estrechos, los contactos son de larga duración y son repetidos y usualmente con las mismas personas en escenarios cerrados y poco ventilados. Ejemplos: Oficinas, call centers, viviendas, fábricas, entre otros.', 'siscovid');?></p>
+        <div class="row">
+          <div class="col-12">
+            <h3 class="title"><img class="icon" src="/wp-content/uploads/politicas-factors-icon.png" alt="Factors icon"><?php _e('¿Qué situaciones ocurren en las ciudades que facilitan la transmisión del SARS-COV2?','siscovid')?></h3>
           </div>
-          <div class="factor-container">
-            <h4><?php _e('Hiperconectividad:', 'siscovid'); ?></h4>
-            <p><?php _e('Número elevado de contactos, pero los contactos son de corta duración y con muchas mas personas, usualmente desconocidos y no se repiten. Ejemplos: servicios de domicilio, transporte urbano y servicios de atención al cliente.', 'siscovid');?></p>
+        </div>
+        <div class="factor-container static-subelement fade-in first-factor">
+          <div class="row">
+            <div class="col-4 offset-2">
+              <h4><?php _e('Hipercontacto:', 'siscovid'); ?></h4>
+              <p><?php _e('Número elevado de contactos estrechos, los contactos son de larga duración y son repetidos y usualmente con las mismas personas en escenarios cerrados y poco ventilados. Ejemplos: Oficinas, call centers, viviendas, fábricas, entre otros.', 'siscovid');?></p>
+            </div>
+            <div class="col-4 image-column">
+              <img class="lazy loaded" src="/wp-content/uploads/politicas-maxims-2.png" data-src="/wp-content/uploads/politicas-maxims-3.png" alt="Third maxim icon" data-was-processed="true">
+            </div>
+          </div>
+        </div>
+        <div class="factor-container static-subelement fade-in second-factor">
+          <div class="row">
+            <div class="col-4 offset-2 image-column">
+              <img class="lazy loaded" src="/wp-content/uploads/politicas-maxims-2.png" data-src="/wp-content/uploads/politicas-maxims-3.png" alt="Third maxim icon" data-was-processed="true">
+            </div>
+            <div class="col-4">
+              <h4><?php _e('Hiperconectividad:', 'siscovid'); ?></h4>
+              <p><?php _e('Número elevado de contactos, pero los contactos son de corta duración y con muchas mas personas, usualmente desconocidos y no se repiten. Ejemplos: servicios de domicilio, transporte urbano y servicios de atención al cliente.', 'siscovid');?></p>
+            </div>
           </div>
         </div>
       </div>
@@ -175,12 +198,30 @@
             </div>
           </div>
 
-          <div class="tasa-container right tasa-0-9">
-            <div class="static-subelement value fade-in"><?php _e('0.9','siscovid');?></div>
+          <div class="tasa-container right tasa-m0-9">
+            <div class="static-subelement value fade-in"><?php _e('','siscovid');?></div>
             <div class="static-subelement text fade-in slide-right-in">
               <div class="arrow left"></div>
               <img class="icon" src="/wp-content/uploads/politicas-effectiveness-icon-0.9-2.png" alt="<?php _e('Icon for 2.5 rate','siscovid')?>">
-              <p><?php _e('+Rastreo manual de conocidos</br>+ Limitar a 4 contactos diarios adicionales','siscovid');?></p>
+              <p><?php _e('+Rastreo manual de todos los contactos','siscovid');?></p>
+            </div>
+          </div>
+
+          <div class="tasa-container left tasa-0-9">
+            <div class="static-subelement value fade-in"><?php _e('0.9','siscovid');?></div>
+            <div class="static-subelement text fade-in slide-left-in">
+              <p><?php _e('+Rastreo manual de conocidos</br>+Limitar a 4 contactos diarios adicionales','siscovid');?></p>
+              <img class="icon" src="/wp-content/uploads/politicas-effectiveness-icon-0.9-1.png" alt="<?php _e('Icon for 2.5 rate','siscovid')?>">
+              <div class="arrow right"></div>
+            </div>
+          </div>
+
+          <div class="tasa-container right tasa-e0-9">
+            <div class="static-subelement value fade-in"><?php _e('','siscovid');?></div>
+            <div class="static-subelement text fade-in slide-right-in">
+              <div class="arrow left"></div>
+              <img class="icon" src="/wp-content/uploads/politicas-effectiveness-icon-0.9-3.png" alt="<?php _e('Icon for 2.5 rate','siscovid')?>">
+              <p><?php _e('+Rastreo manual de conocidos</br>+limitar a 4 contactos diarios adicionales</br>+ Rastreo basado en aplicaciones (apps)','siscovid');?></p>
             </div>
           </div>
 
@@ -193,7 +234,96 @@
     <div class="interventions-types-section">
       <div class="row interventions-inf-personal">
         <div class="interventions-index">
-          <img src="/wp-content/uploads/politicas-interventions-table.png" alt="<?php _e('Interventions Types Image','siscovid')?>">
+          <div class="col-12 main-index-container">
+            <div class="row epidemic-intelligence index-row">
+              <div class="col-2 header">
+                <div class="header-div white-background"></div>  
+                <div class="header-div black-background"></div>
+                <div class="header-div color-background"></div>
+                <div class="header-div text"><? _e('Inteligencia epidemiológica','siscovid');?></div>
+              </div>
+              <div class="col-10">
+                <div class="row items-container">
+                  <div class="col-12 item-row">
+                    <span><?php _e('Detección temprana y aislamiento de los casos','siscovid');?></span>
+                  </div>
+                  <div class="col-2 item-row">
+                    <span><?php _e('Pruebas masivas','siscovid');?></span>
+                  </div>
+                  <div class="col-9 offset-1 item-row">
+                    <span><?php _e('Pruebas masivas','siscovid');?></span>
+                  </div>
+                  <div class="col-2 item-row">
+                    <span><?php _e('ID de contactos','siscovid');?></span>
+                  </div>
+                  <div class="col-8 offset-2 item-row">
+                    <span><?php _e('ID de contactos','siscovid');?></span>
+                  </div>
+                  <div class="col-12 item-row">
+                    <span><?php _e('Prevención y control de la infección en centros de salud (Trabajadores de salud)','siscovid');?></span>
+                  </div>
+                  <div class="col-12 item-row">
+                    <span><?php _e('Cuidado clínico apropiado y aumento de personal a necesidad','siscovid');?></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row inf index-row">
+              <div class="col-2 header">
+                <div class="header-div white-background"></div>  
+                <div class="header-div black-background"></div>
+                <div class="header-div color-background"></div>
+                <div class="header-div text"><? _e('Intervenciones no farmacológicas (IsNF)','siscovid');?></div>
+              </div>
+              <div class="col-10">
+                <div class="row items-container">
+                  <div class="col-12 item-row">
+                    <span><?php _e('Comunicación de riesgo y participación comunitaria (aceptación, ajustes a contexto)','siscovid');?></span>
+                  </div>
+                  <div class="col-12 item-row">
+                    <span><?php _e('Individuales diarias (lavado de manos, higiene respiratoria, aislamiento voluntario, máscaras faciales)','siscovid');?></span>
+                  </div>
+                  <div class="col-12 item-row">
+                    <span><?php _e('Ambientales (limpieza de superficies, ventilación)','siscovid');?></span>
+                  </div>
+                  <div class="col-10 offset-2  item-row">
+                    <span><?php _e('Comunitarias','siscovid');?></span>
+                  </div>
+                  <div class="col-2 offset-2  item-row multiple-lines">
+                    <span><?php _e('Cierre de Grupos de alto riesgo: Distanciamiento físico (DF)','siscovid');?></span>
+                  </div>
+                  <div class="col-2 item-row multiple-lines">
+                    <span><?php _e('DF general & cierre de establecimientos educativos','siscovid');?></span>
+                  </div>
+                  <div class="col-3 item-row multiple-lines">
+                    <span><?php _e('DF cierre generalizado','siscovid');?></span>
+                  </div>
+                  <div class="col-3 item-row multiple-lines">
+                    <span><?php _e('DF Cierre generalizado','siscovid');?></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row if">
+              <div class="col-2 header">
+                <div class="header-div white-background"></div>  
+                <div class="header-div black-background"></div>
+                <div class="header-div color-background"></div>
+                <div class="header-div text"><? _e('Intervenciones farmacológicas','siscovid');?></div>
+              </div>
+              <div class="col-10">
+                <div class="row items-container">
+                  <div class="col-9 offset-3 item-row">
+                    <span><?php _e('Tratamiento COVID - 19','siscovid');?></span>
+                  </div>
+                  <div class="col-4 offset-8 item-row">
+                    <span><?php _e('Vacunas','siscovid');?></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <img src="/wp-content/uploads/politicas-interventions-table.png" alt="<?php _e('Interventions Types Image','siscovid')?>"> -->
         </div>
         <div class="col-lg-4 offset-lg-6 col-sm-10 offset-sm-1 first-column">
           <p><?php _e('Las <strong>INF</strong> tienen como objetivo disminuir la transmisión entre personas, ralentizar la propagación de la enfermedad y, en consecuencia, reducir y retrasar el pico de su aparición. De esta manera, es posible reducir rápidamente la demanda de atención médica y mitigar las consecuencias de la enfermedad, incluida la disminución de la morbilidad y mortalidad asociada. Las INF tienen alcance individual, comunitario y ambiental.','siscovid')?></p>
@@ -237,9 +367,10 @@
           <img src="/wp-content/uploads/politicas-pharma-image-1.png" alt="<?php _e('Covid-19 Vacine development phases in numbers','siscovid')?>">
           <p class="image-description"><?php _e('Fases de desarrollo vacunas <span class="color-green">Covid-19</span>','siscovid')?></p>
           <p><?php _e('La Asociación Colombiana de Infectología ha desarrollado el consenso colombiano de atención, diagnóstico y manejo de la infección por SARS-COV2-COVID19 en establecimientos de atención de la salud. Esto corresponde a recomendaciones basadas en consensos de expertos informados en la evidencia. Esta asociación realiza actualizaciones constantes apoyándose en la mejor evidencia disponible. Para mas actualizaciones puede consultar:', 'siscovid');?></p>
-          <p><a href="https://www.revistainfectio.org/index.php/infectio/article/view/851" rel="nofollow">https://www.revistainfectio.org/index.php/infectio/article/view/851</a></p></div>
+          <p><a href="https://www.revistainfectio.org/index.php/infectio/article/view/851" rel="nofollow">https://www.revistainfectio.org/index.php/infectio/article/view/851</a></p>
         </div>      
       </div>
+
     </div>
 
     <div class="row implemented-row">
@@ -278,75 +409,75 @@
       </div>
 
       <div class="row community-maxims">
-        <div class="col-lg-4 offset-lg-2 col-sm-10 offset-sm-1 maxims-images">
-          <div class="maxim-image maxims-intro">
+        <div class="col-lg-4 offset-lg-2 col-sm-10 offset-sm-0 maxims-images">
+          <div class="maxim-image maxim-intro fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-intro.png" alt="<?php _e('Maxims intro icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-1">
+          <div class="maxim-image maxim-1 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-1.png" alt="<?php _e('First maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-2">
+          <div class="maxim-image maxim-2 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-2.png" alt="<?php _e('Second maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-3">
+          <div class="maxim-image maxim-3 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-3.png" alt="<?php _e('Third maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-4">
+          <div class="maxim-image maxim-4 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-4.png" alt="<?php _e('Fourth maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-5">
+          <div class="maxim-image maxim-5 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-5.png" alt="<?php _e('Fifth maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-6">
+          <div class="maxim-image maxim-6 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-6.png" alt="<?php _e('Sixth maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-7">
+          <div class="maxim-image maxim-7 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-7.png" alt="<?php _e('Seventh maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-8">
+          <div class="maxim-image maxim-8 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-8.png" alt="<?php _e('Eight maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-9">
+          <div class="maxim-image maxim-9 fade-in fade-out static-subelement">
             <img src="/wp-content/uploads/politicas-maxims-9.png" alt="<?php _e('Ninth maxim icon','siscovid');?>">
           </div>
-          <div class="maxim-image maxims-10">
+          <div class="maxim-image maxim-10 fade-in fade-out static-subelement last-element">
             <img src="/wp-content/uploads/politicas-maxims-10.png" alt="<?php _e('Tenth maxim icon','siscovid');?>">
           </div>
         </div>
-        <div class="col-lg-4 offset-lg-0 col-sm-10 offset-sm-1 maxims-texts">
+        <div class="col-lg-4 offset-lg-6 col-sm-10 offset-sm-1 maxims-text">
           <h4 class="title"><?php _e('Principios clave:','siscovid')?></h4>
-          <div class="maxim maxims-intro">
+          <div class="maxim maxim-intro">
             <h5><?php _e('Instrucciones claras y específicas', 'siscovid');?></h5>
             <p><?php _e('La información que se da al público debe tener una guía clara sobre qué comportamientos deben adoptarse para realizar el distanciamiento social','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-1">
+          <div class="maxim maxim-1">
             <p><?php _e('<strong>Promover la protección mutua</strong> al explicar como el distanciamiento social beneficia a toda la sociedad (incluyendo a nuestros seres queridos) y protege a los más vulnerables','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-2">
+          <div class="maxim maxim-2">
             <p><?php _e('<strong>¡Estamos juntos en esto!</strong> Enfatizar la pertenencia a grupos (como la familia, el barrio, las comunidades, el país) para despertar el sentimiento del deber, la responsabilidad social y la inclusión','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-3">
+          <div class="maxim maxim-3">
             <p><?php _e('<strong>"Así somos"</strong> Incluir mensajes de identidad y cultura grupal positiva','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-4">
+          <div class="maxim maxim-4">
             <p><?php _e('<strong>Evitar mensajes de miedo y desagrado</strong> hacia los demás ya que pueden fomentar estigmatización de personas o grupos','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-5">
+          <div class="maxim maxim-5">
             <p><?php _e('<strong>No usar mensajes autoritarios</strong> ya que estos sólo fomentan cambios en el corto plazo','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-6">
+          <div class="maxim maxim-6">
             <p><?php _e('<strong>Fomentar la creación de planes y revisarlos con frecuencia</strong>, anticipar barreras para seguirlos y facilitadores para la ahderencia','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-7">
+          <div class="maxim maxim-7">
             <p><?php _e('<strong>Usar incentivos</strong> y facilitar el acceso a educación, beneficios laborales, acceso a salid mental, entre otros','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-8">
+          <div class="maxim maxim-8">
             <p><?php _e('<strong>Comunicar los mensajes</strong> en campañas masivas y medios de comunicación y en redes sociales','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-9">
+          <div class="maxim maxim-9">
             <p><?php _e('Cada campaña debe <strong>definir claramente el cambio que quiere generar</strong> en la sociedad','siscovid'); ?></p>
           </div>
-          <div class="maxim maxims-10">
+          <div class="maxim maxim-10">
             <p><?php _e('<strong>Definir la forma de hacer llegar la información</strong> dependiendo de la población objetivo','siscovid'); ?></p>
           </div>
         </div>

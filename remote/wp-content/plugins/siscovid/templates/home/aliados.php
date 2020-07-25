@@ -9,7 +9,7 @@
       <div class="col-12 col-sm-10 offset-sm-1 allies allies-container">
         <img src="/wp-content/uploads/uniandes.jpeg" alt="Uniandes Logo">
         <img src="/wp-content/uploads/cnc.jpeg" alt="Centro nacional de consultoría Logo">
-        <img class="ginnova" src="/wp-content/uploads/ginnova.png" alt="Gestión e innovación empresarial Logo">
+        <img src="/wp-content/uploads/unibague.png" alt="Universidad de Ibagué">
         <img src="/wp-content/uploads/socialHealth.jpeg" alt="Social & health complexity center Logo">
         <img src="/wp-content/uploads/epiandes.jpeg" alt="EpiAndes Logo">
         <img src="/wp-content/uploads/santafe.png" alt="Fundación Santa Fe de Bogotá Logo">

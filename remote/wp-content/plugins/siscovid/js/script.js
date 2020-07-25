@@ -328,6 +328,9 @@
         else if($(this).hasClass('last-element')) {
           this.style.setProperty('--data-self-height', $(this).height());
         }
+        else if(className == 'fixed') {
+          this.style.setProperty('--data-top-fixed', $(window).scrollTop());
+        }
         $this.addClass(className);
       }
       else if(topOfWindow < height && $this.hasClass(className)) {
@@ -336,15 +339,8 @@
     };
   }
 
-  var zoomIn = function ($height) {
-    var topOfWindow = $(window).scrollTop();
-    
-    return function () {
-      var $this = $(this);
-      $this.css({
-        'opacity': Math.min((topOfWindow - 825) /$height , 1), 
-        'transform': 'translate(-50%, -50%) scale(' + Math.min((topOfWindow - 825) /$height , 1) + ')'})
-    }
+  var convertRemToPixels = function(rem) {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
   $(document).ready(function () {
@@ -388,7 +384,23 @@
     }
 
     if($('.page-politicas').length > 0) {
-      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('entering', 350));
+      let introStart = $('#policy .static-row.introduction').offset().top - window.innerHeight*0.1;
+      let interventionsStart = $('#policy .effectiveness-image-row').offset().top - window.innerHeight*0.4;
+      let indexStart = $('#policy .interventions-types-section').offset().top + window.innerHeight*0.25;
+      let indexEnd = indexStart + $('#policy .interventions-types-section').height() - window.innerHeight*0.9;
+
+      window.siscovid = {};
+      window.siscovid.scrollHeight = 450;
+      window.siscovid.heightOffset = 100;
+      
+      window.siscovid.intro = {start : introStart};
+      window.siscovid.interventions = {start : interventionsStart};
+      window.siscovid.index = {start : indexStart, end: indexEnd};
+      window.siscovid.maxims = {};
+
+      $('#policy .introduction')[0].style.height = (introStart + 16*window.siscovid.scrollHeight + 9*window.siscovid.heightOffset + window.innerHeight/2) + "px";
+      $('#policy .effectiveness-image-row')[0].style.height = (16*window.siscovid.scrollHeight + 2*window.siscovid.heightOffset + window.innerHeight) + "px";
+      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('entering', introStart));
     }
   });
 
@@ -405,132 +417,252 @@
     }
 
     if($('.page-politicas').length > 0) {
-      // $('#policy .static-row').each(function(){
-      //   debugger;
-      //   $(this).css('--data-top', $(window).scrollTop());
-      // });
       document.documentElement.style.setProperty('--data-top', $(window).scrollTop());
-
+      let start = window.siscovid.intro.start;
+      let scrollHeight = window.siscovid.scrollHeight;
+      let heightOffset = window.siscovid.heightOffset;
       $('#policy .static-element.introduction-text.first-element').each(checkOffsetStaticPage('in', 343));
 
-      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('exiting', 800));
-      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('out', 1100));
-
       /* introduction image enter */
-      $('#policy .static-element.introduction-image').each(checkOffsetStaticPage('in', 825));
-      $('#policy .static-element.introduction-image .first-image').each(checkOffsetStaticPage('entering', 825));
-      $('#policy .static-element.introduction-image .second-image').each(checkOffsetStaticPage('entering', 1225));
-      $('#policy .static-element.introduction-image .third-image').each(checkOffsetStaticPage('entering', 1625));
-      $('#policy .static-element.introduction-image .image-description').each(checkOffsetStaticPage('entering', 1725));
+      $('#policy .static-subelement.introduction-image').each(checkOffsetStaticPage('in', start + scrollHeight));
+      $('#policy .static-subelement.introduction-image .first-image').each(checkOffsetStaticPage('entering', start + scrollHeight));
+      $('#policy .static-subelement.introduction-image .second-image').each(checkOffsetStaticPage('entering', start + 2*scrollHeight));
+      $('#policy .static-subelement.introduction-image .third-image').each(checkOffsetStaticPage('entering', start + 3*scrollHeight));
+      $('#policy .static-subelement.introduction-image .image-description').each(checkOffsetStaticPage('entering', start + 3*scrollHeight + heightOffset)); //1600
       /* introduction image exit */
-      $('#policy .static-element.introduction-image .first-image').each(checkOffsetStaticPage('transition', 2000));
-      $('#policy .static-element.introduction-image .second-image').each(checkOffsetStaticPage('transition', 2000));
-      $('#policy .static-element.introduction-image .third-image').each(checkOffsetStaticPage('transition', 2000));
-
-      $('#policy .static-element.introduction-image').each(checkOffsetStaticPage('exiting', 2325));
-      $('#policy .static-element.introduction-image').each(checkOffsetStaticPage('out', 2600));
+      $('#policy .static-subelement.introduction-image .first-image').each(checkOffsetStaticPage('transition', start + 4*scrollHeight + heightOffset));
+      $('#policy .static-subelement.introduction-image .second-image').each(checkOffsetStaticPage('transition', start + 4*scrollHeight + heightOffset));
+      $('#policy .static-subelement.introduction-image .third-image').each(checkOffsetStaticPage('transition', start + 4*scrollHeight + heightOffset));
+      /* introduction text exit */
+      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('exiting', start + 5*scrollHeight + heightOffset));
+      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('out', start + 6*scrollHeight + heightOffset)); //2400
 
       /* Cities text enter */
-      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('entering', 2500));
-      $('#policy .static-element.cities-text .cities-p').each(checkOffsetStaticPage('entering', 2800));
-      $('#policy .static-element.cities-text .cities-ul').each(checkOffsetStaticPage('entering', 3100));
-      /* Cities text exit */
-      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('exiting', 3300));
-      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('out', 3600));
-
+      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('entering', start + 5*scrollHeight + 3*heightOffset));
+      $('#policy .static-element.cities-text .cities-p').each(checkOffsetStaticPage('entering', start + 6*scrollHeight + 3*heightOffset));
       /* Map enter */
-      $('#policy .static-element.map-section').each(checkOffsetStaticPage('in', 3500));
-      $('#policy .static-element.map-section .map').each(checkOffsetStaticPage('entering', 3500));
-      /* Map exit */
-      $('#policy .static-element.map-section').each(checkOffsetStaticPage('exiting', 3900));
-      $('#policy .static-element.map-section').each(checkOffsetStaticPage('out', 4200));
+      $('#policy .static-element.cities-text .map').each(checkOffsetStaticPage('entering', start + 7*scrollHeight + 3*heightOffset)); //3400
+      /* Cities text exit */
+      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('exiting', start + 8*scrollHeight + 3*heightOffset));
+      $('#policy .static-element.cities-text').each(checkOffsetStaticPage('out', start + 9*scrollHeight + 3*heightOffset)); //3900
 
       /* Factors enter */
-      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('entering', 4100));
+      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('entering', start + 9*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.factors-text .first-factor').each(checkOffsetStaticPage('entering', start + 9*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.factors-text .second-factor').each(checkOffsetStaticPage('entering', start + 10*scrollHeight + 4*heightOffset));
       /* Factors exit */
-      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('exiting', 4600));
-      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('out', 4900));
+      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('exiting', start + 11*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.factors-text').each(checkOffsetStaticPage('out', start + 12*scrollHeight + 4*heightOffset));
       
       /* Interventions enter*/
-      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('entering', 4800));
+      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('entering', start + 11*scrollHeight + 5*heightOffset));
       
       /* Interventions first image enter*/
-      $('#policy .static-element.interventions-text .objectives.image-container').each(checkOffsetStaticPage('in', 5100));
-      $('#policy .static-element.interventions-text .objectives .first-image').each(checkOffsetStaticPage('entering', 5200));
-      $('#policy .static-element.interventions-text .objectives .second-image').each(checkOffsetStaticPage('entering', 5500));
-      $('#policy .static-element.interventions-text .objectives .third-image').each(checkOffsetStaticPage('entering', 5800));
-      $('#policy .static-element.interventions-text .objectives .image-description').each(checkOffsetStaticPage('entering', 5900));
+      $('#policy .static-element.interventions-text .objectives.image-container').each(checkOffsetStaticPage('in', start + 11*scrollHeight + 5*heightOffset));
+      $('#policy .static-element.interventions-text .objectives .first-image').each(checkOffsetStaticPage('entering', start + 11*scrollHeight + 6*heightOffset));
+      $('#policy .static-element.interventions-text .objectives .second-image').each(checkOffsetStaticPage('entering', start + 12*scrollHeight + 6*heightOffset));
+      $('#policy .static-element.interventions-text .objectives .third-image').each(checkOffsetStaticPage('entering', start + 13*scrollHeight + 6*heightOffset));
+      $('#policy .static-element.interventions-text .objectives .image-description').each(checkOffsetStaticPage('entering', start + 13*scrollHeight + 7*heightOffset));
       
       /* Interventions first image exit*/
-      $('#policy .static-element.interventions-text .objectives.image-container').each(checkOffsetStaticPage('exiting', 6400));
+      $('#policy .static-element.interventions-text .objectives.image-container').each(checkOffsetStaticPage('exiting', start + 14*scrollHeight + 7*heightOffset));
       
       /* Interventions Second image enter */
-      $('#policy .static-element.interventions-text .graph.image-container').each(checkOffsetStaticPage('entering', 6500));
+      $('#policy .static-element.interventions-text .graph.image-container').each(checkOffsetStaticPage('entering', start + 15*scrollHeight + 8*heightOffset));
       
       /* Interventions exit */
-      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('out', 6833));
+      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('out', start + 16*scrollHeight + 8*heightOffset));
     
-      /* Effectiveness enter */
-      $('#policy .static-element.effectiveness-image-container.first-element').each(checkOffsetStaticPage('in', 8400));
+      let interventionsStart = window.siscovid.interventions.start;
       
-      $('#policy .static-element.effectiveness-image-container .animated-subtitle').each(checkOffsetStaticPage('entering', 8650));
+      /* Effectiveness enter */
+      $('#policy .static-element.effectiveness-image-container.first-element').each(checkOffsetStaticPage('in', interventionsStart));
+      
+      $('#policy .static-element.effectiveness-image-container .animated-subtitle').each(checkOffsetStaticPage('entering', interventionsStart + scrollHeight));
       
       /* Tasa 2.6 */
-      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .value').each(checkOffsetStaticPage('entering', 9000));
-      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .text').each(checkOffsetStaticPage('entering', 9000));
+      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .value').each(checkOffsetStaticPage('entering', interventionsStart + 2*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .text').each(checkOffsetStaticPage('entering', interventionsStart + 2*scrollHeight));
 
       /* Tasa 2.5 */
-      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .value').each(checkOffsetStaticPage('entering', 9400));
-      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .text').each(checkOffsetStaticPage('entering', 9400));
+      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .value').each(checkOffsetStaticPage('entering', interventionsStart + 3*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .text').each(checkOffsetStaticPage('entering', interventionsStart + 3*scrollHeight));
       
       /* Tasa disminucion */
-      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .arrow').each(checkOffsetStaticPage('entering', 9800));
-      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .text').each(checkOffsetStaticPage('entering', 9800));
+      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .arrow').each(checkOffsetStaticPage('entering', interventionsStart + 4*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .text').each(checkOffsetStaticPage('entering', interventionsStart + 4*scrollHeight));
 
       /* Tasa 1.8 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .value').each(checkOffsetStaticPage('entering', 10200));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .text').each(checkOffsetStaticPage('entering', 10200));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .value').each(checkOffsetStaticPage('entering', interventionsStart + 5*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .text').each(checkOffsetStaticPage('entering', interventionsStart + 5*scrollHeight));
 
       /* Tasa 1.7 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .value').each(checkOffsetStaticPage('entering', 10600));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .text').each(checkOffsetStaticPage('entering', 10600));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .value').each(checkOffsetStaticPage('entering', interventionsStart + 6*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .text').each(checkOffsetStaticPage('entering', interventionsStart + 6*scrollHeight));
 
       /* Tasa 1.6 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .value').each(checkOffsetStaticPage('entering', 11000));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .text').each(checkOffsetStaticPage('entering', 11000));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .value').each(checkOffsetStaticPage('entering', interventionsStart + 7*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .text').each(checkOffsetStaticPage('entering', interventionsStart + 7*scrollHeight));
 
       /* Tasa Medidas */
-      $('#policy .static-element.effectiveness-image-container .tasa-medidas .text').each(checkOffsetStaticPage('entering', 11200));
+      $('#policy .static-element.effectiveness-image-container .tasa-medidas .text').each(checkOffsetStaticPage('entering', interventionsStart + 8*scrollHeight));
 
       /* Tasa 1.4 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .value').each(checkOffsetStaticPage('entering', 11600));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .text').each(checkOffsetStaticPage('entering', 11600));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .value').each(checkOffsetStaticPage('entering', interventionsStart + 9*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .text').each(checkOffsetStaticPage('entering', interventionsStart + 9*scrollHeight));
 
       /* Tasa 1.2 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .value').each(checkOffsetStaticPage('entering', 12000));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .text').each(checkOffsetStaticPage('entering', 12000));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .value').each(checkOffsetStaticPage('entering', interventionsStart + 10*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .text').each(checkOffsetStaticPage('entering', interventionsStart + 10*scrollHeight));
 
       /* Tasa 1.1 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .value').each(checkOffsetStaticPage('entering', 12400));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .text').each(checkOffsetStaticPage('entering', 12400));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .value').each(checkOffsetStaticPage('entering', interventionsStart + 11*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .text').each(checkOffsetStaticPage('entering', interventionsStart + 11*scrollHeight));
 
       /* Tasa 1.0 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .value').each(checkOffsetStaticPage('entering', 12800));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .text').each(checkOffsetStaticPage('entering', 12800));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .value').each(checkOffsetStaticPage('entering', interventionsStart + 12*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .text').each(checkOffsetStaticPage('entering', interventionsStart + 12*scrollHeight));
+
+      /* Tasa mayor 0.9 */
+      $('#policy .static-element.effectiveness-image-container .tasa-m0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 13*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-m0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 13*scrollHeight));
 
       /* Tasa 0.9 */
-      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .value').each(checkOffsetStaticPage('entering', 13200));
-      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .text').each(checkOffsetStaticPage('entering', 13200));
+      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 14*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 14*scrollHeight));
 
-      /* Tasa 0.9 */
-      $('#policy .static-element.effectiveness-image-container .image-description').each(checkOffsetStaticPage('entering', 13300));
+      /* Tasa menor 0.9 */
+      $('#policy .static-element.effectiveness-image-container .tasa-e0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight));
+      $('#policy .static-element.effectiveness-image-container .tasa-e0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight));
+
+      /* Image description*/
+      $('#policy .static-element.effectiveness-image-container .image-description').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight + 2*heightOffset));
 
       /* Effectiveness exit */
-      $('#policy .static-element.effectiveness-image-container.last-element').each(checkOffsetStaticPage('out', 14000));
+      $('#policy .static-element.effectiveness-image-container.last-element').each(checkOffsetStaticPage('out', interventionsStart + 16*scrollHeight + 2*heightOffset));
+
+      let indexStart = window.siscovid.index.start;
+      let indexEnd = window.siscovid.index.end;
 
       /* Interventions index */
-      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('fixed', 14700));
-      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('exit', 16375));
+      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('fixed', indexStart));
+      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('exit', indexEnd));
+    
+      /* Maxims enter */
+      // let maximsIntro = $('#policy .community-maxims .maxims-images .maxims-intro');
+      // let maximStart =  window.siscovid.maxims.maximsIntroTop - window.innerHeight + maximsIntro.find('img').height() + convertRemToPixels(3);
+      // maximsIntro.each(checkOffsetStaticPage('fixed', maximStart));
+      
+      
+      // let maximIn = maximStart + window.innerHeight/2 - convertRemToPixels(3);
+      // maximsIntro.each(checkOffsetStaticPage('in', maximIn));
+      // $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('in', maximIn));
+
+      var texts = $('#policy .community-maxims .maxims-text');
+      var maximsin = texts.offset().top - window.innerHeight*0.4;
+      $('#policy .community-maxims .maxims-images .maxim-intro').each(checkOffsetStaticPage('in', maximsin));
+      $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('in', maximsin));
+
+      let currentMaximImage;
+      let nextMaximImage;
+      let markMaximText;
+      let maximChange;
+
+      /* Maxim 1 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-intro');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-1');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-1 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+
+      /* Maxim 2 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-1');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-2');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-2 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+
+      /* Maxim 3 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-2');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-3');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-3 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+
+      /* Maxim 4 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-3');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-4');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-4 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 5 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-4');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-5');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-5 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 6 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-5');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-6');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-6 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 7 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-6');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-7');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-7 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 8 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-7');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-8');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-8 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 9 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-8');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-9');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-9 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      
+      /* Maxim 10 */
+      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-9');
+      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-10');
+      markMaximText = $('#policy .community-maxims .maxims-text .maxim-10 p');
+      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
+      
+      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
+      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+
+      /* Maxims exit */
+      var texts = $('#policy .community-maxims .maxims-text');
+      var maximsOut = texts.offset().top + texts.height() - window.innerHeight;
+      $('#policy .community-maxims .maxims-images .last-element').each(checkOffsetStaticPage('out', maximsOut));
+      $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('out', maximsOut));
     }
   });
 
