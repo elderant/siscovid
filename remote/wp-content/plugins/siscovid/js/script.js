@@ -273,6 +273,23 @@
     });
   }
   
+  var siscovid_handle_reference_hover = function(event) {
+    event.stopPropagation();
+    let $referenceContainer = $(this).find('.reference-container')
+    if(!$referenceContainer.hasClass('active')) {
+      $referenceContainer.addClass('active');
+
+      $(this).find('.modal-helper').on('mouseleave', function(event){
+        event.stopPropagation();
+        $referenceContainer.removeClass('active');
+      });
+      $(this).on('mouseleave', function(event){
+        event.stopPropagation();
+        $referenceContainer.removeClass('active');
+      });
+    }
+  }
+
   /**
   * Disables all links and changes cursor for the website, used in ajax calls.
   */
@@ -353,7 +370,7 @@
       $('#allies .allies').each(checkOffset('animate__animated animate__fadeInDown'));
 
       // Home - models animaton
-      $('#project .images-container .agentes-container').on('hover', function() {
+      $('#project .images-container .agentes-container').on('mouseenter', function() {
         $('.agentes-container').addClass('animate');
         $('.poblacional-container').addClass('animate');
 
@@ -361,7 +378,7 @@
         $('.poblacional-container').removeClass('reverse');
       });
 
-      $('#project .images-container .poblacional-container').on('hover', function() {
+      $('#project .images-container .poblacional-container').on('mouseenter', function() {
         $('.agentes-container').addClass('reverse');
         $('.poblacional-container').addClass('reverse');
 
@@ -384,23 +401,27 @@
     }
 
     if($('.page-politicas').length > 0) {
-      let introStart = $('#policy .static-row.introduction').offset().top - window.innerHeight*0.1;
-      let interventionsStart = $('#policy .effectiveness-image-row').offset().top - window.innerHeight*0.4;
-      let indexStart = $('#policy .interventions-types-section').offset().top + window.innerHeight*0.25;
-      let indexEnd = indexStart + $('#policy .interventions-types-section').height() - window.innerHeight*0.9;
+      //References events
+      $('#policy .reference').each(function(){
+        $(this).on('mouseenter', siscovid_handle_reference_hover);
+      });
 
+      // Scroll events and variables
+      let introStart = $('#policy .static-row.introduction').offset().top - window.innerHeight*0.1;
+      
+      // General variables
       window.siscovid = {};
-      window.siscovid.scrollHeight = 450;
+      window.siscovid.scrollHeight = 500;
       window.siscovid.heightOffset = 100;
       
+      // introduction variables
       window.siscovid.intro = {start : introStart};
-      window.siscovid.interventions = {start : interventionsStart};
-      window.siscovid.index = {start : indexStart, end: indexEnd};
-      window.siscovid.maxims = {};
-
-      $('#policy .introduction')[0].style.height = (introStart + 16*window.siscovid.scrollHeight + 9*window.siscovid.heightOffset + window.innerHeight/2) + "px";
-      $('#policy .effectiveness-image-row')[0].style.height = (16*window.siscovid.scrollHeight + 2*window.siscovid.heightOffset + window.innerHeight) + "px";
-      $('#policy .static-element.introduction-text').each(checkOffsetStaticPage('entering', introStart));
+      window.siscovid.inf = {start : introStart + 16*window.siscovid.scrollHeight + 9*window.siscovid.heightOffset};
+      window.siscovid.effectiveness = {start : window.siscovid.inf.start + 5*window.siscovid.scrollHeight + 3*window.siscovid.heightOffset};
+      window.siscovid.if = {start : window.siscovid.effectiveness.start + 16*window.siscovid.scrollHeight + 3*window.siscovid.heightOffset};
+      window.siscovid.used = {start : window.siscovid.if.start + 8*window.siscovid.scrollHeight};
+      window.siscovid.model = {start : window.siscovid.used.start + 10*window.siscovid.scrollHeight + 3*window.siscovid.heightOffset};
+      $('#policy .introduction')[0].style.height = (window.siscovid.model.start + 32*window.siscovid.scrollHeight + 6*window.siscovid.heightOffset + window.innerHeight/2) + "px";
     }
   });
 
@@ -421,6 +442,12 @@
       let start = window.siscovid.intro.start;
       let scrollHeight = window.siscovid.scrollHeight;
       let heightOffset = window.siscovid.heightOffset;
+      let infStart = window.siscovid.inf.start;
+      let effectivenessStart = window.siscovid.effectiveness.start;
+      let ifStart = window.siscovid.if.start;
+      let usedStart = window.siscovid.used.start
+      let modelStart = window.siscovid.model.start;
+
       $('#policy .static-element.introduction-text.first-element').each(checkOffsetStaticPage('in', 343));
 
       /* introduction image enter */
@@ -471,198 +498,343 @@
       $('#policy .static-element.interventions-text .graph.image-container').each(checkOffsetStaticPage('entering', start + 15*scrollHeight + 8*heightOffset));
       
       /* Interventions exit */
-      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('out', start + 16*scrollHeight + 8*heightOffset));
+      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('exiting', start + 16*scrollHeight + 8*heightOffset));
+      $('#policy .static-element.interventions-text').each(checkOffsetStaticPage('out', start + 17*scrollHeight + 8*heightOffset));
+
+      /* Interventions exit */
+      //$('#policy .static-element.interventions-text').each(checkOffsetStaticPage('out', start + 16*scrollHeight + 8*heightOffset));
     
-      let interventionsStart = window.siscovid.interventions.start;
+      /* INF enter */
+      $('#policy .static-element.inf-container').each(checkOffsetStaticPage('entering', infStart));
+      $('#policy .static-element.inf-container .inf-individual').each(checkOffsetStaticPage('in', infStart));
+
+      /* INF individuales : enter */
+      $('#policy .static-element.inf-container .inf-individual .text-container').each(checkOffsetStaticPage('entering', infStart + scrollHeight));
+      $('#policy .static-element.inf-container .inf-individual .image-container').each(checkOffsetStaticPage('entering', infStart + scrollHeight));
+
+      /* INF individuales : exit */
+      $('#policy .static-element.inf-container .inf-individual').each(checkOffsetStaticPage('exiting', infStart + 2*scrollHeight));
+      $('#policy .static-element.inf-container .inf-individual').each(checkOffsetStaticPage('out', infStart + 3*scrollHeight));
+
+      /* INF Community enter */
+      $('#policy .static-element.inf-container .inf-community').each(checkOffsetStaticPage('entering', infStart + 2*scrollHeight + heightOffset));
       
-      /* Effectiveness enter */
-      $('#policy .static-element.effectiveness-image-container.first-element').each(checkOffsetStaticPage('in', interventionsStart));
+      /* INF Community : bottom row enter */
+      $('#policy .static-element.inf-container .inf-community .message').each(checkOffsetStaticPage('in', infStart + 3*scrollHeight + heightOffset));
+      $('#policy .static-element.inf-container .inf-community .bottom-container').each(checkOffsetStaticPage('entering', infStart + 3*scrollHeight + heightOffset));
+
+      /* INF Community exit */
+      $('#policy .static-element.inf-container .inf-community').each(checkOffsetStaticPage('exiting', infStart + 4*scrollHeight + heightOffset));
+      $('#policy .static-element.inf-container .inf-community').each(checkOffsetStaticPage('out', infStart + 5*scrollHeight + heightOffset));
+
+      /* INF Environment enter */
+      $('#policy .static-element.inf-container .inf-environment').each(checkOffsetStaticPage('entering', infStart + 4*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-container .inf-environment .image-container').each(checkOffsetStaticPage('entering', infStart + 4*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-container .inf-environment .text-container').each(checkOffsetStaticPage('entering', infStart + 4*scrollHeight + 2*heightOffset));
+
+      /* INF Environment exit */
+      /* INF exit */
+      $('#policy .static-element.inf-container').each(checkOffsetStaticPage('exiting', infStart + 5*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-container').each(checkOffsetStaticPage('out', infStart + 6*scrollHeight + 2*heightOffset));
       
-      $('#policy .static-element.effectiveness-image-container .animated-subtitle').each(checkOffsetStaticPage('entering', interventionsStart + scrollHeight));
+      /* INF Effectiveness enter */
+      $('#policy .static-element.inf-effectiveness').each(checkOffsetStaticPage('entering', effectivenessStart));
+      
+      $('#policy .static-element.inf-effectiveness .animated-subtitle').each(checkOffsetStaticPage('entering', effectivenessStart + scrollHeight));
       
       /* Tasa 2.6 */
-      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .value').each(checkOffsetStaticPage('entering', interventionsStart + 2*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-2-6 .text').each(checkOffsetStaticPage('entering', interventionsStart + 2*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-2-6 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 2*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-2-6 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 2*scrollHeight));
 
       /* Tasa 2.5 */
-      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .value').each(checkOffsetStaticPage('entering', interventionsStart + 3*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-2-5 .text').each(checkOffsetStaticPage('entering', interventionsStart + 3*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-2-5 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 3*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-2-5 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 3*scrollHeight));
       
       /* Tasa disminucion */
-      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .arrow').each(checkOffsetStaticPage('entering', interventionsStart + 4*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-disminucion .text').each(checkOffsetStaticPage('entering', interventionsStart + 4*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-disminucion .arrow').each(checkOffsetStaticPage('entering', effectivenessStart + 4*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-disminucion .text').each(checkOffsetStaticPage('entering', effectivenessStart + 4*scrollHeight));
 
       /* Tasa 1.8 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .value').each(checkOffsetStaticPage('entering', interventionsStart + 5*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-8 .text').each(checkOffsetStaticPage('entering', interventionsStart + 5*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-8 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 5*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-8 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 5*scrollHeight));
 
       /* Tasa 1.7 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .value').each(checkOffsetStaticPage('entering', interventionsStart + 6*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-7 .text').each(checkOffsetStaticPage('entering', interventionsStart + 6*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-7 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 6*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-7 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 6*scrollHeight));
 
       /* Tasa 1.6 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .value').each(checkOffsetStaticPage('entering', interventionsStart + 7*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-6 .text').each(checkOffsetStaticPage('entering', interventionsStart + 7*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-6 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 7*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-6 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 7*scrollHeight));
 
       /* Tasa Medidas */
-      $('#policy .static-element.effectiveness-image-container .tasa-medidas .text').each(checkOffsetStaticPage('entering', interventionsStart + 8*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-medidas .text').each(checkOffsetStaticPage('entering', effectivenessStart + 8*scrollHeight));
 
       /* Tasa 1.4 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .value').each(checkOffsetStaticPage('entering', interventionsStart + 9*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-4 .text').each(checkOffsetStaticPage('entering', interventionsStart + 9*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-4 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 9*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-4 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 9*scrollHeight));
 
       /* Tasa 1.2 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .value').each(checkOffsetStaticPage('entering', interventionsStart + 10*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-2 .text').each(checkOffsetStaticPage('entering', interventionsStart + 10*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-2 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 10*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-2 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 10*scrollHeight));
 
       /* Tasa 1.1 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .value').each(checkOffsetStaticPage('entering', interventionsStart + 11*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-1 .text').each(checkOffsetStaticPage('entering', interventionsStart + 11*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-1 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 11*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-1 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 11*scrollHeight));
 
       /* Tasa 1.0 */
-      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .value').each(checkOffsetStaticPage('entering', interventionsStart + 12*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-1-0 .text').each(checkOffsetStaticPage('entering', interventionsStart + 12*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-0 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 12*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-1-0 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 12*scrollHeight));
 
       /* Tasa mayor 0.9 */
-      $('#policy .static-element.effectiveness-image-container .tasa-m0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 13*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-m0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 13*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-m0-9 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 13*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-m0-9 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 13*scrollHeight));
 
       /* Tasa 0.9 */
-      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 14*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 14*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-0-9 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 14*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-0-9 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 14*scrollHeight));
 
       /* Tasa menor 0.9 */
-      $('#policy .static-element.effectiveness-image-container .tasa-e0-9 .value').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight));
-      $('#policy .static-element.effectiveness-image-container .tasa-e0-9 .text').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-e0-9 .value').each(checkOffsetStaticPage('entering', effectivenessStart + 15*scrollHeight));
+      $('#policy .static-element.inf-effectiveness .tasa-e0-9 .text').each(checkOffsetStaticPage('entering', effectivenessStart + 15*scrollHeight));
 
       /* Image description*/
-      $('#policy .static-element.effectiveness-image-container .image-description').each(checkOffsetStaticPage('entering', interventionsStart + 15*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-effectiveness .image-description').each(checkOffsetStaticPage('entering', effectivenessStart + 15*scrollHeight + 2*heightOffset));
 
       /* Effectiveness exit */
-      $('#policy .static-element.effectiveness-image-container.last-element').each(checkOffsetStaticPage('out', interventionsStart + 16*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-effectiveness').each(checkOffsetStaticPage('exiting', effectivenessStart + 16*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.inf-effectiveness').each(checkOffsetStaticPage('out', effectivenessStart + 17*scrollHeight + 2*heightOffset));
 
-      let indexStart = window.siscovid.index.start;
-      let indexEnd = window.siscovid.index.end;
+      /* IF start */
+      $('#policy .static-element.if-vaccines').each(checkOffsetStaticPage('entering', ifStart));
 
-      /* Interventions index */
-      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('fixed', indexStart));
-      $('#policy .interventions-types-section .interventions-index').each(checkOffsetStaticPage('exit', indexEnd));
-    
+      /* IF container start */
+      $('#policy .static-element.if-vaccines .if-main-container').each(checkOffsetStaticPage('entering', ifStart + scrollHeight));
+
+      /* preclinic */
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row').each(checkOffsetStaticPage('entering', ifStart + scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row .vaccine-text').each(checkOffsetStaticPage('entering',  ifStart + scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row .vaccine-image').each(checkOffsetStaticPage('entering',  ifStart + scrollHeight));
+
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row').each(checkOffsetStaticPage('exiting', ifStart + 3*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row .vaccine-text').each(checkOffsetStaticPage('exiting', ifStart + 3*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-preclinic-row .vaccine-image').each(checkOffsetStaticPage('exiting', ifStart + 3*scrollHeight));
+
+      /* phase 1 */
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row').each(checkOffsetStaticPage('entering', ifStart + 2*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row .vaccine-text').each(checkOffsetStaticPage('entering', ifStart + 2*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row .vaccine-image').each(checkOffsetStaticPage('entering', ifStart + 2*scrollHeight));
+
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row').each(checkOffsetStaticPage('exiting', ifStart + 4*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row .vaccine-text').each(checkOffsetStaticPage('exiting', ifStart + 4*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-1-row .vaccine-image').each(checkOffsetStaticPage('exiting', ifStart + 4*scrollHeight));
+
+      /* phase 2 */
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row').each(checkOffsetStaticPage('entering', ifStart + 3*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row .vaccine-text').each(checkOffsetStaticPage('entering', ifStart + 3*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row .vaccine-image').each(checkOffsetStaticPage('entering', ifStart + 3*scrollHeight));
+
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row').each(checkOffsetStaticPage('exiting', ifStart + 5*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row .vaccine-text').each(checkOffsetStaticPage('exiting', ifStart + 5*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-2-row .vaccine-image').each(checkOffsetStaticPage('exiting', ifStart + 5*scrollHeight));
+
+      /* phase 3 */
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row').each(checkOffsetStaticPage('entering', ifStart + 4*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row .vaccine-text').each(checkOffsetStaticPage('entering', ifStart + 4*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row .vaccine-image').each(checkOffsetStaticPage('entering', ifStart + 4*scrollHeight));
+
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row').each(checkOffsetStaticPage('exiting', ifStart + 6*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row .vaccine-text').each(checkOffsetStaticPage('exiting', ifStart + 6*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-3-row .vaccine-image').each(checkOffsetStaticPage('exiting', ifStart + 6*scrollHeight));
+
+      /* phase 4 */
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row').each(checkOffsetStaticPage('entering', ifStart + 5*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row .vaccine-text').each(checkOffsetStaticPage('entering',ifStart + 5*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row .vaccine-image').each(checkOffsetStaticPage('entering', ifStart + 5*scrollHeight));
+
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row').each(checkOffsetStaticPage('exiting', ifStart + 7*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row .vaccine-text').each(checkOffsetStaticPage('exiting', ifStart + 7*scrollHeight));
+      $('#policy .static-element.if-vaccines .if-main-container .phase-4-row .vaccine-image').each(checkOffsetStaticPage('exiting', ifStart + 7*scrollHeight));
+
+      /* IF exit */
+      // $('#policy .static-element.if-vaccines .if-main-container.scroll').each(checkOffsetStaticPage('fixed', ifStart + 8*scrollHeight));
+      $('#policy .static-element.if-vaccines').each(checkOffsetStaticPage('exiting', ifStart + 8*scrollHeight));
+      $('#policy .static-element.if-vaccines').each(checkOffsetStaticPage('out', ifStart + 9*scrollHeight));
+      
+      /* used enter */
+      $('#policy .static-element.interventions-used').each(checkOffsetStaticPage('entering', usedStart));
+      
+      /* used description enter */ 
+      $('#policy .static-element.interventions-used .description-container').each(checkOffsetStaticPage('entering', usedStart + scrollHeight));
+      
+      /* used exit */
+      $('#policy .static-element.interventions-used').each(checkOffsetStaticPage('exiting', usedStart + 2*scrollHeight));
+      $('#policy .static-element.interventions-used').each(checkOffsetStaticPage('out', usedStart + 3*scrollHeight));
+
+      /* Opinions enter */
+      $('#policy .static-element.interventions-opinion').each(checkOffsetStaticPage('entering', usedStart + 2*scrollHeight + heightOffset));
+
+      /* Opinions text enter */
+      $('#policy .static-element.interventions-opinion .text-column .static-subelement').each(checkOffsetStaticPage('entering', usedStart + 3*scrollHeight + heightOffset));
+
+      /* Opnions map enter */
+      $('#policy .static-element.interventions-opinion .map').each(checkOffsetStaticPage('entering', usedStart + 4*scrollHeight + heightOffset));
+      
+      /* Opinions exit */
+      $('#policy .static-element.interventions-opinion').each(checkOffsetStaticPage('exiting', usedStart + 5*scrollHeight + heightOffset));
+      $('#policy .static-element.interventions-opinion').each(checkOffsetStaticPage('out', usedStart + 6*scrollHeight + heightOffset));
+
       /* Maxims enter */
-      // let maximsIntro = $('#policy .community-maxims .maxims-images .maxims-intro');
-      // let maximStart =  window.siscovid.maxims.maximsIntroTop - window.innerHeight + maximsIntro.find('img').height() + convertRemToPixels(3);
-      // maximsIntro.each(checkOffsetStaticPage('fixed', maximStart));
+      $('#policy .static-element.interventions-maxims').each(checkOffsetStaticPage('entering', usedStart + 5*scrollHeight + 2*heightOffset));
       
-      
-      // let maximIn = maximStart + window.innerHeight/2 - convertRemToPixels(3);
-      // maximsIntro.each(checkOffsetStaticPage('in', maximIn));
-      // $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('in', maximIn));
+      /* Maxims First part enter */
+      $('#policy .static-element.interventions-maxims .first-section').each(checkOffsetStaticPage('entering', usedStart + 6*scrollHeight + 2*heightOffset));
 
-      var texts = $('#policy .community-maxims .maxims-text');
-      var maximsin = texts.offset().top - window.innerHeight*0.4;
-      $('#policy .community-maxims .maxims-images .maxim-intro').each(checkOffsetStaticPage('in', maximsin));
-      $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('in', maximsin));
+      /* Maxims Second part enter */
+      $('#policy .static-element.interventions-maxims .second-section').each(checkOffsetStaticPage('entering', usedStart + 7*scrollHeight + 2*heightOffset));
 
-      let currentMaximImage;
-      let nextMaximImage;
-      let markMaximText;
-      let maximChange;
+      /* Maxims Third part enter */
+      $('#policy .static-element.interventions-maxims .third-section').each(checkOffsetStaticPage('entering', usedStart + 8*scrollHeight + 2*heightOffset));
 
-      /* Maxim 1 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-intro');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-1');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-1 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-
-      /* Maxim 2 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-1');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-2');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-2 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-
-      /* Maxim 3 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-2');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-3');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-3 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-
-      /* Maxim 4 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-3');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-4');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-4 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 5 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-4');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-5');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-5 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 6 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-5');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-6');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-6 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 7 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-6');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-7');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-7 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 8 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-7');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-8');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-8 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 9 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-8');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-9');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-9 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
-      
-      /* Maxim 10 */
-      currentMaximImage = $('#policy .community-maxims .maxims-images .maxim-9');
-      nextMaximImage = $('#policy .community-maxims .maxims-images .maxim-10');
-      markMaximText = $('#policy .community-maxims .maxims-text .maxim-10 p');
-      maximChange = markMaximText.offset().top - window.innerHeight/2 - 300 + markMaximText.height()/2;
-      
-      currentMaximImage.each(checkOffsetStaticPage('exiting', maximChange));
-      nextMaximImage.each(checkOffsetStaticPage('entering', maximChange));
+      /* Maxims text enter */
+      $('#policy .static-element.interventions-maxims .description-container').each(checkOffsetStaticPage('entering', usedStart + 9*scrollHeight + 2*heightOffset));
 
       /* Maxims exit */
-      var texts = $('#policy .community-maxims .maxims-text');
-      var maximsOut = texts.offset().top + texts.height() - window.innerHeight;
-      $('#policy .community-maxims .maxims-images .last-element').each(checkOffsetStaticPage('out', maximsOut));
-      $('#policy .community-maxims .maxims-images').each(checkOffsetStaticPage('out', maximsOut));
+      $('#policy .static-element.interventions-maxims').each(checkOffsetStaticPage('exiting', usedStart + 10*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.interventions-maxims').each(checkOffsetStaticPage('out', usedStart + 11*scrollHeight + 2*heightOffset));
+
+      /* Models intro enter */
+      $('#policy .static-element.models-intro').each(checkOffsetStaticPage('entering', modelStart));
+
+      /* Models intro text enter */
+      $('#policy .static-element.models-intro .text-column .static-subelement').each(checkOffsetStaticPage('entering', modelStart + scrollHeight));
+
+      /* Models intro images enter */
+      $('#policy .static-element.models-intro .image-column .model-image').each(checkOffsetStaticPage('entering', modelStart + 2*scrollHeight));
+
+      /* Models intro image name enter */
+      $('#policy .static-element.models-intro .image-column .description-container').each(checkOffsetStaticPage('entering', modelStart + 3*scrollHeight));
+
+      /* Models intro exit */
+      $('#policy .static-element.models-intro').each(checkOffsetStaticPage('exiting', modelStart + 4*scrollHeight));
+      $('#policy .static-element.models-intro').each(checkOffsetStaticPage('out', modelStart + 5*scrollHeight));
+     
+      
+      /* Model Population enter */
+      $('#policy .static-element.model-population').each(checkOffsetStaticPage('entering', modelStart + 4*scrollHeight + heightOffset));
+      $('#policy .static-element.model-population .background-title .title1').each(checkOffsetStaticPage('entering', modelStart + 4*scrollHeight + heightOffset));
+      
+      /* Model Population description enter */
+      $('#policy .static-element.model-population .model-description').each(checkOffsetStaticPage('entering', modelStart + 5*scrollHeight + heightOffset));
+      $('#policy .static-element.model-population .model-description .model-image').each(checkOffsetStaticPage('entering', modelStart + 5*scrollHeight + heightOffset));
+      
+      /* Model Population description text enter */
+      $('#policy .static-element.model-population .model-description .text-column .static-subelement').each(checkOffsetStaticPage('entering', modelStart + 5*scrollHeight + heightOffset));
+      
+      /* Model Population image description enter */
+      $('#policy .static-element.model-population .model-description .description-container').each(checkOffsetStaticPage('entering', modelStart + 7*scrollHeight + heightOffset));
+     
+      /* Model Population description exit */
+      $('#policy .static-element.model-population .model-description').each(checkOffsetStaticPage('exiting', modelStart + 8*scrollHeight + heightOffset));
+      $('#policy .static-element.model-population .background-title .title1').each(checkOffsetStaticPage('exiting', modelStart + 8*scrollHeight + heightOffset));
+      $('#policy .static-element.model-population .model-description').each(checkOffsetStaticPage('out', modelStart + 9*scrollHeight + heightOffset));
+
+      /* Model Population result 1 enter */
+      $('#policy .static-element.model-population .model-results1').each(checkOffsetStaticPage('entering', modelStart + 8*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.model-population .background-title .title2').each(checkOffsetStaticPage('entering', modelStart + 8*scrollHeight + 2*heightOffset));
+
+      /* Model Population result 1 image enter */
+      $('#policy .static-element.model-population .model-results1 .model-image').each(checkOffsetStaticPage('entering', modelStart + 9*scrollHeight + 2*heightOffset));
+
+      /* Model Population result 1 image description */
+      $('#policy .static-element.model-population .model-results1 .description-container').each(checkOffsetStaticPage('entering', modelStart + 10*scrollHeight + 2*heightOffset));
+
+      /* Model Population result 1 exit */
+      $('#policy .static-element.model-population .model-results1').each(checkOffsetStaticPage('exiting', modelStart + 11*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.model-population .background-title .title2').each(checkOffsetStaticPage('exiting', modelStart + 11*scrollHeight + 2*heightOffset));
+      $('#policy .static-element.model-population .model-results1').each(checkOffsetStaticPage('out', modelStart + 12*scrollHeight + 2*heightOffset));
+
+      /* Model Population result 2 enter */
+      $('#policy .static-element.model-population .model-results2').each(checkOffsetStaticPage('entering', modelStart + 11*scrollHeight + 3*heightOffset));
+      $('#policy .static-element.model-population .background-title .title3').each(checkOffsetStaticPage('entering', modelStart + 11*scrollHeight + 3*heightOffset));
+
+      /* Model Population result 2 image description enter */
+      $('#policy .static-element.model-population .model-results2 .description-container').each(checkOffsetStaticPage('entering', modelStart + 12*scrollHeight + 3*heightOffset));
+
+      /* Model Population result 2 image description */
+      $('#policy .static-element.model-population .model-results2 .text-row .static-subelement').each(checkOffsetStaticPage('entering', modelStart + 13*scrollHeight + 3*heightOffset));
+
+      /* Model Population exit */
+      $('#policy .static-element.model-population').each(checkOffsetStaticPage('exiting', modelStart + 14*scrollHeight + 3*heightOffset));
+      $('#policy .static-element.model-population').each(checkOffsetStaticPage('out', modelStart + 15*scrollHeight + 3*heightOffset));
+
+
+      /* Model Agent enter */
+      $('#policy .static-element.model-agent').each(checkOffsetStaticPage('entering', modelStart + 14*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .background-title .title1').each(checkOffsetStaticPage('entering', modelStart + 14*scrollHeight + 4*heightOffset));
+
+      /* Model Agent description enter */
+      $('#policy .static-element.model-agent .model-description').each(checkOffsetStaticPage('entering', modelStart + 15*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .model-description .text-row .static-subelement').each(checkOffsetStaticPage('entering', modelStart + 15*scrollHeight + 4*heightOffset));
+      
+      /* Model Agent description characteristics 1 enter */
+      $('#policy .static-element.model-agent .agent-characteristics').each(checkOffsetStaticPage('entering', modelStart + 16*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .agent-characteristics .agent-grouped').each(checkOffsetStaticPage('entering', modelStart + 16*scrollHeight + 4*heightOffset));
+      
+      /* Model Agent description characteristics 1 image description enter */
+      $('#policy .static-element.model-agent .agent-characteristics .agent-grouped .description-container').each(checkOffsetStaticPage('entering', modelStart + 17*scrollHeight + 4*heightOffset));
+
+      /* Model Agent description characteristics 3 enter */
+      //$('#policy .static-element.model-agent .agent-characteristics .agent-movement').each(checkOffsetStaticPage('exiting', modelStart + 18*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .agent-characteristics .agent-states-row').each(checkOffsetStaticPage('entering', modelStart + 18*scrollHeight + 4*heightOffset));
+
+      /* Model Agent description characteristics 2 enter */
+      $('#policy .static-element.model-agent .agent-characteristics .agent-grouped').each(checkOffsetStaticPage('exiting', modelStart + 19*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .agent-characteristics .agent-movement').each(checkOffsetStaticPage('entering', modelStart + 19*scrollHeight + 4*heightOffset));
+
+      /* Model Agent description characteristics 2 image description enter */
+      $('#policy .static-element.model-agent .agent-characteristics .agent-movement .description-container').each(checkOffsetStaticPage('entering', modelStart + 20*scrollHeight + 4*heightOffset));
+      
+      /* Model Agent description exit */
+      $('#policy .static-element.model-agent .model-description').each(checkOffsetStaticPage('exiting', modelStart + 21*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .background-title .title1').each(checkOffsetStaticPage('exiting', modelStart + 21*scrollHeight + 4*heightOffset));
+      $('#policy .static-element.model-agent .model-description').each(checkOffsetStaticPage('out', modelStart + 22*scrollHeight + 4*heightOffset));
+
+
+      /* Model Agent results enter */
+      $('#policy .static-element.model-agent .model-results').each(checkOffsetStaticPage('entering', modelStart + 21*scrollHeight + 5*heightOffset));
+      $('#policy .static-element.model-agent .background-title .title2').each(checkOffsetStaticPage('entering', modelStart + 21*scrollHeight + 5*heightOffset));
+
+      /* Model Agent first graph enter */
+      $('#policy .static-element.model-agent .model-results .image-container.bogota').each(checkOffsetStaticPage('entering', modelStart + 22*scrollHeight + 5*heightOffset));
+
+      /* Model Agent graph description enter */
+      $('#policy .static-element.model-agent .model-results .image-row .description-container').each(checkOffsetStaticPage('entering', modelStart + 23*scrollHeight + 5*heightOffset));
+
+      /* Model Agent bottom row enter */
+      $('#policy .static-element.model-agent .model-results .bottom-row').each(checkOffsetStaticPage('entering', modelStart + 24*scrollHeight + 5*heightOffset));
+
+      /* Model Agent second graph enter */
+      $('#policy .static-element.model-agent .model-results .image-container.bogota').each(checkOffsetStaticPage('exiting', modelStart + 25*scrollHeight + 5*heightOffset));
+      $('#policy .static-element.model-agent .model-results .image-container.barranquilla').each(checkOffsetStaticPage('entering', modelStart + 26*scrollHeight + 5*heightOffset));
+
+      /* Model Agent third graph enter */
+      $('#policy .static-element.model-agent .model-results .image-container.barranquilla').each(checkOffsetStaticPage('exiting', modelStart + 27*scrollHeight + 5*heightOffset));
+      $('#policy .static-element.model-agent .model-results .image-container.cartagena').each(checkOffsetStaticPage('entering', modelStart + 28*scrollHeight + 5*heightOffset));
+
+      /* Model Agent exit */
+      $('#policy .static-element.model-agent').each(checkOffsetStaticPage('exiting', modelStart + 29*scrollHeight + 5*heightOffset));
+      $('#policy .static-element.model-agent').each(checkOffsetStaticPage('out', modelStart + 30*scrollHeight + 5*heightOffset));
+
+      /* Closing enter */
+      $('#policy .static-element.closing-text').each(checkOffsetStaticPage('entering', modelStart + 29*scrollHeight + 6*heightOffset));
+
+      /* Closing main enter */
+      $('#policy .static-element.closing-text .text-row .static-subelement').each(checkOffsetStaticPage('entering', modelStart + 30*scrollHeight + 6*heightOffset));
+
+      /* Closing logo enter */
+      $('#policy .static-element.closing-text .site-logo').each(checkOffsetStaticPage('entering', modelStart + 31*scrollHeight + 6*heightOffset));
+
+      $('#policy .static-element.closing-text').each(checkOffsetStaticPage('out', modelStart + 32*scrollHeight + 6*heightOffset));
     }
   });
 

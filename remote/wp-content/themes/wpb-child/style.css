@@ -10,9 +10,11 @@ Text Domain:	 wpb-child
 */
  
 :root {
-	--black: #000;
+  --black: #000;
+  
 	--blue: #437eeb;
 	--blue-dark-shade: #3c71dc;
+	--blue-light-shade: #598DEE;
 
 	--blue-dark: #3f4f6b;
 
@@ -23,7 +25,8 @@ Text Domain:	 wpb-child
 	--green-dark-shade: #b4bd20;
 	--green-dark:	#297373;
 
-	--red: #ff1039;
+  --red: #FF1039;
+  
 	--orange: #ff8c42;
 	--orange-dark-shade: #EC7E3B;
 
@@ -31,16 +34,22 @@ Text Domain:	 wpb-child
 	--light-dark-shade: #dadbe6;
 
 	--dark: #797a85;
-	
+  
+  --purple: #8D5A97;
+
 	/* static sections animations*/
 	--data-top: 0;
-	--data-height: 300;
+	--data-height: 500;
 	--data-start-offset:0;
 	--data-end-offset:0;
 	--data-transition-offset: 0;
 	--data-self-height: 0;
 	--data-top-fixed: 0;
 	--data-scroll-end: 0;
+	--data-inf-start: 0;
+	--data-inf-height: 0;
+	--data-if-start: 0;
+	--data-if-height: 0;
 }
 
 /* font - Oswald */
@@ -183,7 +192,12 @@ a.secondary:hover {
 	color: var(--green);
 }
 
-p {
+.p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+p, .p {
 	text-align: justify;
 }
 
@@ -345,11 +359,6 @@ header#masthead {
 	background-color: var(--white);
 	padding: 0;
 	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-}
-
-#masthead nav {
-	/* padding: 15px;
-	padding-right: 15px; */
 }
 
 #masthead .topbar {
@@ -573,6 +582,18 @@ ul {
 
 .color-green {
 	color: var(--green);	
+}
+
+.color-red {
+	color: var(--red);	
+}
+
+.color-orange {
+	color: var(--orange);	
+}
+
+.color-green-dark {
+	color: var(--green-dark);	
 }
 
 .background-light {

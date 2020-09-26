@@ -780,7 +780,8 @@
 #methodology .model ol.animate,
 #methodology .model ul.animate,
 #methodology .datos .overview img.animate-flip,
-#methodology .model ul.animate-flip {
+#methodology .model ul.animate-flip,
+#methodology .model.datos div.text-container {
   opacity: 0;
 }
 
@@ -1494,6 +1495,34 @@
   text-align: center;
 }
 
+#policy .background-title .icon-container {
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+#policy .background-title img {
+  padding: 0.3rem;
+}
+
+#policy .background-title .text-container {
+  width: 97%;
+  height: fit-content;
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  background-color: var(--green);
+  color: var(--white);
+}
+
+#policy .background-title .text-container.title-extra {
+  z-index: 0;
+  position: absolute;
+  right: 0;
+}
+
 #policy .image-description {
   width: 100%;
   margin-top: 0.2rem;
@@ -1528,11 +1557,73 @@
   padding: 1rem 1rem 1rem 40px;
 }
 
+#policy .reference {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+#policy .reference .reference-container {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-20%, -106%);
+  transition: all 0.5s ease-in-out;
+}
+
+#policy .reference .reference-container.active {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+}
+
+#policy .reference .modal-container .modal-helper {
+  position: absolute;
+  height: calc(100% + 6% + 10%);
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#policy .reference .modal-container .modal-dialog {
+  width: 25vw;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: var(--blue-light-shade);
+  text-align: left;
+  color: var(--white);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+#policy .reference .modal-container .modal-dialog a {
+  color: var(--white);
+}
+
+.modal-container .modal-dialog.arrow-down::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 21.5%;
+  transform: translate(-50%, 97%);
+  border-left: transparent;
+  border-top: var(--blue-light-shade);
+  border-right: transparent;
+  border-bottom: transparent;
+  border-width: 14px;
+  border-style: solid;
+}
+
+#policy .reference.drive .modal-container .modal-dialog {
+  word-break: break-all;
+}
+
 /* START first static element */ 
 #policy .static-row.introduction {
   position: relative;
-  /* var(--data-scroll-end)*1px */
-  height: calc(8000px + 50vh);
+  height: calc(280px + 1vh + 87*500px + 25*100px);
   overflow: hidden;
 }
 
@@ -1625,10 +1716,32 @@
   transform: scale( max(1, calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height)) * 5 + 1)));
 }
 
+#policy .static-subelement.slide-right-in.entering {
+  transform: translateX(max(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*100%)));
+}
 
-#policy .static-element.slide-out-up.exiting,
-#policy .static-subelement.slide-out-up.exiting {
+#policy .static-subelement.slide-left-in.entering {
+  transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
+}
+
+#policy .static-element.slide-up-in.entering {
+  transform: translate(-50%, max(0%,calc(((var(--data-top) - var(--data-start-offset)) / var(--data-height))*-100% + 100%)));
+}
+
+#policy .static-subelement.slide-up-in.entering {
+  transform: translateY(max(0%,calc(((var(--data-top) - var(--data-start-offset)) / var(--data-height))*-100% + 100%)));
+}
+
+#policy .static-element.slide-up-out.exiting {
   transform: translate(-50%, min(100%,calc(((var(--data-end-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*150% - 200%)));
+}
+
+#policy .static-subelement.slide-up-out.exiting {
+  transform: translateY(min(100%,calc(((var(--data-end-offset) - var(--data-top)) / var(--data-height))*100%)));
+}
+
+#policy .static-subelement.slide-right-out.exiting {
+  transform: translateX(min(100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*100%)));
 }
 
 #policy .static-subelement.slide-left-out.exiting {
@@ -1643,7 +1756,48 @@
   transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
 }
 
+/* slowed animations */
+#policy .static-element.fade-in-slow.entering,
+#policy .static-subelement.fade-in-slow.entering {
+  opacity: min(1, calc((((var(--data-top) - var(--data-start-offset))) / var(--data-height))));
+}
+#policy .static-element.fade-out-slow.exiting,
+#policy .static-subelement.fade-out-slow.exiting {
+  opacity: max(0, calc((((var(--data-end-offset) + var(--data-height) - var(--data-top))) / var(--data-height))));
+}
+
+#policy .static-subelement.slide-up-in-slow.entering {
+  transform: translateY(max(0%,calc((var(--data-height) + 0.5 * (var(--data-start-offset) - var(--data-top))) / var(--data-height) * 250%)))
+}
+#policy .static-subelement.slide-up-out-slow.exiting {
+  transform: translateY(min(100%,calc(((var(--data-end-offset) - var(--data-top)) * 0.5) / var(--data-height) * 250%)));
+}
+
+#policy .static-subelement.slide-right-in-slow.entering {
+  transform: translateX(max(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*100%)));
+}
+
+#policy .static-subelement.slide-left-in-slow.entering {
+  transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
+}
+
+#policy .static-subelement.slide-right-out-slow.exiting {
+  transform: translateX(min(100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*100%)));
+}
+
+#policy .static-subelement.slide-left-out-slow.exiting {
+  transform: translateX(max(-100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*-100%)));
+}
+
+/* #policy .static-subelement.highlight.pulse.start {
+  transform: scale3d(min(1,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
+}  */
+
 /* specific */
+#policy .introduction-text p {
+  margin-bottom: 2rem;
+}
+
 #policy .introduction-image .first-image {z-index: 1;}
 #policy .introduction-image .second-image {z-index: 2;}
 #policy .introduction-image .third-image {z-index: 3;}
@@ -1668,6 +1822,7 @@
   height: 578px;
 }
 
+/* Factors */
 #policy .factors-text .factor-container {
   width: 100%;
   margin-top: 2rem;
@@ -1685,7 +1840,7 @@
   max-height: 200px;
 } 
 
-
+/* Interventions intro */
 #policy .interventions-text .graph {
   position: absolute;
   top: calc(45px + 28px + 72px + 16px);
@@ -1704,9 +1859,353 @@
 #policy .interventions-text .graph .second-text {
   margin-top: 0.5rem;
 }
-/* End first static element */ 
 
-#policy .table-row {
+/* INF Container */
+#policy .inf-container .inf-individual .inf-introduction{
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#policy .inf-container .inf-individual .text-container {
+  z-index: 2;
+}
+
+#policy .inf-container .inf-community,
+#policy .inf-container .inf-environment {
+  position: absolute;
+  top: calc(28px + 24px + 48px + 16px + 1rem);
+  width: 100%;
+  min-height: 550px;
+  text-align: center;
+}
+
+#policy .inf-container .inf-community .bottom-container {
+  padding-top: 1rem;
+}
+
+#policy .inf-container .inf-community .message {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* INF effectiveness */
+#policy .inf-effectiveness .title {
+  margin-bottom: 1rem;
+}
+
+#policy .inf-effectiveness .h2 {
+  margin-bottom: 0.5rem
+}
+
+#policy .static-row.inf-effectiveness {
+  position: relative;
+  height: calc(7000px + 50vh);
+  overflow: hidden;
+}
+
+#policy .inf-effectiveness .image-div {
+  position: relative;
+  text-align: center;
+}
+
+#policy .inf-effectiveness .image-div > img.image {
+  height: 75vh;
+}
+
+/* Tasa containers definitions */
+#policy .inf-effectiveness .tasa-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+}
+
+#policy .inf-effectiveness .tasa-container.left {
+  transform: translateX(-100%);
+}
+
+/* Tasa value */
+#policy .inf-effectiveness .tasa-container .value {
+  position: absolute;
+  color: white;
+}
+
+#policy .inf-effectiveness .tasa-container.left .value {
+  left: auto;
+  right: 0;
+  transform: translateX(50%);
+}
+
+#policy .inf-effectiveness .tasa-container.right .value {
+  right: auto;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+/* Tasa text container */
+#policy .inf-effectiveness .tasa-container .text {
+  display: flex;
+  align-items: center;
+  text-align: left;
+} 
+
+/* Tasa Text items */
+#policy .inf-effectiveness .tasa-container .text p {
+  margin: 0;
+  text-align: left;
+}
+
+#policy .inf-effectiveness .tasa-container.left .text .icon {
+  align-self: flex-end;
+}
+
+#policy .inf-effectiveness .tasa-container.left .text .icon {
+  max-height: 45px;
+  padding-left: 0.5rem;
+}
+
+#policy .inf-effectiveness .tasa-container.right .text .icon {
+  max-height: 45px;
+  padding-right: 0.5rem;
+}
+
+#policy .inf-effectiveness .tasa-container .arrow {
+  position: relative;
+  width: 7vw;
+  height: 2px;
+  background-color: var(--black);
+  margin: 0 1rem;
+}
+
+#policy .inf-effectiveness .tasa-container .arrow.down {
+  transform: rotateZ(90deg);
+}
+
+#policy .inf-effectiveness .tasa-container .arrow.right {
+  /* right: -56%; */
+  margin: 0 1rem 0 0.5rem;
+}
+
+#policy .inf-effectiveness .tasa-container .arrow.left {
+  /* right: 103%; */
+  margin: 0 0.5rem 0 1rem;
+}
+
+#policy .inf-effectiveness .tasa-container .arrow::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 0;
+  border: solid var(--black);
+  border-width: 6px;
+  padding: 0px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: translate(-100%, -50%);
+}
+
+#policy .inf-effectiveness .tasa-container .arrow.right::after {
+  left: 0;
+  border-left-color: transparent;
+  transform: translate(-100%, -50%);
+}
+
+#policy .inf-effectiveness .tasa-container .arrow.left::after {
+  right: 0;
+  border-right-color: transparent;
+  transform: translate(100%,-50%);
+}
+
+/* Specific */
+#policy .inf-effectiveness .tasa-container.tasa-2-6 {top: 8%;}
+#policy .inf-effectiveness .tasa-container.tasa-2-6 .text {max-width: 300px;}
+#policy .inf-effectiveness .tasa-container.tasa-2-6 .text p {
+  padding: 0.5rem;
+  background-color: var(--orange);
+  color: white;
+}
+
+#policy .inf-effectiveness .tasa-container.tasa-2-5 {top: 14%;}
+#policy .inf-effectiveness .tasa-container.tasa-2-5 .text {max-width: 375px;color:var(--red);}
+
+#policy .inf-effectiveness .tasa-container.tasa-disminucion {top: 20%;}
+#policy .inf-effectiveness .tasa-disminucion .arrow.down.right {
+  width: 3vw;
+  margin-right: 0;
+  margin-left: auto;
+  background-color: var(--white);
+  transform: translateX(50%) rotateZ(-90deg);
+}
+#policy .inf-effectiveness .tasa-disminucion .arrow.down.right::after {border-right-color:var(--white);}
+
+#policy .inf-effectiveness .tasa-container.tasa-disminucion .text {max-width:165px;padding:0.3rem 0.5rem;background-color: var(--orange);color: var(--white);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-8 {top: 30%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-8 .text {max-width: 325px;color:var(--purple);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-7 {top: 36%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-7 .text {max-width: 375px;color:var(--purple);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-6 {top: 42%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-6 .text {max-width: 325px;color:var(--purple);}
+
+#policy .inf-effectiveness .tasa-container.tasa-medidas {top: 52%;left: 45%;}
+#policy .inf-effectiveness .tasa-container.tasa-medidas .text {max-width:250px;padding:0.3rem 0.5rem;background-color: var(--orange);color: var(--white);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-4 {top: 56%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-4 .text {max-width: 375px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-2 {top: 62%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-2 .text {max-width: 325px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-1 {top: 68%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-1 .text {max-width: 375px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-1-0 {top: 74%;}
+#policy .inf-effectiveness .tasa-container.tasa-1-0 .text {max-width: 370px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-m0-9 {top: 78%;}
+#policy .inf-effectiveness .tasa-container.tasa-m0-9 .text {max-width: 500px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-0-9 {top: 82%;}
+#policy .inf-effectiveness .tasa-container.tasa-0-9 .text {max-width: 500px;color:var(--blue);}
+
+#policy .inf-effectiveness .tasa-container.tasa-e0-9 {top: 84%;}
+#policy .inf-effectiveness .tasa-container.tasa-e0-9 .text {max-width: 500px;color:var(--blue);}
+
+/* IF */
+#policy .if-vaccines .vaccines-texts,
+#policy .if-vaccines .vaccines-images {
+  overflow: hidden;
+  /* height: 70vh; */
+}
+
+#policy .if-vaccines .vaccines {
+  position: relative;
+  margin: 25vh 0;
+}
+
+#policy .if-vaccines .phase-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#policy .if-vaccines .phase-row:first-child {
+  position: relative;
+}
+
+/* used */
+#policy .interventions-used .results {
+  width: 100%;
+  height: 70vh;
+}
+
+#policy .interventions-used .first-text {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+#policy .interventions-used .second-text {
+  margin-top: 0.5rem;
+}
+
+/* maxims */
+#policy .interventions-maxims .section-image {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#policy .interventions-maxims .first-text {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+#policy .interventions-maxims .second-text {
+  margin-top: 0.5rem;
+}
+
+/* Metapopulation model */
+#policy .model-population .model-results1,
+#policy .model-population .model-results2 {
+  position: absolute !important;
+  top: calc(4rem + 2rem);
+  width: 100%;
+  max-height: 730px;
+}
+
+#policy .model-population .model-description,
+#policy .model-population .model-results1 .text-row,
+#policy .model-population .model-results2 .text-row {
+  padding-top: 2rem;
+}
+
+#policy .model-population .model-results1 .image-row,
+#policy .model-population .model-results2 .image-row {
+  padding-top: 2rem;
+}
+
+/* agent model */
+#policy .model-agent .model-results {
+  position: absolute !important;
+  top: calc(4rem + 2rem);
+  width: 100%;
+  max-height: 550px;
+}
+
+#policy .model-agent .model-description > .text-row,
+#policy .model-agent .model-description .agent-characteristics h4 {
+  padding-top: 2rem;
+}
+
+#policy .model-agent .model-description .agent-grouped {
+  height: 375px;
+}
+
+#policy .model-agent .model-description .agent-individual-row {
+  /* height: 350px; */
+  padding-top: 2rem;
+}
+
+#policy .model-agent .model-description .agent-states-row {
+  padding-top: 2rem;
+}
+
+#policy .model-agent .model-description .agent-movement {
+  position: absolute !important;
+  top: calc(1.5rem*1.2 + 0.5rem + 2rem);
+  width: 100%;
+  height: 375px;
+  padding-top: 2rem;
+}
+
+#policy .model-agent .model-results .image-container {
+  padding-top: 2rem;
+}
+
+#policy .model-agent .model-results .image-container.barranquilla,
+#policy .model-agent .model-results .image-container.cartagena {
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+  /* height: 350px; */
+  /* padding-top: 2rem; */
+}
+
+/* Closing */
+#policy .closing-text .site-logo {
+  height: 200px;
+}
+
+/* End First static element */
+
+/* #policy .table-row {
   text-align: center;
 }
 
@@ -1728,197 +2227,14 @@
   color: var(--blue);
 }
 
-/* Start second static element */
-#policy .effectiveness-image-row .title {
-  margin-bottom: 1rem;
-}
-
-#policy .effectiveness-image-row .h2 {
-  margin-bottom: 0.5rem
-}
-
-#policy .static-row.effectiveness-image-row {
-  position: relative;
-  height: calc(7000px + 50vh);
-  overflow: hidden;
-}
-
-#policy .effectiveness-image-row .image-div {
-  position: relative;
-  text-align: center;
-}
-
-#policy .effectiveness-image-row .image-div > img.image {
-  height: 75vh;
-}
-
-/* Tasa containers definition */
-#policy .effectiveness-image-container .tasa-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 50%;
-}
-
-#policy .effectiveness-image-container .tasa-container.left {
-  transform: translateX(-100%);
-}
-
-
-/* Tasa value */
-#policy .effectiveness-image-container .tasa-container .value {
-  position: absolute;
-  color: white;
-}
-
-#policy .effectiveness-image-container .tasa-container.left .value {
-  left: auto;
-  right: 0;
-  transform: translateX(50%);
-}
-
-#policy .effectiveness-image-container .tasa-container.right .value {
-  right: auto;
-  left: 0;
-  transform: translateX(-50%);
-}
-
-/* Tasa text container */
-#policy .effectiveness-image-container .tasa-container .text {
-  display: flex;
-  align-items: center;
-  text-align: left;
-} 
-
-/* Tasa Text items */
-#policy .effectiveness-image-container .tasa-container .text p {
-  margin: 0;
-  text-align: left;
-}
-
-#policy .effectiveness-image-container .tasa-container.left .text .icon {
-  align-self: flex-end;
-}
-
-#policy .effectiveness-image-container .tasa-container.left .text .icon {
-  max-height: 45px;
-  padding-left: 0.5rem;
-}
-
-#policy .effectiveness-image-container .tasa-container.right .text .icon {
-  max-height: 45px;
-  padding-right: 0.5rem;
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow {
-  position: relative;
-  width: 7vw;
-  height: 2px;
-  background-color: var(--black);
-  margin: 0 1rem;
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow.down {
-  transform: rotateZ(90deg);
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow.right {
-  /* right: -56%; */
-  margin: 0 1rem 0 0.5rem;
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow.left {
-  /* right: 103%; */
-  margin: 0 0.5rem 0 1rem;
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow::after {
-  content: '';
-  position: absolute;
-  display: inline-block;
-  top: 50%;
-  left: 0;
-  border: solid var(--black);
-  border-width: 6px;
-  padding: 0px;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  transform: translate(-100%, -50%);
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow.right::after {
-  left: 0;
-  border-left-color: transparent;
-  transform: translate(-100%, -50%);
-}
-
-#policy .effectiveness-image-container .tasa-container .arrow.left::after {
-  right: 0;
-  border-right-color: transparent;
-  transform: translate(100%,-50%);
-}
-
-/* Specific */
-#policy .effectiveness-image-container .tasa-container.tasa-2-6 {top: 8%;}
-#policy .effectiveness-image-container .tasa-container.tasa-2-6 .text {max-width: 300px;}
-#policy .effectiveness-image-container .tasa-container.tasa-2-6 .text p {
-  padding: 0.5rem;
-  background-color: var(--orange);
-  color: white;
-}
-
-#policy .effectiveness-image-container .tasa-container.tasa-2-5 {top: 14%;}
-#policy .effectiveness-image-container .tasa-container.tasa-2-5 .text {max-width: 375px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-disminucion {top: 22%;}
-#policy .effectiveness-image-container .tasa-disminucion .arrow.down.right {
-  width: 3vw;
-  margin-right: 0;
-  margin-left: auto;
-  background-color: var(--white);
-  transform: translateX(50%) rotateZ(-90deg);
-}
-#policy .effectiveness-image-container .tasa-disminucion .arrow.down.right::after {border-right-color: var(--white);}
-
-#policy .effectiveness-image-container .tasa-container.tasa-disminucion .text {max-width: 148px;color: var(--blue);}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-8 {top: 30%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-8 .text {max-width: 325px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-7 {top: 36%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-7 .text {max-width: 375px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-6 {top: 42%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-6 .text {max-width: 325px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-medidas {top: 50%;left: 48%;}
-#policy .effectiveness-image-container .tasa-container.tasa-medidas .text {max-width: 178px;color: var(--blue);}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-4 {top: 56%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-4 .text {max-width: 375px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-2 {top: 62%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-2 .text {max-width: 325px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-1 {top: 68%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-1 .text {max-width: 375px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-1-0 {top: 74%;}
-#policy .effectiveness-image-container .tasa-container.tasa-1-0 .text {max-width: 370px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-m0-9 {top: 78%;}
-#policy .effectiveness-image-container .tasa-container.tasa-m0-9 .text {max-width: 500px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-0-9 {top: 82%;}
-#policy .effectiveness-image-container .tasa-container.tasa-0-9 .text {max-width: 500px;}
-
-#policy .effectiveness-image-container .tasa-container.tasa-e0-9 {top: 84%;}
-#policy .effectiveness-image-container .tasa-container.tasa-e0-9 .text {max-width: 500px;}
-/* End Second static element */
+#policy .interventons-pharmacological-image .highlight-link {
+  font-weight: bold;
+  color: var(--blue);
+} */
 
 /* Tipos de intervenciones main content */
 
-#policy .interventions-types-section {
+/* #policy .interventions-types-section {
   position: relative;
 }
 
@@ -1981,7 +2297,16 @@
 #policy .main-index-container .header .black-background {
   z-index: 2;
   background: black;
-  height: 50%;
+}
+
+#policy .main-index-container .epidemic-intelligence .black-background {
+  height: 100%;
+}
+#policy .main-index-container .inf .header .black-background {
+  height: min(100%, max(  0%, calc( ((var(--data-top) - var(--data-inf-start)) / var(--data-inf-height)) * 100% )  ));
+}
+#policy .main-index-container .if .header .black-background {
+  height: min(100%, max(  0%, calc( ((var(--data-top) - var(--data-if-start)) / var(--data-if-height)) * 100% )  ));
 }
 
 #policy .main-index-container .header .color-background {
@@ -2145,10 +2470,6 @@
   opacity: 1;
 }
 
-/* #policy .community-maxims .maxims-intro.fixed {
-  top: calc((var(--data-top) - var(--data-top-fixed)) * 0.5px)
-} */
-
 #policy .community-maxims .maxim-intro.in {
   position: absolute;
   top: 50%;
@@ -2167,4 +2488,4 @@
 
 #policy .community-maxims .maxims-text {
   padding-top: 7vh;
-}
+} */
