@@ -576,6 +576,10 @@ ul {
 	margin-bottom: 1.5rem;
 }
 
+.color-black {
+	color: var(--black);	
+}
+
 .color-blue {
 	color: var(--blue);	
 }

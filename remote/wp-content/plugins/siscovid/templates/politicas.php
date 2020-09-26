@@ -118,8 +118,7 @@
         </div>
         <div class="static-subelement graph fade-in slide-right-in image-container">
           <img class="image" src="/wp-content/uploads/politicas-interventions-graph.png" alt="<?php _e('Interventions Graph', 'siscovid')?>">
-          <p class="image-description first-text"><?php _e('Adaptación fuente: CDC','siscovid')?></p>
-          <p class="image-description second-text"><?php _e('Curva epidémica hipotética que muestra el curso normal de una epidemia y el aplazamiento de la curva esperada al adoptar intervenciones','siscovid')?></p>
+          <p class="image-description"><?php _e('<span class="source-text color-black">Adaptación fuente: CDC,</span> Curva epidémica hipotética que muestra el curso normal de una epidemia y el aplazamiento de la curva esperada al adoptar intervenciones','siscovid')?></p>
         </div>
       </div>
       
@@ -166,13 +165,18 @@
             </div>
           </div>
         </div>
-        <div class="static-subelement inf-environment fade-in d-flex">
-          <div class="static-subelement image-container fade-in slide-left-in col-8">
-            <img src="/wp-content/uploads/politicas-interventions-table.png" alt="<?php _e('Temporal image','siscovid');?>">
+        <div class="static-subelement inf-environment fade-in">
+          <div class="row image-row">
+            <div class="static-subelement image-container fade-in slide-left-in col-12">
+              <img src="/wp-content/uploads/politicas-inf-image3.jpg" alt="<?php _e('Outside restaurant image','siscovid');?>">
+              <div><span class="source"><?php _e('Fuente de la imagen: ','siscovid');?><a href="http://www.freepik.com">upklyak / Freepik</a></span></div>
+            </div>
           </div>
-          <div class="static-subelement text-container fade-in slide-right-in col-4 d-flex flex-column justify-content-center">
-            <h5><?php _e('INF Ambientales','siscovid')?></h5>
-            <p><?php _e('Las medidas ambientales hacen referencia a las acciones que se realizan que ayudan a eliminar el virus en lugares (ambientes interiores) y diversas superficies. Entre dichas acciones están mantener habitaciones bien ventiladas y expuestas al sol y limpieza rutinaria de superficies que, si están contaminadas, pueden contribuir a la propagación de virus (botones de ascensor, pasamanos, manijas de puertas y ventanas, botones, celulares, computadores, estaciones de trabajo).','siscovid'); ?></p>
+          <div class="row text-row">
+            <div class="static-subelement text-container fade-in slide-right-in col-12 d-flex flex-column justify-content-center">
+              <h5><?php _e('INF Ambientales','siscovid')?></h5>
+              <p><?php _e('Las medidas ambientales hacen referencia a las acciones que se realizan que ayudan a eliminar el virus en lugares (ambientes interiores) y diversas superficies. Entre dichas acciones están mantener habitaciones bien ventiladas y expuestas al sol y limpieza rutinaria de superficies que, si están contaminadas, pueden contribuir a la propagación de virus (botones de ascensor, pasamanos, manijas de puertas y ventanas, botones, celulares, computadores, estaciones de trabajo).','siscovid'); ?></p>
+            </div>
           </div>
         </div>
       </div>
@@ -367,8 +371,7 @@
         </h3>
         <iframe class="results" src="https://fabiancpl.github.io/siscovid/daily-cases-viz/index.html" frameborder="0"></iframe>
         <div class="static-subelement fade-in description-container">
-          <p class="image-description first-text"><?php _e('Fuente: SIVIGILA','siscovid')?></p>
-          <p class="image-description second-text"><?php _e('Casos nuevos y medidas nacionales y municipales de mitigación de la pandemia','siscovid')?></p>
+          <p class="image-description"><?php _e('<span class="source-text color-black">Fuente: SIVIGILA,</span> Casos nuevos y medidas nacionales y municipales de mitigación de la pandemia','siscovid')?></p>
         </div>
       </div>
       <div class="interventions-opinion col-8 fade-in fade-out static-element">
@@ -414,8 +417,8 @@
         <div class="row">
           <div class="col-12">
             <div class="static-subelement fade-in description-container">
-              <div class="p first-text">
-                <?php _e('Fuente: Infografía adaptada de Bonell et al. (', 'siscovid');?>
+              <div class="image-description p">
+                <?php _e('<span class="source-text color-black">Fuente: Infografía adaptada de Bonell et al. (', 'siscovid');?>
                 <div class="reference">
                   <span><?php _e('22', 'siscovid');?></span>
                   <div class="reference-container modal-container">
@@ -426,9 +429,8 @@
                     </div>
                   </div>
                 </div>
-                <?php _e(')', 'siscovid');?>
+                <?php _e('),</span> Infografía de principios claves para dirigirse a las comunidades', 'siscovid');?>
               </div>
-              <p class="image-description second-text"><?php _e('Infografía de principios claves para dirigirse a las comunidades','siscovid')?></p>
             </div>
           </div>
         </div>
@@ -572,15 +574,15 @@
             <div class="col-12">
               <div class="static-subelement fade-in fade-out slide-left-out image-container bogota text-center">
                 <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results1.png" alt="<?php _e('Agent model mortality rate for Bogotá graph', 'siscovid')?>">
-                <!-- <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>"> -->
+                <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>">
               </div>
               <div class="static-subelement fade-in slide-right-in fade-out slide-left-out image-container barranquilla text-center">
                 <img class="result-image" src="/wp-content/uploads/politicas-model-agent-results2.png" alt="<?php _e('Agent model mortality rate for Barranquilla graph', 'siscovid')?>">
-                <!-- <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>"> -->
+                <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>">
               </div>
               <div class="static-subelement fade-in slide-right-in image-container cartagena text-center">
                 <img class="result-image" src="/wp-content/uploads/politicas-model-agent-results3.png" alt="<?php _e('Agent model mortality rate for Cartagena graph', 'siscovid')?>">
-                <!-- <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>"> -->
+                <img class="result-image bogota" src="/wp-content/uploads/politicas-model-agent-results-legend.png" alt="<?php _e('Agent model mortality rate legend', 'siscovid')?>">
               </div>
               <div class="static-subelement fade-in description-container">
                 <p class="image-description"><?php _e('Tasa de mortalidad** (muertes por 100.000 habitantes)','siscovid')?></p>

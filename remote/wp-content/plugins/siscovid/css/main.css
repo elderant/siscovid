@@ -1532,6 +1532,10 @@
   text-align: center;
 }
 
+#policy .image-description .source-text {
+  font-size: 1rem;  
+}
+
 #policy .cities-text h3 {
   line-height: 45px;
 }
@@ -1724,6 +1728,14 @@
   transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
 }
 
+#policy .static-subelement.slide-right-out.exiting {
+  transform: translateX(min(100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*100%)));
+}
+
+#policy .static-subelement.slide-left-out.exiting {
+  transform: translateX(max(-100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*-100%)));
+}
+
 #policy .static-element.slide-up-in.entering {
   transform: translate(-50%, max(0%,calc(((var(--data-top) - var(--data-start-offset)) / var(--data-height))*-100% + 100%)));
 }
@@ -1738,22 +1750,6 @@
 
 #policy .static-subelement.slide-up-out.exiting {
   transform: translateY(min(100%,calc(((var(--data-end-offset) - var(--data-top)) / var(--data-height))*100%)));
-}
-
-#policy .static-subelement.slide-right-out.exiting {
-  transform: translateX(min(100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*100%)));
-}
-
-#policy .static-subelement.slide-left-out.exiting {
-  transform: translateX(max(-100%,calc(((var(--data-top) - var(--data-end-offset)) / var(--data-height))*-100%)));
-}
-
-#policy .static-subelement.slide-right-in.entering {
-  transform: translateX(max(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*100%)));
-}
-
-#policy .static-subelement.slide-left-in.entering {
-  transform: translateX(min(0%,calc(((var(--data-start-offset) + var(--data-height) - var(--data-top)) / var(--data-height))*-100%)));
 }
 
 /* slowed animations */
@@ -1849,13 +1845,6 @@
   text-align: center;
 }
 
-#policy .interventions-text .graph .first-text {
-  color: black;
-  font-size: 1rem;
-  margin-bottom: 0;
-  text-align: left;
-}
-
 #policy .interventions-text .graph .second-text {
   margin-top: 0.5rem;
 }
@@ -1886,6 +1875,10 @@
 #policy .inf-container .inf-community .message {
   font-weight: 600;
   font-size: 1.1em;
+}
+
+#policy .inf-container .inf-environment .image-row {
+  padding-bottom: 2rem;
 }
 
 /* INF effectiveness */
@@ -2102,33 +2095,11 @@
   height: 70vh;
 }
 
-#policy .interventions-used .first-text {
-  color: black;
-  font-size: 1rem;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-#policy .interventions-used .second-text {
-  margin-top: 0.5rem;
-}
-
 /* maxims */
 #policy .interventions-maxims .section-image {
   display: block;
   max-width: 600px;
   margin: 0 auto;
-}
-
-#policy .interventions-maxims .first-text {
-  color: black;
-  font-size: 1rem;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-#policy .interventions-maxims .second-text {
-  margin-top: 0.5rem;
 }
 
 /* Metapopulation model */
@@ -2381,17 +2352,6 @@
 #policy .main-index-container .if .item-row {
   color: var(--green);
   border-color: var(--green);
-}
-
-#policy .interventions-inf-personal-image .first-text {
-  color: black;
-  font-size: 1rem;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-#policy .interventions-inf-personal-image .second-text {
-  margin-top: 0.5rem;
 }
 
 #policy .interventions-inf-community {
