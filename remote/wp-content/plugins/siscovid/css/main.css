@@ -33,8 +33,6 @@
 
 #project .row {
   margin-bottom: 3rem;
-  /* padding-top: 2rem; */
-  /* padding-bottom: 2rem; */
 }
 
 #project h2 {
@@ -203,7 +201,6 @@
 
 #project .encuestas-row .banner-container {
   order: 1;
-  /* margin-left: 8.333333%; */
 }
 
 #project .resultados-row .images-container {
@@ -1840,6 +1837,7 @@
 #policy .interventions-text .graph {
   position: absolute;
   top: calc(45px + 28px + 72px + 16px);
+  left: 0;
   width: 100%;
   min-height: 460px;
   text-align: center;
@@ -1863,6 +1861,7 @@
 #policy .inf-container .inf-environment {
   position: absolute;
   top: calc(28px + 24px + 48px + 16px + 1rem);
+  left: 0;
   width: 100%;
   min-height: 550px;
   text-align: center;
@@ -2071,7 +2070,6 @@
 #policy .if-vaccines .vaccines-texts,
 #policy .if-vaccines .vaccines-images {
   overflow: hidden;
-  /* height: 70vh; */
 }
 
 #policy .if-vaccines .vaccines {
@@ -2105,27 +2103,30 @@
 /* Metapopulation model */
 #policy .model-population .model-results1,
 #policy .model-population .model-results2 {
-  position: absolute !important;
+  position: absolute;
   top: calc(4rem + 2rem);
+  left: 0;
   width: 100%;
-  max-height: 730px;
 }
 
 #policy .model-population .model-description,
-#policy .model-population .model-results1 .text-row,
 #policy .model-population .model-results2 .text-row {
   padding-top: 2rem;
 }
 
-#policy .model-population .model-results1 .image-row,
-#policy .model-population .model-results2 .image-row {
+#policy .model-population .model-description {
+  height: 620px;
+}
+
+#policy .model-population .model-results1 .image-row {
   padding-top: 2rem;
 }
 
 /* agent model */
 #policy .model-agent .model-results {
-  position: absolute !important;
+  position: absolute;
   top: calc(4rem + 2rem);
+  left: 0;
   width: 100%;
   max-height: 550px;
 }
@@ -2140,7 +2141,6 @@
 }
 
 #policy .model-agent .model-description .agent-individual-row {
-  /* height: 350px; */
   padding-top: 2rem;
 }
 
@@ -2149,7 +2149,7 @@
 }
 
 #policy .model-agent .model-description .agent-movement {
-  position: absolute !important;
+  position: absolute;
   top: calc(1.5rem*1.2 + 0.5rem + 2rem);
   width: 100%;
   height: 375px;
@@ -2162,290 +2162,12 @@
 
 #policy .model-agent .model-results .image-container.barranquilla,
 #policy .model-agent .model-results .image-container.cartagena {
-  position: absolute !important;
+  position: absolute;
   top: 0;
   width: 100%;
-  /* height: 350px; */
-  /* padding-top: 2rem; */
 }
 
 /* Closing */
 #policy .closing-text .site-logo {
   height: 200px;
 }
-
-/* End First static element */
-
-/* #policy .table-row {
-  text-align: center;
-}
-
-#policy .row.epidemic-intelligence-text-row {
-  margin-top: 2rem;
-}
-
-#policy ol.lettered-list {
-  list-style: none;
-  counter-reset: number-counter;
-}
-
-#policy ol.style-color-blue li {
-  counter-increment: number-counter;
-}
-
-#policy ol.style-color-blue li::before {
-  content: counter(number-counter) ". ";
-  color: var(--blue);
-}
-
-#policy .interventons-pharmacological-image .highlight-link {
-  font-weight: bold;
-  color: var(--blue);
-} */
-
-/* Tipos de intervenciones main content */
-
-/* #policy .interventions-types-section {
-  position: relative;
-}
-
-#policy .interventions-index {
-  position: absolute;
-  top: 4.5%;
-  left: 14%;
-}
-
-#policy .interventions-index.fixed {
-  position: fixed;
-  top: 50%;
-  left: 27%;
-  transform: translate(-50%,-50%);
-}
-
-#policy .interventions-index.fixed.exit {
-  position: absolute;
-  top: unset;
-  bottom: 0%;
-}
-
-#policy .interventions-index {
-  max-width: 450px;
-}
-
-#policy .interventions-index .main-index-container {
-  font-size: 0.5rem;
-  text-align: center;
-}
-
-#policy .interventions-index.fixed .main-index-container .header {
-  mix-blend-mode: screen;
-}
-
-#policy .main-index-container .header {
-  position: relaitve;
-  max-width: 16%;
-  margin: 0.1rem 0;
-  margin-right: 0.667%;
-  border: 1px solid;
-  padding: 0;
-  border-radius: 10px 0 0 0;
-}
-
-#policy .main-index-container .header .header-div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 10px 0 0 0;
-}
-
-#policy .main-index-container .header .white-background {
-  z-index: 1;
-  background: white;
-}
-
-#policy .main-index-container .header .black-background {
-  z-index: 2;
-  background: black;
-}
-
-#policy .main-index-container .epidemic-intelligence .black-background {
-  height: 100%;
-}
-#policy .main-index-container .inf .header .black-background {
-  height: min(100%, max(  0%, calc( ((var(--data-top) - var(--data-inf-start)) / var(--data-inf-height)) * 100% )  ));
-}
-#policy .main-index-container .if .header .black-background {
-  height: min(100%, max(  0%, calc( ((var(--data-top) - var(--data-if-start)) / var(--data-if-height)) * 100% )  ));
-}
-
-#policy .main-index-container .header .color-background {
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  mix-blend-mode: screen;
-}
-
-#policy .main-index-container .header .text {
-  display: flex;
-  align-items: center;
-  z-index: 3;
-  position: absolute;
-  color: white;
-  mix-blend-mode: difference;
-}
-
-#policy .main-index-container .epidemic-intelligence .header {
-  border-color: var(--blue);
-}
-#policy .main-index-container .inf .header {
-  border-color: var(--blue-dark-shade);
-}
-#policy .main-index-container .if .header {
-  border-color: var(--green);
-}
-
-#policy .main-index-container .epidemic-intelligence .header .color-background {
-  background-color: var(--blue);
-}
-#policy .main-index-container .inf .header .color-background {
-  background-color: var(--blue-dark-shade);
-}
-#policy .main-index-container .if .header .color-background {
-  background-color: var(--green);
-}
-
-#policy .main-index-container .item-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
-  border: 1px solid;
-  padding: 0 0.1rem;
-  border-radius: 5px;
-}
-
-#policy .main-index-container .item-row.multiple-lines {
-  border-radius: 5px 0 0 0;
-}
-
-#policy .main-index-container .item-row.col-2 {
-  max-width: 16%;
-  margin-right: 0.667%;
-}
-#policy .main-index-container .item-row.col-3 {
-  max-width: 24%;
-  margin-right: 1%;
-}
-
-#policy .main-index-container .epidemic-intelligence .item-row {
-  color: var(--blue);
-  border-color: var(--blue);
-}
-#policy .main-index-container .inf .item-row {
-  color: var(--blue-dark-shade);
-  border-color: var(--blue-dark-shade);
-}
-#policy .main-index-container .if .item-row {
-  color: var(--green);
-  border-color: var(--green);
-}
-
-#policy .interventions-inf-community {
-  margin-top: 2rem;
-}
-
-#policy .interventons-pharmacological-image {
-  text-align: center;
-}
-
-#policy .implemented-row {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-#policy .implemented-row iframe {
-  width: 1025px;
-  height: 450px;
-} 
-
-#policy .social-distancing-intro,
-#policy .community-intro-row {
-  margin-top: 3rem;
-}
-
-#policy .social-distancing-image p {
-  padding: 0 1rem;
-  line-height: 2;
-}
-
-#policy .community-maxims {
-  position: relative;
-  margin-top: 6rem;
-}
-
-#policy .community-maxims .maxims-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
-
-#policy .community-maxims .maxims-images.in {
-  position: fixed;
-}
-
-#policy .community-maxims .maxims-images.in.out {
-  position: absolute;
-  height: 100%;
-}
-
-#policy .community-maxims .maxim {
-  height: 500px;
-}
-
-#policy .community-maxims .maxim-image {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 0 15px;
-  transform: translateY(-50%);
-  text-align: center;
-}
-
-#policy .community-maxims .maxim-image img {
-  max-height: 425px;
-  max-height: 500px;
-}
-
-#policy .community-maxims .maxim-intro {
-  position: relative;
-  top: 0;
-  transform: unset;
-  visibility: visible;
-  opacity: 1;
-}
-
-#policy .community-maxims .maxim-intro.in {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  padding: 0 15px;
-  transform: translateY(-50%);
-}
-
-#policy .community-maxims .maxim-image.last-element.out {
-  position: absolute;
-  top: unset;
-  bottom: 0;
-  visibility: visible;
-  opacity: 1;
-}
-
-#policy .community-maxims .maxims-text {
-  padding-top: 7vh;
-} */

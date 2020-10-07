@@ -17,29 +17,136 @@
 
 /*-- 0. STYLES FOR MOBILE DEVICES - media screen max-width: 768px --*/
 @media screen and (max-width: 768px) {
-	/* .animated {
-		-webkit-animation-fill-mode: none !important;
-		-moz-animation-fill-mode: none !important;
-		-ms-animation-fill-mode: none !important;
-		-o-animation-fill-mode: none !important;
-		animation-fill-mode: none !important;
-		-webkit-animation-duration: 0s !important;
-		-moz-animation-duration: 0s !important;
-		-ms-animation-duration: 0s !important;
-		-o-animation-duration: 0s !important;
-		animation-duration: 0s !important;
-	}
-		
-	.flash, .shake, .bounce, .tada, .swing, .wobble, .pulse, .animated.flip, .flipInX, .flipOutX, .flipInY, .flipOutY, .fadeIn, .fadeInUp, .fadeInDown, .fadeInLeft, .fadeInRight, .fadeInUpBig, .fadeInDownBig, .fadeInLeftBig, .fadeInRightBig, .fadeOut, .fadeOutUp, .fadeOutDown, .fadeOutLeft, .fadeOutRight, .fadeOutUpBig, .fadeOutDownBig, .fadeOutLeftBig, .fadeOutRightBig, .slideInDown, .slideInLeft, .slideInRight, .slideOutUp, .slideOutLeft, .slideOutRight, .bounceIn, .bounceInUp, .bounceInDown, .bounceInLeft, .bounceInRight, .bounceOut, .bounceOutUp, .bounceOutDown, .bounceOutLeft, .bounceOutRight, .rotateIn, .rotateInUpLeft, .rotateInDownLeft, .rotateInUpRight, .rotateInDownRight, .rotateOut, .rotateOutUpLeft, .rotateOutDownLeft, .rotateOutUpRight, .rotateOutDownRight, .lightSpeedIn, .lightSpeedOut, .hinge, .rollIn, .rollOut, .zoomIn, .bounce-in  {
-		-webkit-animation-name: none !important;
-		-moz-animation-name: none !important;
-		-o-animation-name: none !important;
-		animation-name: none !important;
-	}
+  /* Politicas */
+  #policy .static-row.introduction {
+    height: auto;
+  }
 
-	.animate-in, .description, .presentation h3, .move, .device, .arrow-fast, .fast h3, .arrow-intuitive, .intuitive h3, .arrow-simple, .simple h3, .arrow-secure, .secure h3, .arrow-awesome, .awesome h3, .arrow-free, .free h3, .award h3, .cbp-ig-grid-li, .rating, .grid figure, .patches h3, .price h3, .cd-timeline-icon, .cd-timeline-content, .plans, .cbp-qtrotator, .view, .team, .social, .form-inline, #map {
-		visibility: visible !important;
-	} */
+  #policy .static-element {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    left: 0;
+    top: 0;
+    padding-bottom: 4rem;
+  }
+
+  #policy .static-subelement {
+    padding-bottom: 2rem;
+  }
+
+  #policy .static-subelement {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #policy .static-element.first-element {
+    position: relative;
+    top: 0;
+  }
+
+  #policy .image-description {
+    margin-top: 1rem;
+    padding-bottom: 0;
+  }
+
+  #policy .map-column {
+    max-width: unset;
+    max-height: unset;
+  }
+
+  #policy .interventions-text .image-container.objectives {
+    height: auto;
+  }
+
+  #policy .interventions-text .graph {
+    position: relative;
+    top: auto;
+    min-height: unset;
+  }
+
+  #policy .inf-container .inf-community, 
+  #policy .inf-container .inf-environment {
+    position: relative;
+    top: auto;
+    min-height: unset;
+  }
+
+  #policy .inf-container .inf-introduction {
+    padding-bottom: 2rem;
+  }
+
+  #policy .if-vaccines .vaccines {
+    margin: 0 auto;
+  }
+
+  #policy .if-vaccines .phase-row {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding-bottom: 2rem;
+  }
+
+  #policy .if-vaccines .phase-row .vaccine-text {
+    padding: 0;
+    padding-right: 0.5rem;
+  }
+
+  #policy .if-vaccines .phase-row .vaccine-image {
+    padding: 0;
+    padding-left: 0.5rem;
+  }
+
+  #policy .model-population .model-description {
+    height: auto;
+  }
+
+  #policy .model-population .model-results1, 
+  #policy .model-population .model-results2 {
+    position: relative;
+    top: 0;
+  }
+
+  #policy .inf-effectiveness .tasa-disminucion .arrow.down.right {
+    padding: 0;
+  }
+
+  #policy .interventions-maxims .section-image {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  #policy .background-title .text-container.title-extra {
+    display: none;
+  }
+
+  #policy .model-population .model-description {
+    height: auto;
+  }
+
+  #policy .model-agent .model-results {
+    position: relative;
+    top: 0;
+    max-height: unset;
+  }
+
+  #policy .model-agent .model-description .agent-grouped {
+    height: auto;
+  }
+
+  #policy .model-agent .model-description .agent-movement {
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+
+  #policy .model-agent .model-results .image-container.barranquilla, 
+  #policy .model-agent .model-results .image-container.cartagena {
+    position: relative;
+    top: 0;
+  }
 }
 
 
@@ -242,7 +349,77 @@
 		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
-	}
+  }
+  
+  /* politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 135px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: 200px;
+    width: auto;
+  }
+
+  #policy .inf-container .inf-individual img,
+  #policy .inf-container .inf-community img {
+    width: 100%;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .image-description {
+    margin-top: 2rem;
+  }
+
+  #policy .inf-effectiveness .image-div > img.image {
+    height: 90vh;
+  }
+
+  #policy .background-title .text-container {
+    width: 100%;
+  }
+
+  #policy .inf-effectiveness .image-div {
+    font-size: 0.8em;
+  }
+
+  #policy .if-vaccines .phase-row .vaccine-text {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  #policy .interventions-used .results {
+    width: 100%;
+    height: 900px;
+  }
+
+  #policy .map-column iframe,
+  #policy .map-column iframe {
+    width: 100%;
+    height: 785px;
+  }
+
+  #policy .background-title img {
+    display: none
+  }
+
+  #policy .model-population .model-results1 .image-row img,
+  #policy .model-population .model-results2 .image-row img {
+    height: auto;
+  }
+
+  #policy .model-agent .model-results .image-container .result-image,
+  #policy .model-agent .model-results .image-container .legend-image {
+    height: 102px;
+  }
 }
 
 /*-- 2. STYLES FOR MOBILE DEVICES - media screen min width: 401px / max width: 575px --*/
@@ -440,7 +617,61 @@
 		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
-	}
+  }
+  
+  /* politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 100px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: 160px;
+    width: auto;
+  }
+
+  #policy .inf-container .inf-individual img,
+  #policy .inf-container .inf-community img {
+    width: 80%;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .image-div {
+    font-size: 0.8em;
+  }
+
+  #policy .interventions-used .results {
+    width: 100%;
+    height: 900px;
+  }
+
+  #policy .if-vaccines .phase-row .vaccine-text {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  #policy .map-column iframe,
+  #policy .map-column iframe {
+    width: 100%;
+    height: 785px;
+  }
+
+  #policy .model-population .model-results1 .image-row img,
+  #policy .model-population .model-results2 .image-row img {
+    height: auto;
+  }
+
+  #policy .model-agent .model-results .image-container .result-image,
+  #policy .model-agent .model-results .image-container .legend-image {
+    height: 102px;
+  }
 }
 
 /*-- 3. STYLES FOR MOBILE DEVICES - media screen min width: 576px / max width: 649px --*/
@@ -612,11 +843,64 @@
 		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
-	}
+  }
+  
+  /* politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 150px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: 230px;
+    width: auto;
+  }
+
+  #policy .inf-container .inf-individual img,
+  #policy .inf-container .inf-community img {
+    width: 80%;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  /* #policy .inf-effectiveness .image-div > img.image {
+    height: 90vh;
+  } */
+
+  #policy .inf-effectiveness .image-div {
+    font-size: 0.8em;
+  }
+
+  #policy .interventions-used .results {
+    width: 100%;
+    height: 900px;
+  }
+
+  #policy .map-column iframe,
+  #policy .map-column iframe {
+    width: 100%;
+    height: 610px;
+  }
+
+  #policy .model-population .model-results1 .image-row img,
+  #policy .model-population .model-results2 .image-row img {
+    height: 250px;
+  }
+
+  #policy .model-agent .model-results .image-container .result-image,
+  #policy .model-agent .model-results .image-container .legend-image {
+    height: 100px;
+  }
 }
 
 /*-- 4. STYLES FOR MOBILE DEVICES - media screen min width: 650px / max width: 767px --*/
-@media screen and (min-width: 650px) and (max-width: 767px) {	
+@media screen and (min-width: 650px) and (max-width: 767px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
 	}
@@ -758,12 +1042,60 @@
 		padding: 1.5em 0;
 		height: 575px;
 		width: 925px;
-	}
+  }
+  
+  /* politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 150px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: 260px;
+    width: auto;
+  }
+
+  #policy .inf-container .inf-individual img {
+    width: 80%;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .image-div {
+    font-size: 0.8em;
+  }
+
+  #policy .interventions-used .results {
+    width: 100%;
+    height: 900px;
+  }
+
+  #policy .map-column iframe,
+  #policy .map-column iframe {
+    width: 100%;
+    height: 610px;
+  }
+
+  #policy .model-population .model-results1 .image-row img,
+  #policy .model-population .model-results2 .image-row img {
+    height: 250px;
+  }
+
+  #policy .model-agent .model-results .image-container .result-image,
+  #policy .model-agent .model-results .image-container .legend-image {
+    height: 110px;
+  }
 }
 
 
 /*-- 5. STYLES FOR MOBILE DEVICES - media screen min width: 768px / max width: 991px --*/
-@media screen and (min-width: 768px) and (max-width: 991px) {	
+@media screen and (min-width: 768px) and (max-width: 991px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
 	}
@@ -870,12 +1202,49 @@
 
 	#survey .reporte iframe {
     height: 55vw;
-	}
+  }
+  
+  /* Politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 150px;
+  }
+
+  #policy .interventions-text .image-container.objectives {
+    height: 464px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: 196px;
+    width: auto;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .model-population .model-results1 .image-row img,
+  #policy .model-population .model-results2 .image-row img {
+    height: 250px;
+  }
+
+  #policy .model-population .model-description {
+    height: 550px;
+  }
+
+  #policy .model-agent .model-results .image-container .result-image,
+  #policy .model-agent .model-results .image-container .legend-image {
+    height: 125px;
+  }
 }
 
 
 /*-- 6. STYLES FOR MOBILE DEVICES - media screen min width: 992px / max width: 1199px --*/
-@media screen and (min-width: 992px) and (max-width: 1199px) {	
+@media screen and (min-width: 992px) and (max-width: 1199px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background: none;
 	}
@@ -966,12 +1335,35 @@
 
 	#survey .reporte iframe {
     height: 55vw;
-	}
+  }
+  
+  /* Politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .model-population .model-description {
+    height: 550px;
+  }
 }
 
 
 /*-- 7. STYLES FOR MOBILE DEVICES - media screen min width: 1200px / max width: 1279px --*/
-@media screen and (min-width: 1200px) and (max-width: 1279px) {	
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -790px;
 	}
@@ -1010,12 +1402,35 @@
 
 	#methodology .datos .overview .datos-part {
 		min-height: 440px;
-	}
+  }
+  
+  /* Politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
+
+  #policy .model-population .model-description {
+    height: 550px;
+  }
 }
 
 
 /*-- 8. STYLES FOR MOBILE DEVICES - media screen min width: 1280px / max width: 1365px --*/
-@media screen and (min-width: 1280px) and (max-width: 1365px) {	
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -685px;
 	}
@@ -1057,12 +1472,31 @@
 
 	#methodology .datos .overview .datos-part {
 		min-height: 466px;
-	}
+  }
+  
+  /* Politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
 }
 
 
 /*-- 9. STYLES FOR MOBILE DEVICES - media screen min width: 1366px / max width: 1535px --*/
-@media screen and (min-width: 1366px) and (max-width: 1535px) {	
+@media screen and (min-width: 1366px) and (max-width: 1535px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -615px;
 	}
@@ -1096,12 +1530,31 @@
 
 	#methodology .datos .overview .datos-part {
 		min-height: 500px;
-	}
+  }
+  
+  /* Politicas */
+  #policy .introduction-image img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .interventions-text .image-container.objectives img {
+    height: auto;
+    width: 250px;
+  }
+
+  #policy .inf-effectiveness .title {
+    margin-bottom: 0;
+  }
+
+  #policy .inf-effectiveness .h2 {
+    margin-bottom: 0;
+  }
 }
 
 
 /*-- 10. STYLES FOR MOBILE DEVICES - media screen min width: 1536px / max width: 1679px --*/
-@media screen and (min-width: 1536px) and (max-width: 1679px) {	
+@media screen and (min-width: 1536px) and (max-width: 1679px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -490px;
 	}
@@ -1125,11 +1578,15 @@
 		width: 30vw;
 	}
 
+  /* Politicas */
+  #policy .inf-effectiveness .image-div {
+    font-size: 14px;
+  }
 }
 
 
 /*-- 11. STYLES FOR MOBILE DEVICES - media screen min width: 1680px / max width: 1919px --*/
-@media screen and (min-width: 1680px) and (max-width: 1919px) {	
+@media screen and (min-width: 1680px) and (max-width: 1919px) {
 	.page-id-2.page-template-fullwidth #content.site-content {
 		background-position-x: -440px;
 	}
@@ -1140,7 +1597,7 @@
 
 	#methodology .datos .overview .datos-part {
 		min-height: 466px;
-	}
+  }
 }
 
 

@@ -360,6 +360,10 @@
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
+  var isMobile = function() {
+    return (window.innerWidth < 768)? true: false;
+  }
+
   $(document).ready(function () {
     if($('.page-home').length > 0) {
       siscovid_initialize_team_carrousel();
@@ -400,7 +404,7 @@
       siscovid_handle_metodologia_agentes_fadeIn();
     }
 
-    if($('.page-politicas').length > 0) {
+    if($('.page-politicas').length > 0 && !isMobile()) {
       //References events
       $('#policy .reference').each(function(){
         $(this).on('mouseenter', siscovid_handle_reference_hover);
@@ -437,7 +441,7 @@
       $('#allies .allies').each(checkOffset('animate__animated animate__fadeInDown'));
     }
 
-    if($('.page-politicas').length > 0) {
+    if($('.page-politicas').length > 0 && !isMobile()) {
       document.documentElement.style.setProperty('--data-top', $(window).scrollTop());
       let start = window.siscovid.intro.start;
       let scrollHeight = window.siscovid.scrollHeight;
